@@ -22,7 +22,7 @@ get_template_part('backdrop');
     <div id="sections">
         <?
             get_template_part('section', 'home');
-            get_template_part('section', 'aboutus');
+            get_template_part('section', 'about');
             get_template_part('section', 'work');
             get_template_part('section', 'contact');
             //get_template_part('section', 'blog');

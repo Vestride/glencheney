@@ -15,8 +15,8 @@
         <h3 class="section-title text-right"><span>Contact<span class="title-icon icon-message"></span></span></h3>
         <div class="contact">
             <div class="contact-form">
-                <h2>Message Us</h2>
-                <p class="greeting">Have a <strong>comment</strong> or <strong>question</strong>? Just want to <strong>say hello</strong>? We&rsquo;d love to hear from you!</p>
+                <h2>Message Me</h2>
+                <p class="greeting">Have a <strong>comment</strong> or <strong>question</strong>? Just want to <strong>say hello</strong>? I&rsquo;d love to hear from you!</p>
                 <form>
                     <div class="notification error-notification" style="display: none;"></div>
                     <input type="hidden" name="name" value="" />

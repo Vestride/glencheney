@@ -17,11 +17,10 @@ get_template_part('backdrop', 'small');
 ?>
 
 <div id="main" role="main">
-
+    <section class="clearfix">
     <?php if (have_posts()) : ?>
-
         <header class="page-header">
-            <h1 class="page-title">
+            <h1 class="page-title section-title text-right">
                 <?php if (is_day()) : ?>
                     <?php printf(__('Daily Archives: %s', 'vestride'), '<span>' . get_the_date() . '</span>'); ?>
                 <?php elseif (is_month()) : ?>
@@ -34,6 +33,7 @@ get_template_part('backdrop', 'small');
             </h1>
         </header>
 
+        <div class="has-posts rfloat">
         <?php vestride_content_nav('nav-above'); ?>
 
         <?php /* Start the Loop */ ?>
@@ -50,7 +50,7 @@ get_template_part('backdrop', 'small');
         <?php endwhile; ?>
 
         <?php vestride_content_nav('nav-below'); ?>
-
+        </div>
     <?php else : ?>
 
         <article id="post-0" class="post no-results not-found">
@@ -65,10 +65,9 @@ get_template_part('backdrop', 'small');
         </article><!-- #post-0 -->
 
     <?php endif; ?>
-
+    <?php get_sidebar(); ?>
 </div><!-- #main -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
 <script>
     $(document).ready(function() {

@@ -27,6 +27,8 @@ foreach ($attachments as $attachment) {
 $videoEmbed = wp_specialchars_decode(get_metadata('post', $post->ID, 'video', true), ENT_QUOTES);
 $hasVideo = $videoEmbed != '' ? true : false;
 $hero = $hasVideo ? $videoEmbed : get_the_post_thumbnail(get_the_ID(), 'work-promo');
+$externalLink = get_metadata('post', $post->ID, 'external', true);
+$tag_list = get_the_tag_list('', ', ', '');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -61,8 +63,17 @@ $hero = $hasVideo ? $videoEmbed : get_the_post_thumbnail(get_the_ID(), 'work-pro
                     </li>
                     <? endfor; ?>
                 </ul>
+                
+                <h2 class="short">Tags</h2>
+                <p class="tiles"><?php echo $tag_list; ?></p>
             </div>
         </section>
+        
+        <?php if ($externalLink != '') : ?>
+        <section class="external-site-link clearfix">
+            <a href="<?php echo $externalLink; ?>" class="arrow rfloat" target="_blank">Launch Site</a>
+        </section>
+        <?php endif; ?>
         
         <div class="divider"></div>
         
@@ -70,36 +81,23 @@ $hero = $hasVideo ? $videoEmbed : get_the_post_thumbnail(get_the_ID(), 'work-pro
             <h2><?php the_title(); ?></h2>
             <p><?php the_content(); ?></p>
         </section>
-        
-        <!--
-        <section class="section-info clearfix">
-            <div class="section-details rfloat"><?php echo $post->post_excerpt; ?></div>
-            <div class="section-overview">
-                <span class="article-title">Overview</span>
-                <span class="article-subtitle"><? the_title(); ?></span>
-            </div>
-        </section>
-        <section class="section-info clearfix">
-            <div class="section-details rfloat"><?php the_content(); ?></div>
-            <div class="section-overview">
-                <span class="article-title">Challenges</span>
-                <span class="article-subtitle"><? the_title(); ?></span>
-            </div>
-        </section>
-        -->
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
         <?php
+        /* translators: used between list items, there is a space after the comma */
         $categories_list = get_the_term_list('', 'type', '', ', ', '');
-        
-        if ('' != $categories_list) {
+
+        /* translators: used between list items, there is a space after the comma */
+        if ('' != $tag_list) {
+            $utility_text = __('This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'vestride');
+        } elseif ('' != $categories_list) {
             $utility_text = __('This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'vestride');
         } else {
             $utility_text = __('This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'vestride');
         }
 
-        printf($utility_text, $categories_list, '', esc_url(get_permalink()), the_title_attribute('echo=0'), get_the_author(), esc_url(get_author_posts_url(get_the_author_meta('ID'))));
+        printf($utility_text, $categories_list, $tag_list, esc_url(get_permalink()), the_title_attribute('echo=0'), get_the_author(), esc_url(get_author_posts_url(get_the_author_meta('ID'))));
         ?>
         <?php edit_post_link(__('Edit', 'vestride'), '<span class="edit-link">', '</span>'); ?>
         

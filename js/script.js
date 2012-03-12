@@ -287,7 +287,7 @@ var Vestride = {
     },
 
     scrolledIt : function() {
-        var title = 'Eightfold Studios'
+        var title = 'Glen Cheney';
         // Highlight which section we're in
         $('#sections > section').each(function() {
             var $this = $(this)

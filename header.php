@@ -43,8 +43,8 @@ if ($paged >= 2 || $page >= 2)
         <meta property="og:image" content="<?php bloginfo('url'); ?>/apple-touch-icon-114x114-precomposed.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="<?php bloginfo('url'); ?>" />
-        <meta property="og:site_name" content="Eightfold Studios" />
-        <meta property="fb:admins" content="771347349,769883321" />
+        <meta property="og:site_name" content="Glen Cheney Portfolio" />
+        <meta property="fb:admins" content="771347349" />
         <!--<link href="https://plus.google.com/107693036436931694456" rel="publisher" />-->
 
         <link rel="shortcut icon" href="<?php bloginfo('url'); ?>/favicon.ico" type="image/x-icon" />

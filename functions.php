@@ -142,10 +142,10 @@ function vestride_content_nav( $nav_id ) {
 
 function vestride_nav_single() {
     ?>
-    <nav id="nav-single" class="text-center">
+    <nav id="nav-single" class="clearfix">
         <h3 class="ir"><?php _e('Post navigation', 'vestride'); ?></h3>
         <span class="nav-previous"><?php previous_post_link('%link'); ?></span>
-        <span class="nav-next"><?php next_post_link('%link'); ?></span>
+        <span class="nav-next rfloat"><?php next_post_link('%link'); ?></span>
     </nav><!-- #nav-single -->
 <?php
 }
@@ -273,7 +273,7 @@ if ( ! function_exists( 'vestride_posted_on' ) ) :
  * @since Twenty Eleven 1.0
  */
 function vestride_posted_on() {
-    printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'vestride' ),
+    printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>', 'vestride' ),
         esc_url( get_permalink() ),
         esc_attr( get_the_time() ),
         esc_attr( get_the_date( 'c' ) ),
@@ -305,41 +305,6 @@ function vestride_body_classes($classes) {
 add_filter( 'body_class', 'vestride_body_classes' );
 
 
-function create_person_post_type() {
-    $labels = array(
-        'name' => __('People'),
-        'singular_name' => __('Person'),
-        'menu_name' => __('People'),
-        'add_new' => __('Add New'),
-        'add_new_item' => __('Add New Person'),
-        'edit' => __('Edit'),
-        'edit_item' => __('Edit Person'),
-        'new_item' => __('New Person'),
-        'view' => __('View'),
-        'view_item' => __('View Person'),
-        'search_items' => __('Search People'),
-        'not_found' => __('No people found'),
-        'not_found_in_trash' => __('No people found in Trash'),
-        'parent' => __('Parent Person')
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'query_var' => true,
-        'rewrite' => true,
-        'capability_type' => 'post',
-        'has_archive' => false,
-        'hierarchical' => false,
-        'menu_position' => 7,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
-        'taxonomies' => array()
-    );
-    register_post_type('person', $args);
-}
-
 function create_project_post_type() {
     $labels = array(
         'name' => __('Projects'),
@@ -370,12 +335,22 @@ function create_project_post_type() {
         'hierarchical' => false,
         'menu_position' => 6,
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
-        'taxonomies' => array('type')
+        'taxonomies' => array('type', 'post_tag')
     );
     register_post_type('project', $args);
 }
 add_action('init', 'create_project_post_type');
-add_action('init', 'create_person_post_type');
+
+add_filter('pre_get_posts', 'query_post_type');
+function query_post_type($query) {
+  if(is_category() || is_tag()) {
+    $post_type = get_query_var('post_type');
+	if(!$post_type)
+	    $post_type = array('post','project'); // replace cpt to your custom post type
+    $query->set('post_type',$post_type);
+	return $query;
+    }
+}
 
 function vestride_icons() {
                 ?>
@@ -386,16 +361,6 @@ function vestride_icons() {
             }
             #menu-posts-project:hover .wp-menu-image,
             #menu-posts-project.wp-has-current-submenu .wp-menu-image {
-                background-position: 6px 7px !important;
-                opacity: 1.0;
-            }
-            
-            #menu-posts-person .wp-menu-image {
-                background: url('<?php bloginfo('template_url'); ?>/img/user-business.png') no-repeat 6px -17px !important;
-                opacity: 0.6;
-            }
-            #menu-posts-person:hover .wp-menu-image,
-            #menu-posts-person.wp-has-current-submenu .wp-menu-image {
                 background-position: 6px 7px !important;
                 opacity: 1.0;
             }
@@ -416,7 +381,7 @@ function create_project_taxonomies() {
         'update_item' => __('Update Type'),
         'add_new_item' => __('Add New Type'),
         'new_item_name' => __('New Type Name'),
-        'menu_name' => __('Type'),
+        'menu_name' => __('Types'),
     );
 
     register_taxonomy('type', array('project'), array(
@@ -435,21 +400,11 @@ function add_project_columns($columns) {
         'title' => __('Title'),
         'featured' => __('Featured'),
         'types' => __('Types'),
+        'tags' => __('Tags'),
         'date' => __('Date')
     );
 }
 add_filter('manage_project_posts_columns' , 'add_project_columns');
-
-function add_person_columns($columns) {
-    return array(
-        'cb' => '<input type="checkbox" />',
-        'title' => __('Title'),
-        'featured' => __('Featured'),
-        'position' => __('Position'),
-        'date' => __('Date')
-    );
-}
-add_filter('manage_person_posts_columns' , 'add_person_columns');
 
 add_action('manage_posts_custom_column', 'custom_columns', 10, 2);
 function custom_columns($column, $post_id) {
@@ -474,7 +429,6 @@ function custom_columns($column, $post_id) {
 function project_init() {
     add_meta_box("year_completed_meta", "Year Completed", "year_completed", "project", "side", "low");
     add_meta_box("credits_meta", "Additional Info", "add_info_meta", "project", "normal", "low");
-    add_meta_box('person_meta', 'Person Details', 'add_person_meta', 'person', 'normal', 'high');
 }
 add_action("admin_init", "project_init");
 
@@ -493,6 +447,7 @@ function add_info_meta() {
     $custom = get_post_custom($post->ID);
     $featured = $custom["featured"][0];
     $video = $custom["video"][0];
+    $external = $custom["external"][0];
     /*$programs = $custom["programs"][0];
     $programs = maybe_unserialize($programs);
     if (empty($programs)) {
@@ -509,6 +464,11 @@ function add_info_meta() {
                 Featured
             </label>
             
+        </p>
+        <p>
+            <label for="external_meta"><strong>External Link:</strong></label>
+            <br />
+            <input id="external_meta" name="external" value="<?php echo $external; ?>" placeholder="http://www.example.com" style="width:300px;" />
         </p>
         <p>
             <label for="video_meta"><strong>Video embed code:</strong></label>
@@ -545,92 +505,6 @@ function add_info_meta() {
         */
 }
 
-function add_person_meta() {
-    global $post;
-    $custom = get_post_custom($post->ID);
-    $fname = $custom["fname"][0];
-    $lname = $custom["lname"][0];
-    $position = $custom['position'][0];
-    $featured = $custom["featured"][0];
-    $order = $custom['order'][0];
-    $facebook = $custom["facebook"][0];
-    $twitter = $custom["twitter"][0];
-    $xbox = $custom['xbox'][0];
-    $youtube = $custom['youtube'][0];
-    $github = $custom['github'][0];
-    $linkedin = $custom['linkedin'][0];
-    $googleplus = $custom['googleplus'][0];
-    ?>
-        <h2>Personal Info</h2>
-        <p>
-            <label for="first_name_meta"><strong>First Name:</strong></label>
-            <br />
-            <input id="first_name_meta" name="fname" value="<?php echo $fname; ?>" />
-        </p>
-        <p>
-            <label for="last_name_meta"><strong>Last Name:</strong></label>
-            <br />
-            <input id="last_name_meta" name="lname" value="<?php echo $lname; ?>" />
-        </p>
-        <p>
-            <label for="position_meta"><strong>Position:</strong></label>
-            <br />
-            <input id="position_meta" name="position" value="<?php echo $position; ?>" />
-        </p>
-        
-        <h2>Feature person in About us section</h2>
-        <p>
-            <label>
-                <input type="checkbox" name="featured" value="featured" <? echo $featured === 'featured' ? 'checked' : ''; ?> />
-                Featured
-            </label>
-            <br />
-            <em>For featured people, the order in which they show up in the about us section. 1 is high.</em>
-            <br />
-            <label for="order_meta"><strong>Order:</strong></label>
-            <br />
-            <input id="order_meta" name="order" value="<?php echo $order; ?>" />
-        </p>
-        
-        <h2>Social Links</h2>
-        <em>Only four (4) of these will be visible! If you don&rsquo;t want one, leave it blank!</em>
-        <p>
-            <label for="facebook_meta"><strong>Facebook:</strong></label>
-            <br />
-            <input id="facebook_meta" name="facebook" value="<?php echo $facebook; ?>" />
-        </p>
-        <p>
-            <label for="twitter_meta"><strong>Twitter:</strong></label>
-            <br />
-            <input id="twitter_meta" name="twitter" value="<?php echo $twitter; ?>" />
-        </p>
-        <p>
-            <label for="xbox_meta"><strong>Xbox LIVE:</strong></label>
-            <br />
-            <input id="xbox_meta" name="xbox" value="<?php echo $xbox; ?>" />
-        </p>
-        <p>
-            <label for="youtube_meta"><strong>YouTube:</strong></label>
-            <br />
-            <input id="youtube_meta" name="youtube" value="<?php echo $youtube; ?>" />
-        </p>
-        <p>
-            <label for="github_meta"><strong>Github:</strong></label>
-            <br />
-            <input id="github_meta" name="github" value="<?php echo $github; ?>" />
-        </p>
-        <p>
-            <label for="linkedin_meta"><strong>LinkedIn:</strong></label>
-            <br />
-            <input id="linkedin_meta" name="linkedin" value="<?php echo $linkedin; ?>" />
-        </p>
-        <p>
-            <label for="googleplus_meta"><strong>Google Plus:</strong></label>
-            <br />
-            <input id="googleplus_meta" name="googleplus" value="<?php echo $googleplus; ?>" />
-        </p>
-    <?php
-}
 
 
 function save_details($post_id) {
@@ -640,20 +514,8 @@ function save_details($post_id) {
             update_post_meta($post_id, "year_completed", $_POST["year_completed"]);
             update_post_meta($post_id, "featured", $_POST["featured"]);
             update_post_meta($post_id, "video", esc_html($_POST["video"]));
+            update_post_meta($post_id, "external", $_POST["external"]);
             //update_post_meta($post_id, "programs", $_POST["programs"]);
-        } else if ($post->post_type === 'person') {
-            update_post_meta($post_id, "fname", $_POST["fname"]);
-            update_post_meta($post_id, "lname", $_POST["lname"]);
-            update_post_meta($post_id, "position", $_POST["position"]);
-            update_post_meta($post_id, "featured", $_POST["featured"]);
-            update_post_meta($post_id, "order", $_POST["order"]);
-            update_post_meta($post_id, "facebook", $_POST["facebook"]);
-            update_post_meta($post_id, "twitter", $_POST["twitter"]);
-            update_post_meta($post_id, "xbox", $_POST["xbox"]);
-            update_post_meta($post_id, "youtube", $_POST["youtube"]);
-            update_post_meta($post_id, "github", $_POST["github"]);
-            update_post_meta($post_id, "linkedin", $_POST["linkedin"]);
-            update_post_meta($post_id, "googleplus", $_POST["googleplus"]);
         }
     }
 }
@@ -704,53 +566,6 @@ function vestride_get_featured_project_posts() {
     return vestride_get_project_posts(null, 'featured', true);
 }
 
-function vestride_get_people($onlyFeatured = false) {
-    
-    $args = array(
-        'post_type' => 'person',
-        'numberposts' => -1
-    );
-    
-    if ($onlyFeatured) {
-        $args['meta_key'] = 'featured';
-        $args['meta_value'] = 'featured';
-    }
-    
-    $people = get_posts($args);
-    
-    
-    foreach ($people as &$person) {
-        $custom = get_post_custom($person->ID);
-        $person->fname = $custom["fname"][0];
-        $person->lname = $custom["lname"][0];
-        $person->position = $custom['position'][0];
-        $person->featured = $custom["featured"][0];
-        $person->order = $custom["order"][0] == '' ? 100 : $custom['order'][0];
-        
-        $person->social = array(
-            'facebook' => $custom["facebook"][0],
-            'twitter' => $custom["twitter"][0],
-            'xbox' => $custom['xbox'][0],
-            'youtube' => $custom['youtube'][0],
-            'github' => $custom['github'][0],
-            'linkedin' => $custom['linkedin'][0],
-            'googleplus' => $custom['googleplus'][0]
-        );
-        
-        $person->img = get_the_post_thumbnail($person->ID, 'work-promo');
-    }
-    unset($person);
-    $order = array();
-    foreach ($people as $key => $row) {
-        $order[$key] = $row->order;
-    }
-    array_multisort($order, SORT_ASC, $people);
-    return $people;
-}
-
-function vestride_get_featured_people() {
-    return vestride_get_people(true);
-}
 
 function get_the_categories($delimiter = ' ', $post_id = false) {
     $thelist = '';
@@ -769,13 +584,13 @@ function vestride_header($page = 'home') {
     ?>
             <header>
                 <nav id="nav" role="navigation">
-                    <div class="logo"><a href="<?php bloginfo('url'); ?>"><img src="<?= get_template_directory_uri(); ?>/img/es.svg" alt="logo" width="28" /><strong>Eightfold</strong> <span class="main-color">Studios</span></a></div>
+                    <div class="logo"><a href="<?php bloginfo('url'); ?>"><img src="<?= get_template_directory_uri(); ?>/img/logo.svg" alt="logo" width="28" /><strong>Glen</strong> <span class="main-color">Cheney</span></a></div>
                     <ul>
                         <li><?= vestride_header_link('Home', '#main', 'home', $page) ?></li>
-                        <li><?= vestride_header_link('About Us', '#about', 'about', $page); ?></li>
+                        <li><?= vestride_header_link('About', '#about', 'about', $page); ?></li>
                         <li><?= vestride_header_link('Work', '#work', 'work', $page); ?></li>
                         <li><?= vestride_header_link('Contact', '#contact', 'contact', $page); ?></li>
-                        <!--<li><?= vestride_header_link('Blog', '#blog', 'blog', $page); ?></li>-->
+                        <li><a href="<?php bloginfo('url'); ?>/blog"<?php echo $page == 'blog' ? ' class="in"' : ''; ?>>Blog</a></li>
                     </ul>
                 </nav>
             </header>

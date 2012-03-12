@@ -23,24 +23,24 @@ $featured_projects = vestride_get_featured_project_posts();
             <div class="divider"></div>
             <nav class="quick-links clearfix">
                 <div>
-                    <h4><span class="sprite sprite-question"></span>Who <strong>We Are</strong></h4>
-                    <p>Eightfold Studios is a design company based in Corvallis, Oregon</p>
-                    <p><a href="#about">Learn More<span class="sprite sprite-arrow-right"></span></a></p>
+                    <h4><span class="sprite sprite-person"></span>Who <strong>I am</strong></h4>
+                    <p>I&rsquo;m a New Media Interactive Development student, graduating from <a href="http://rit.edu">RIT</a></p>
+                    <p><a href="#about">More about me<span class="sprite sprite-arrow-right"></span></a></p>
                 </div>
                 <div>
-                    <h4><span class="sprite sprite-briefcase"></span>What <strong>We Do</strong></h4>
-                    <p>Our mission is to bring ideas to life. To put it simply, well, we create things.</p>
-                    <p><a href="#work">View our work<span class="sprite sprite-arrow-right"></span></a></p>
+                    <h4><span class="sprite sprite-briefcase"></span>What <strong>I Do</strong></h4>
+                    <p>I&rsquo;m a developer with a passion for the frontend. I enjoy keeping up with new technologies and making the web awesome.</p>
+                    <p><a href="#work">View my work<span class="sprite sprite-arrow-right"></span></a></p>
                 </div>
                 <div>
-                    <h4><span class="sprite sprite-message"></span>Our <strong>Blog</strong></h4>
-                    <p>Want to know what we&rsquo;re up to? Keep up with our latest projects and interests.</p>
-                    <p><a href="<?php bloginfo('url'); ?>/blog">Visit our blog<span class="sprite sprite-arrow-right"></span></a></p>
+                    <h4><span class="sprite sprite-envelope"></span>Contact <strong>Me</strong></h4>
+                    <p>Have a comment or question? Just want to say hello? I&rsquo;d love to hear from you!</p>
+                    <p><a href="#contact">Get in touch<span class="sprite sprite-arrow-right"></span></a></p>
                 </div>
                 <div>
-                    <h4><span class="sprite sprite-download"></span>Free <strong>Downloads</strong></h4>
-                    <p>Like free stuff? Of course you do. Download wallpapers, icons, and more!</p>
-                    <p><a href="<?php bloginfo('url'); ?>/downloads">Get free stuff!<span class="sprite sprite-arrow-right"></span></a></p>
+                    <h4><span class="sprite sprite-message"></span>My <strong>Blog</strong></h4>
+                    <p>Want to know what I&rsquo;m up to? Keep up with my latest projects and interests.</p>
+                    <p><a href="<?php bloginfo('url'); ?>/blog">Visit my blog<span class="sprite sprite-arrow-right"></span></a></p>
                 </div>
             </nav>
         </section>
