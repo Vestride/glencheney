@@ -15,10 +15,10 @@ $featured_projects = vestride_get_featured_project_posts();
                 </ul>
                 <div class="carousel-next sprite sprite-next"></div>
                 <div class="carousel-prev sprite sprite-prev"></div>
-                <span class="carousel-item-title"></span>
                 <div class="carousel-control-container">
                     <div class="carousel-control"></div>
                 </div>
+                <p class="carousel-item-title"></p>
             </div>
             <div class="divider"></div>
             <nav class="quick-links clearfix">

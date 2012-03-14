@@ -6,7 +6,7 @@ $projects = vestride_get_project_posts();
     <section id="work">
         <h3 class="section-title text-right"><span>Work<span class="title-icon icon-briefcase"></span></span></h3>
         <div class="paginate">
-            <h2 class="short current-filter">Most Recent</h2>
+            <h2 class="short filter-title">Most Recent</h2>
             
             <div class="paginate-container">
                 <span class="pages">Page 0/0</span>
@@ -25,7 +25,7 @@ $projects = vestride_get_project_posts();
                         <div class="item-img"><? echo $project->img; ?></div>
                         <div class="item-details-container">
                             <div class="item-details">
-                                <a href="<? echo $project->permalink; ?>"><h4 class="item-title"><?= $project->post_title; ?></h4></a>
+                                <h4 class="item-title"><a href="<? echo $project->permalink; ?>" title="Launch project"><?= $project->post_title; ?></a></h4>
                                 <h5 class="item-type main-color"><?php echo implode(', ', $project->terms); ?></h5>
                                 <p class="item-post-excerpt"><?php echo $project->post_excerpt; ?></p>
                                 <p class="item-link"><a href="<? echo $project->permalink; ?>" title="Launch project">View project<span class="sprite sprite-arrow-right"></span></a></p>

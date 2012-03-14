@@ -72,6 +72,21 @@ function vestride_setup() {
 endif; // vestride_setup
 
 
+// CUSTOM ADMIN LOGIN HEADER LOGO  
+
+function my_custom_login_logo() {
+    echo '
+    <style> 
+        h1 a {
+            background-image:url(' . get_bloginfo('template_directory') . '/img/logo.png) !important;
+            height: auto;
+            width: auto;
+        }    
+    </style>';
+}
+
+add_action('login_head', 'my_custom_login_logo');
+
 /**
  * Sets the post excerpt length to 40 words.
  *
@@ -144,8 +159,8 @@ function vestride_nav_single() {
     ?>
     <nav id="nav-single" class="clearfix">
         <h3 class="ir"><?php _e('Post navigation', 'vestride'); ?></h3>
-        <span class="nav-previous"><?php previous_post_link('%link'); ?></span>
         <span class="nav-next rfloat"><?php next_post_link('%link'); ?></span>
+        <span class="nav-previous"><?php previous_post_link('%link'); ?></span>
     </nav><!-- #nav-single -->
 <?php
 }

@@ -20,7 +20,7 @@ get_template_part('backdrop', 'small');
     <section class="clearfix">
     <?php if (have_posts()) : ?>
         <header class="page-header">
-            <h1 class="page-title section-title text-right">
+            <h1 class="page-title section-title text-right"><span>
                 <?php if (is_day()) : ?>
                     <?php printf(__('Daily Archives: %s', 'vestride'), '<span>' . get_the_date() . '</span>'); ?>
                 <?php elseif (is_month()) : ?>
@@ -30,7 +30,7 @@ get_template_part('backdrop', 'small');
                 <?php else : ?>
                     <?php _e('Blog Archives', 'vestride'); ?>
                 <?php endif; ?>
-            </h1>
+            </span></h1>
         </header>
 
         <div class="has-posts rfloat">

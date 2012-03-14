@@ -281,7 +281,7 @@ var Vestride = {
     
     titles : {
         'home' : 'Home',
-        'about' : 'About Us',
+        'about' : 'About',
         'work' : 'Work',
         'contact' : 'Contact'
     },

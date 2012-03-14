@@ -380,9 +380,17 @@ $.fn.spin = function(opts) {
          */
         navigate : function(toIndex) {
             var data = this.data(paginate),
-                $oldCenter = this.find('.filtered.stage-center'),
-                currentPage = parseInt($oldCenter.first().attr('data-page')),
-                $newCenter = this.find('.filtered[data-page=' + toIndex + ']'),
+                $filtered = this.find('.filtered'),
+                currentPage = parseInt($filtered.filter('.stage-center').first().attr('data-page')),
+                $newCenter = $filtered.filter('[data-page=' + toIndex + ']'),
+                $animating = $filtered.filter(function() {
+                    var itemsPage = parseInt($(this).attr('data-page'));
+                    if (toIndex > currentPage) {
+                        return itemsPage < toIndex;
+                    } else {
+                        return itemsPage > toIndex;
+                    }
+                }),
                 toStage = toIndex > currentPage ? 'stage-left' : 'stage-right',
                 fromStage = toStage == 'stage-left' ? 'stage-right' : 'stage-left';
                 
@@ -391,11 +399,11 @@ $.fn.spin = function(opts) {
                 return;
             }
             
-            $oldCenter.addClass(toStage).removeClass('stage-center');
+            $animating.removeClass('stage-center ' + fromStage).addClass(toStage);
             $newCenter.addClass('stage-center').removeClass(fromStage);
             
             // Transition the old stage-center items to stage-left/right
-            $oldCenter.each(function(){
+            $animating.each(function(){
                 var $this = $(this),
                     containerWidth = $this.parent().width(),
                     x = toIndex > currentPage ? parseInt($this.attr('data-x')) - containerWidth : parseInt($this.attr('data-x')) + containerWidth,

@@ -20,6 +20,9 @@
     </header><!-- .entry-header -->
 
     <div class="entry-content">
+        <?php if ($the_post_thumbnail = get_the_post_thumbnail(null, 'work-promo')) : ?>
+        <div class="entry-img"><?php echo $the_post_thumbnail; ?></div>
+        <?php endif; ?>
         <?php the_content(); ?>
         <?php wp_link_pages(array('before' => '<div class="page-link"><span>' . __('Pages:', 'vestride') . '</span>', 'after' => '</div>')); ?>
     </div><!-- .entry-content -->
