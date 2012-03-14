@@ -170,7 +170,8 @@ $.fn.spin = function(opts) {
             return this.each(function() {
                 var $this = $(this),
                     $items = $this.children(settings.itemSelector),
-                    itemsPerRow = Math.floor($this.width() / settings.itemWidth),
+                    itemsPerRow = 3,
+                    //itemsPerRow = Math.floor($this.width() / settings.itemWidth),
                     numRows = 2,
                     itemHeight = $items.first().outerHeight(),
                     data;

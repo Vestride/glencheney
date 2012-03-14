@@ -51,7 +51,7 @@ if ($paged >= 2 || $page >= 2)
         <link rel="icon" href="<?php bloginfo('url'); ?>/favicon.ico" type="image/ico" />
         <link rel="icon" href="<?php bloginfo('url'); ?>/favicon.png" type="image/png" />
 
-        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="apple-touch-icon-precomposed" href="<?php bloginfo('url'); ?>/apple-touch-icon-precomposed.png" />
         
         <link rel="stylesheet" href="<? bloginfo('stylesheet_url'); ?>" />

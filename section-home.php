@@ -2,7 +2,7 @@
 $featured_projects = vestride_get_featured_project_posts();
 ?>
         <section id="home" class="home">
-            <h4 class="section-title"></h4>
+            <h3 class="section-title text-right"><span>Featured<span class="title-icon icon-star"></span></span></h3>
             <div class="carousel-container">
                 <ul class="carousel">
                     <? foreach ($featured_projects as $project) : ?>
