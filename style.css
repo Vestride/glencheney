@@ -270,7 +270,7 @@ p {
     margin: auto;
 }
 
-nav .logo {
+#nav .logo {
     float: left;
     margin-top: 5px;
     font-size: 20px;
@@ -284,19 +284,19 @@ nav .logo {
           transition: all 0.2s ease-out;
 }
 
-nav .logo.visible {
+#nav .logo.visible {
     opacity: 1;
 }
 
-nav .logo img {
+#nav .logo img {
     margin-top: -5px;
 }
 
-nav .logo strong {
+#nav .logo strong {
     font-weight: 800;
 }
 
-nav .logo .main-color {
+#nav .logo .main-color {
     font-weight: 300;
 }
 
@@ -343,6 +343,35 @@ nav .logo .main-color {
 
 #nav .logo a:hover .main-color {
     color: #F0F0F0;
+}
+
+#nav .nav-view {
+    display: none;
+    background-color: #0F0F0F;
+    padding: 7px 0;
+}
+
+#nav .sidebar-nav-button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 28px;
+    border-radius: 3px;
+    background-color: #2D2D2D;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.95) inset;
+    text-align: center;
+}
+
+#nav .sidebar-nav-button .sprite {
+    margin-top: 6px;
+}
+
+#nav .nav-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
 }
 
 /*=============================================*\
@@ -2069,18 +2098,6 @@ p.comment-form-comment {
     background-position: -608px -338px
 }
 
-.sprite-aftereffects {
-    width: 66px;
-    height: 47px;
-    background-position: -470px -406px;
-}
-
-.sprite-photoshop {
-    width: 59px;
-    height: 47px;
-    background-position: -475px -490px;
-}
-
 .sprite-illustrator {
     width: 52px;
     height: 47px;
@@ -2117,6 +2134,12 @@ p.comment-form-comment {
 
 .sprite-fullscreen-enter:hover {
     background-position: -719px -387px;
+}
+
+.sprite-lines {
+    width: 19px;
+    height: 17px;
+    background-position: -718px -478px;
 }
 
 .arrow,
@@ -2245,37 +2268,74 @@ p.comment-form-comment {
         /*min-width: 100%;*/
     }
     
+    .backdrop {
+        top: 0;
+    }
+    
     #main {
         padding: 0 3%;
     }
     
-    nav .logo strong,
-    nav .logo .main-color {
-        display: none;
+    #nav .nav-inside {
+        position: fixed;
+        z-index: 2;
+        width: 85%;
+        height: 100%;
+        margin-left: -100%;
+        background-color: #0F0F0F;
+        box-shadow: 4px 0 8px rgba(0, 0, 0, .75);
+        
+     -moz-transition: margin-left 0.2s ease-out;
+       -o-transition: margin-left 0.2s ease-out;
+  -webkit-transition: margin-left 0.2s ease-out;
+      -ms-transition: margin-left 0.2s ease-out;
+          transition: margin-left 0.2s ease-out;
     }
     
-    nav .logo img {
-        margin-left: 15px;
+    #nav .nav-inside.on-screen {
+        margin-left: 0;
+    }
+    
+    #nav .logo {
+        opacity: 1;
+        float: none;
+        margin-top: 0;
+        padding: 7px 0;
+    }
+    
+    #nav ul {
+        float: none;
     }
     
     #nav li a {
-        font-size: 14px;
-        padding: 9px 8px;
+        float: none;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        border-top: 1px solid #0D0D0D;
+        border-bottom: 1px solid #4D4D4D;
     }
     
-    /*
-    .tagline-img,
-    .tagline-img img {
-        width: 101px;
+    #nav li a:before {
+        content: '';
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        margin-top: -5px;
+        background-image: url(img/sprites.png);
     }
     
-    .tagline-title {
-        background-size: 300px;
-        width: 300px;
-        top: -20px;
-        top: -55px;
+    #a-home:before { background-position: -707px -430px; }
+    #a-about:before { background-position: -682px -231px; }
+    #a-work:before { background-position: -514px -44px; }
+    #a-contact:before { background-position: -682px -271px; }
+    #a-blog:before { background-position: -606px -44px; }
+    
+    #nav .nav-view {
+        display: block;
     }
-    */
     
     .carousel-container,
     .carousel,

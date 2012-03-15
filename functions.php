@@ -595,18 +595,24 @@ function get_the_categories($delimiter = ' ', $post_id = false) {
 }
 
 function vestride_header($page = 'home') {
-
+    
     ?>
             <header>
                 <nav id="nav" role="navigation">
-                    <div class="logo"><a href="<?php bloginfo('url'); ?>"><img src="<?= get_template_directory_uri(); ?>/img/logo.svg" alt="logo" width="28" /><strong>Glen</strong> <span class="main-color">Cheney</span></a></div>
-                    <ul>
-                        <li><?= vestride_header_link('Home', '#main', 'home', $page) ?></li>
-                        <li><?= vestride_header_link('About', '#about', 'about', $page); ?></li>
-                        <li><?= vestride_header_link('Work', '#work', 'work', $page); ?></li>
-                        <li><?= vestride_header_link('Contact', '#contact', 'contact', $page); ?></li>
-                        <li><a href="<?php bloginfo('url'); ?>/blog"<?php echo $page == 'blog' ? ' class="in"' : ''; ?>>Blog</a></li>
-                    </ul>
+                    <div class="nav-inside clearfix">
+                        <div class="logo"><a href="<?php bloginfo('url'); ?>"><img src="<?= get_template_directory_uri(); ?>/img/logo.svg" alt="logo" width="28" /><strong>Glen</strong> <span class="main-color">Cheney</span></a></div>
+                        <ul>
+                            <li><?= vestride_header_link('Home', '#main', 'home', $page) ?></li>
+                            <li><?= vestride_header_link('About', '#about', 'about', $page); ?></li>
+                            <li><?= vestride_header_link('Work', '#work', 'work', $page); ?></li>
+                            <li><?= vestride_header_link('Contact', '#contact', 'contact', $page); ?></li>
+                        <li><a href="<?php bloginfo('url'); ?>/blog"<?php echo $page == 'blog' ? ' class="in"' : ''; ?> id="a-blog">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-view">
+                        <div class="sidebar-nav-button"><div class="sprite sprite-lines"></div></div>
+                        <p class="nav-title"><?php wp_title('', true, 'right'); ?></p>
+                    </div>
                 </nav>
             </header>
 <?
