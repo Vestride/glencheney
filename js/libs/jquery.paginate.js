@@ -1,10 +1,10 @@
 // IMPORTANT!
 // If you're already using Modernizr, delete it from this file. If you don't know what Modernizr is, leave it :)
 
-/* Modernizr 2.0.6 (Custom Build) | MIT & BSD
- * Build: http://www.modernizr.com/download/#-csstransforms-csstransforms3d-csstransitions-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes
+/* Modernizr 2.5.3 (Custom Build) | MIT & BSD
+ * Build: http://www.modernizr.com/download/#-csstransforms-csstransforms3d-csstransitions-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes
  */
-;window.Modernizr=function(a,b,c){function C(a,b){var c=a.charAt(0).toUpperCase()+a.substr(1),d=(a+" "+o.join(c+" ")+c).split(" ");return B(d,b)}function B(a,b){for(var d in a)if(k[a[d]]!==c)return b=="pfx"?a[d]:!0;return!1}function A(a,b){return!!~(""+a).indexOf(b)}function z(a,b){return typeof a===b}function y(a,b){return x(n.join(a+";")+(b||""))}function x(a){k.cssText=a}var d="2.0.6",e={},f=!0,g=b.documentElement,h=b.head||b.getElementsByTagName("head")[0],i="modernizr",j=b.createElement(i),k=j.style,l,m=Object.prototype.toString,n=" -webkit- -moz- -o- -ms- -khtml- ".split(" "),o="Webkit Moz O ms Khtml".split(" "),p={},q={},r={},s=[],t=function(a,c,d,e){var f,h,j,k=b.createElement("div");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:i+(d+1),k.appendChild(j);f=["&shy;","<style>",a,"</style>"].join(""),k.id=i,k.innerHTML+=f,g.appendChild(k),h=c(k,a),k.parentNode.removeChild(k);return!!h},u,v={}.hasOwnProperty,w;!z(v,c)&&!z(v.call,c)?w=function(a,b){return v.call(a,b)}:w=function(a,b){return b in a&&z(a.constructor.prototype[b],c)};var D=function(a,c){var d=a.join(""),f=c.length;t(d,function(a,c){var d=b.styleSheets[b.styleSheets.length-1],g=d.cssRules&&d.cssRules[0]?d.cssRules[0].cssText:d.cssText||"",h=a.childNodes,i={};while(f--)i[h[f].id]=h[f];e.csstransforms3d=i.csstransforms3d.offsetLeft===9},f,c)}([,["@media (",n.join("transform-3d),("),i,")","{#csstransforms3d{left:9px;position:absolute}}"].join("")],[,"csstransforms3d"]);p.csstransforms=function(){return!!B(["transformProperty","WebkitTransform","MozTransform","OTransform","msTransform"])},p.csstransforms3d=function(){var a=!!B(["perspectiveProperty","WebkitPerspective","MozPerspective","OPerspective","msPerspective"]);a&&"webkitPerspective"in g.style&&(a=e.csstransforms3d);return a},p.csstransitions=function(){return C("transitionProperty")};for(var E in p)w(p,E)&&(u=E.toLowerCase(),e[u]=p[E](),s.push((e[u]?"":"no-")+u));x(""),j=l=null,e._version=d,e._prefixes=n,e._domPrefixes=o,e.testProp=function(a){return B([a])},e.testAllProps=C,e.testStyles=t,g.className=g.className.replace(/\bno-js\b/,"")+(f?" js "+s.join(" "):"");return e}(this,this.document);
+;window.Modernizr=function(a,b,c){function z(a){j.cssText=a}function A(a,b){return z(m.join(a+";")+(b||""))}function B(a,b){return typeof a===b}function C(a,b){return!!~(""+a).indexOf(b)}function D(a,b){for(var d in a)if(j[a[d]]!==c)return b=="pfx"?a[d]:!0;return!1}function E(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:B(f,"function")?f.bind(d||b):f}return!1}function F(a,b,c){var d=a.charAt(0).toUpperCase()+a.substr(1),e=(a+" "+o.join(d+" ")+d).split(" ");return B(b,"string")||B(b,"undefined")?D(e,b):(e=(a+" "+p.join(d+" ")+d).split(" "),E(e,b,c))}var d="2.5.3",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m=" -webkit- -moz- -o- -ms- ".split(" "),n="Webkit Moz O ms",o=n.split(" "),p=n.toLowerCase().split(" "),q={},r={},s={},t=[],u=t.slice,v,w=function(a,c,d,e){var f,i,j,k=b.createElement("div"),l=b.body,m=l?l:b.createElement("body");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:h+(d+1),k.appendChild(j);return f=["&#173;","<style>",a,"</style>"].join(""),k.id=h,m.innerHTML+=f,m.appendChild(k),l||(m.style.background="",g.appendChild(m)),i=c(k,a),l?k.parentNode.removeChild(k):m.parentNode.removeChild(m),!!i},x={}.hasOwnProperty,y;!B(x,"undefined")&&!B(x.call,"undefined")?y=function(a,b){return x.call(a,b)}:y=function(a,b){return b in a&&B(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=u.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(u.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(u.call(arguments)))};return e});var G=function(a,c){var d=a.join(""),f=c.length;w(d,function(a,c){var d=b.styleSheets[b.styleSheets.length-1],g=d?d.cssRules&&d.cssRules[0]?d.cssRules[0].cssText:d.cssText||"":"",h=a.childNodes,i={};while(f--)i[h[f].id]=h[f];e.csstransforms3d=(i.csstransforms3d&&i.csstransforms3d.offsetLeft)===9&&i.csstransforms3d.offsetHeight===3},f,c)}([,["@media (",m.join("transform-3d),("),h,")","{#csstransforms3d{left:9px;position:absolute;height:3px;}}"].join("")],[,"csstransforms3d"]);q.csstransforms=function(){return!!F("transform")},q.csstransforms3d=function(){var a=!!F("perspective");return a&&"webkitPerspective"in g.style&&(a=e.csstransforms3d),a},q.csstransitions=function(){return F("transition")};for(var H in q)y(q,H)&&(v=H.toLowerCase(),e[v]=q[H](),t.push((e[v]?"":"no-")+v));return z(""),i=k=null,e._version=d,e._prefixes=m,e._domPrefixes=p,e._cssomPrefixes=o,e.testProp=function(a){return D([a])},e.testAllProps=F,e.testStyles=w,e.prefixed=function(a,b,c){return b?F(a,b,c):F(a,"pfx")},g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+t.join(" "):""),e}(this,this.document);
 
 /**
  * Paginate by Glen Cheney
@@ -16,12 +16,13 @@
         
         init : function(options) {
             var settings = {
-                'item' : '.item',
+                'itemSelector' : '.item',
                 'itemWidth' : 230,
                 'margins' : 20,
                 'key' : 'all',
                 'prevClass' : '.paginate-prev',
                 'nextClass' : '.paginate-next',
+                'pagesSelector' : '.paginate-container .pages',
                 'controls' : '.paginate-controls'
             };
             
@@ -31,13 +32,16 @@
             
             return this.each(function() {
                 var $this = $(this),
-                    $items = $this.children(settings.item),
-                    itemsPerRow = Math.floor($this.width() / settings.itemWidth),
+                    $items = $this.children(settings.itemSelector),
+                    itemsPerRow = 3,
+                    //itemsPerRow = Math.floor($this.width() / settings.itemWidth),
                     numRows = 2,
                     itemHeight = $items.first().outerHeight(),
                     data;
 
                 data = {
+                    'itemSelector' : settings.itemSelector,
+                    'pagesSelector' : settings.pagesSelector,
                     '$items' : $items,
                     'itemsPerRow' : itemsPerRow,
                     'numRows' : numRows,
@@ -57,7 +61,7 @@
                 }
 
                 // Set up click events for next and previous
-                methods.clicks.call(this, settings);
+                methods.clicks.call(this);
                 
                 // Do it
                 methods.paginate.call(this, 'all');
@@ -103,13 +107,14 @@
             methods.navigated.call($(this), 0);
         },
         
-        clicks : function(settings) {
-            var self = this;
-            $(self).parent().find(settings.nextClass).click(function(){
-                $(self).paginate('next');
+        clicks : function() {
+            var $this = $(this)
+              , data = $this.data(paginate);
+            $this.parent().find(data.nextClass).click(function(){
+                $this.paginate('next');
             });
-            $(self).parent().find(settings.prevClass).click(function(){
-                $(self).paginate('prev');
+            $this.parent().find(data.prevClass).click(function(){
+                $this.paginate('prev');
             });
         },
         
@@ -142,15 +147,16 @@
         },
 
         filter : function() {
-            var $filtered = $(this).find('.filtered')
+            var $this = $(this)
+              , $filtered = $(this).find('.filtered')
+              , data = $this.data(paginate)
               , pages = Math.floor(($filtered.length - 1) / (data.itemsPerRow * data.numRows));
             
-            console.log($(this));
-            $(this).attr('data-pages', pages + 1);
+            $this.attr('data-pages', pages + 1);
             
             $filtered.each(function(index) {
                 var $this = $(this),
-                    data = $this.parent().data(paginate),
+                    //data = $this.parent().data(paginate),
                     row = Math.floor(index / data.itemsPerRow),
                     x = (index % data.itemsPerRow) * (data.itemWidth + data.margins),
                     y = (row % data.numRows) * (data.itemHeight + data.margins),
@@ -182,14 +188,14 @@
         },
         
         /**
-         * Uses Modernizr's testAllProps (aka prefixed()) to get the correct
+         * Uses Modernizr's prefixed() to get the correct
          * vendor property name and sets it using jQuery .css()
          * @param {jq} $el the jquery object to set the css on
          * @param {string} prop the property to set (e.g. 'transition')
          * @param {string} value the value of the prop
          */
         setPrefixedCss : function($el, prop, value) {
-            $el.css(Modernizr.testAllProps(prop, 'pfx'), value);
+            $el.css(Modernizr.prefixed(prop), value);
         },
         
         transition: function(opts) {
@@ -219,41 +225,67 @@
         /**
          * Handles moving the current stage-center items to stage-left and 
          * moving the stage-right items with a data-page attr of +1 to stage center
+         * Gets the current page from the container (#grid), which is 1-based index
          */
         next : function() {
+            methods.navigate.call(this, parseInt(this.attr('data-current-page')));
+        },
+        
+        /**
+         * Handles moving the current stage-center items to stage-right and 
+         * moving the stage-left items with a data-page attr of +1 to stage center
+         */
+        prev : function() {
+            methods.navigate.call(this, parseInt(this.attr('data-current-page')) - 2);
+        },
+        
+        /**
+         * @param {int} toIndex index to navigate to.
+         */
+        navigate : function(toIndex) {
             var data = this.data(paginate),
-                $oldCenter = this.find('.filtered.stage-center'),
-                currentPage = parseInt($oldCenter.first().attr('data-page')),
-                nextPage = currentPage + 1,
-                $newCenter = this.find('.filtered[data-page=' + nextPage + ']');
+                $filtered = this.find('.filtered'),
+                currentPage = parseInt($filtered.filter('.stage-center').first().attr('data-page')),
+                $newCenter = $filtered.filter('[data-page=' + toIndex + ']'),
+                $animating = $filtered.filter(function() {
+                    var itemsPage = parseInt($(this).attr('data-page'));
+                    if (toIndex > currentPage) {
+                        return itemsPage < toIndex;
+                    } else {
+                        return itemsPage > toIndex;
+                    }
+                }),
+                toStage = toIndex > currentPage ? 'stage-left' : 'stage-right',
+                fromStage = toStage == 'stage-left' ? 'stage-right' : 'stage-left';
                 
             // Make sure there's stuff to see
             if ($newCenter.length === 0) {
                 return;
             }
-                
-            $oldCenter.addClass('stage-left').removeClass('stage-center');
-            $newCenter.addClass('stage-center').removeClass('stage-right');
             
-            // Transition the old stage-center items to stage-left
-            $oldCenter.each(function(){
+            $animating.removeClass('stage-center ' + fromStage).addClass(toStage);
+            $newCenter.addClass('stage-center').removeClass(fromStage);
+            
+            // Transition the old stage-center items to stage-left/right
+            $animating.each(function(){
                 var $this = $(this),
-                    x = parseInt($this.attr('data-x')),
+                    containerWidth = $this.parent().width(),
+                    x = toIndex > currentPage ? parseInt($this.attr('data-x')) - containerWidth : parseInt($this.attr('data-x')) + containerWidth,
                     y = parseInt($this.attr('data-y')),
-                    h = $this.height(),
-                    w = $this.width(),
-                    containerWidth = $this.parent().width();
+                    h = $this.height() + 'px',
+                    w = $this.width() + 'px';
+                
                 
                 methods.transition({
                     $this: $(this),
-                    x: x - containerWidth,
+                    x: x,
                     y: y,
-                    left: x - containerWidth + 'px',
+                    left: x + 'px',
                     top: y + 'px',
                     scale : 1,
                     opacity: 1,
-                    height: h + 'px',
-                    width: w + 'px'
+                    height: h,
+                    width: w
                 });
             });
             
@@ -262,8 +294,8 @@
                 var $this = $(this),
                     x = (index % data.itemsPerRow) * (data.itemWidth + data.margins),
                     y = parseInt($this.attr('data-y')),
-                    h = $this.height(),
-                    w = $this.width();
+                    h = $this.height() + 'px',
+                    w = $this.width() + 'px';
                 
                 methods.transition({
                     $this: $(this),
@@ -273,78 +305,13 @@
                     top: y + 'px',
                     scale : 1,
                     opacity: 1,
-                    height: h + 'px',
-                    width: w + 'px'
+                    height: h,
+                    width: w
                 });
             });
             
             
-            methods.navigated.call(this, nextPage);
-        },
-        
-        /**
-         * Handles moving the current stage-center items to stage-right and 
-         * moving the stage-left items with a data-page attr of +1 to stage center
-         */
-        prev : function() {
-            var data = this.data(paginate),
-                $oldCenter = this.find('.filtered.stage-center'),
-                currentPage = parseInt($oldCenter.first().attr('data-page')),
-                nextPage = currentPage - 1,
-                $newCenter = this.find('.filtered[data-page=' + nextPage + ']');
-                
-            // Make sure there's stuff to see
-            if ($newCenter.length === 0) {
-                return;
-            }
-            
-            $oldCenter.addClass('stage-right').removeClass('stage-center');
-            $newCenter.addClass('stage-center').removeClass('stage-left');
-            
-            // Transition the old stage-center items to stage-right
-            $oldCenter.each(function(){
-                var $this = $(this),
-                    x = parseInt($this.attr('data-x')),
-                    y = parseInt($this.attr('data-y')),
-                    h = $this.height(),
-                    w = $this.width(),
-                    containerWidth = $this.parent().width();
-                
-                methods.transition({
-                    $this: $(this),
-                    x: x + containerWidth,
-                    y: y,
-                    left: x + containerWidth + 'px',
-                    top: y + 'px',
-                    scale : 1,
-                    opacity: 1,
-                    height: h + 'px',
-                    width: w + 'px'
-                });
-            });
-            
-            // Transition the old stage-left items to stage-center
-            $newCenter.each(function(index){
-                var $this = $(this),
-                    x = (index % data.itemsPerRow) * (data.itemWidth + data.margins),
-                    y = parseInt($this.attr('data-y')),
-                    h = $this.height(),
-                    w = $this.width();
-                
-                methods.transition({
-                    $this: $(this),
-                    x: x,
-                    y: y,
-                    left: x + 'px',
-                    top: y + 'px',
-                    scale : 1,
-                    opacity: 1,
-                    height: h + 'px',
-                    width: w + 'px'
-                });
-            });
-            
-            methods.navigated.call(this, nextPage);
+            methods.navigated.call(this, toIndex);
         },
         
         /**
@@ -359,6 +326,9 @@
                 hasStageLeft = this.find('.filtered[data-page=' + (toIndex - 1) + ']').length > 0,
                 hasStageRight = this.find('.filtered[data-page=' + (toIndex + 1) + ']').length > 0;
             
+            // add Page 1/2
+            this.attr('data-current-page', toIndex + 1);
+            $(data.pagesSelector).text('Page ' + this.attr('data-current-page') + '/' + this.attr('data-pages'));
             
             // Add classes to navigation buttons specifying if it can navigate
             if (hasStageLeft) {
@@ -401,6 +371,14 @@
             $ctrl = $controls.children().first();
             ctrlsWidth = (($ctrl.width() + parseInt($ctrl.css('marginRight'))) * pages) - parseInt($ctrl.css('marginRight'));
             $controls.css('width', ctrlsWidth);
+            
+            $(data.controls).children().each(function() {
+                var $control = $(this);
+                $control.on('click', function(){
+                    $this.paginate('navigate', parseInt($control.attr('data-index')));
+                });
+            });
+            
         }
     };
     

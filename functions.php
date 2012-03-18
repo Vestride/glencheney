@@ -696,8 +696,7 @@ function vestride_validate_contact_form($message) {
 
 function vestride_send_contact_message($message) {
     $to = array(
-        get_option('admin_email'),
-        'cheney.glen@gmail.com'
+        get_option('admin_email')
     );
     $headers = "From: {$message->email}" . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
