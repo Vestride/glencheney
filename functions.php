@@ -79,7 +79,7 @@ function my_custom_login_logo() {
     <style> 
         h1 a {
             background-image:url(' . get_bloginfo('template_directory') . '/img/logo.png) !important;
-            height: auto;
+            height: 159px !important;
             width: auto;
         }    
     </style>';
@@ -600,7 +600,7 @@ function vestride_header($page = 'home') {
             <header>
                 <nav id="nav" role="navigation">
                     <div class="nav-inside clearfix">
-                        <div class="logo"><a href="<?php bloginfo('url'); ?>"><img src="<?= get_template_directory_uri(); ?>/img/logo.svg" alt="logo" width="28" /><strong>Glen</strong> <span class="main-color">Cheney</span></a></div>
+                        <div class="logo"><a href="<?php bloginfo('url'); ?>"><img src="<?= get_template_directory_uri(); ?>/img/logo.svg" alt="logo" width="20" /><strong>Glen</strong> <span class="main-color">Cheney</span></a></div>
                         <ul>
                             <li><?= vestride_header_link('Home', '#main', 'home', $page) ?></li>
                             <li><?= vestride_header_link('About', '#about', 'about', $page); ?></li>

@@ -60,7 +60,18 @@ function vestride_theme_options_do_page() {
             <?php settings_fields('vestride_options'); ?>
             <?php $options = get_option('vestride_theme_options'); ?>
             
-            <p><?php _e('Up to six social networks can be used at once.'); ?></p>
+            <table class="form-table">
+            
+                <tr valign="top"><th scope="row"><?php _e('Google Analytics', 'jt'); ?></th>
+                    <td>
+                        <input id="jt_theme_options[ga]" name="jt_theme_options[ga]" type="text" value="<?php echo $options['ga']; ?>" placeholder="UA-XXXXX-X" />
+                        <label class="description" for="jt_theme_options[ga]"></label>
+                    </td>
+                </tr>
+                
+            </table>
+            
+            <p><em><?php _e('Up to six social networks can be used at once.'); ?></em></p>
             <table class="form-table">
                 
                 <tr valign="top"><th scope="row"><?php _e('Twitter Username', 'vestride'); ?></th>
@@ -192,7 +203,7 @@ function vestride_theme_options_validate($input) {
     $input['github'] = wp_filter_nohtml_kses($input['github']);
     $input['gamertag'] = wp_filter_nohtml_kses($input['gamertag']);
     $input['linkedin'] = wp_filter_nohtml_kses($input['linkedin']);
-    
+    $input['ga'] = wp_filter_nohtml_kses($input['ga']);
     
     //  105688492908876684797
 

@@ -46,41 +46,44 @@ $tag_list = get_the_tag_list('', ', ', '');
         <section class="clearfix">
             <div class="project-hero rfloat"><? echo $hero; ?></div>
             <div class="project-sidebar project-specs lfloat">
-                <h2 class="short">Screenshots</h2>
-                <ul class="tiles">
-                    <? if ($hasVideo) : ?>
-                    <li class="tile is-video active"><div class="sprite sprite-play"></div><span>Play Video</span><div class="embed hidden"><?php echo $videoEmbed; ?></div></li>
-                    <? endif; ?>
-                    <? for ($i = 0; $i < count($thumbnails); $i++) : ?>
-                    <li class="tile" title="<?php echo $thumbnails[$i]['title']; ?>">
-                        <img src="<?php echo $thumbnails[$i][0]; ?>"
-                             alt="<?php echo $thumbnails[$i]['caption'] != '' ? $thumbnails[$i]['caption'] : $thumbnails[$i]['title'] ; ?>"
-                             data-promo="<?php echo $promos[$i][0]; ?>"
-                             data-thumb="<?php echo $thumbnails[$i][0]; ?>"
-                             height="114"
-                             data-caption="<?php echo $thumbnails[$i]['catption']; ?>"
-                             data-description="<?php echo $thumbnails[$i]['description']; ?>" />
-                    </li>
-                    <? endfor; ?>
-                </ul>
+                <section class="clearfix">
+                    <h2 class="short">Screenshots</h2>
+                    <ul class="tiles">
+                        <? if ($hasVideo) : ?>
+                        <li class="tile is-video active"><div class="sprite sprite-play"></div><span>Play Video</span><div class="embed hidden"><?php echo $videoEmbed; ?></div></li>
+                        <? endif; ?>
+                        <? for ($i = 0; $i < count($thumbnails); $i++) : ?>
+                        <li class="tile" title="<?php echo $thumbnails[$i]['title']; ?>">
+                            <img src="<?php echo $thumbnails[$i][0]; ?>"
+                                alt="<?php echo $thumbnails[$i]['caption'] != '' ? $thumbnails[$i]['caption'] : $thumbnails[$i]['title'] ; ?>"
+                                data-promo="<?php echo $promos[$i][0]; ?>"
+                                data-thumb="<?php echo $thumbnails[$i][0]; ?>"
+                                height="114"
+                                data-caption="<?php echo $thumbnails[$i]['catption']; ?>"
+                                data-description="<?php echo $thumbnails[$i]['description']; ?>" />
+                        </li>
+                        <? endfor; ?>
+                    </ul>
+                </section>
                 
-                <h2 class="short">Tags</h2>
-                <p class="tiles"><?php echo $tag_list; ?></p>
+                <section>
+                    <h2 class="short">Tags</h2>
+                    <p class="tiles"><?php echo $tag_list; ?></p>
+                </section>
             </div>
         </section>
         
-        <?php if ($externalLink != '') : ?>
-        <section class="external-site-link clearfix">
-            <a href="<?php echo $externalLink; ?>" class="arrow rfloat" target="_blank">Launch Site</a>
-        </section>
-        <?php endif; ?>
         
-        <div class="divider"></div>
         
         <section>
-            <h2><?php the_title(); ?></h2>
-            <p><?php the_content(); ?></p>
+            <h2 class="short">Details</h2>
+            <?php if ($externalLink != '') : ?>
+            <a href="<?php echo $externalLink; ?>" class="arrow rfloat" target="_blank">Launch Site</a>
+            <?php endif; ?>
+            <div class="post-content"><?php the_content(); ?></div>
         </section>
+
+        
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">

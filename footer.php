@@ -8,6 +8,10 @@
  * @subpackage Vestride
  * @since Vestride 1.0
  */
+
+
+$theme_options = vestride_get_theme_options();
+$google_analytics = $theme_options['ga'];
 ?>
         <footer>
             <!-- <?php bloginfo('url'); ?> -->
@@ -17,7 +21,7 @@
                 </div>
             </section>
             <section class="footer-inside text-center">
-                <p>Designed by <a href="http://eightfoldstudios.com" target="_blank">Jake Likewise</a> and <a href="http://jessethoman.com" target="_blank">Jesse Thoman</a>| Coded by <a href="http://glencheney.com">Glen Cheney</a></p>
+                <p>Designed by <a href="http://glencheney.com">Glen Cheney</a>, <a href="http://eightfoldstudios.com" title="Eightfold Studios" target="_blank">Jake Likewise</a>, and <a href="http://jessethoman.com" title="Jesse Thoman's portfolio" target="_blank">Jesse Thoman</a>| Coded by <a href="http://glencheney.com">Glen Cheney</a></p>
                 <p><small>&copy; <?= date('Y'); ?> Glen Cheney. All rights reserved.</small></p>
             </section>
         </footer>
@@ -32,25 +36,17 @@
     <script defer src="<? echo get_template_directory_uri(); ?>/js/script.js"></script>
 
     <div id="fb-root"></div>
-    <script>
-    /*window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });*/
-    
+    <script>    
     $(document).ready(function(){
         Vestride.themeUrl = '<? echo get_template_directory_uri(); ?>';
     });
     
-    /*
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    */
+    <?php if ($google_analytics != '') : ?>
+    var _gaq=[['_setAccount','<?php echo $google_analytics; ?>'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+    <? endif; ?>
     </script>
 
 
