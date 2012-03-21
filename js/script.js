@@ -525,7 +525,7 @@ var Vestride = {
                     if (response.success === true) {
                         Dialog.create({
                             title: 'Message sent! =]',
-                            content: 'Your message has been sent successfully. We&rsquo;ll get back to you soon!',
+                            content: 'Your message has been sent successfully. I&rsquo;ll get back to you soon!',
                             classes: ['success'],
                             topPx: 135
                         });
@@ -565,7 +565,7 @@ var Vestride = {
     },
 
     displayContactErrors : function(errors, $notification) {
-        var html = '<h4>Sorry, we couldn\'t send your message.</h4><ul>',
+        var html = '<h4>Sorry, I couldn\'t send your message.</h4><ul>',
             prop;
         for (prop in errors) {
             html += '<li>' + errors[prop] + '</li>';

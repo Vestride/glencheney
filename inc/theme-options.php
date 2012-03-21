@@ -62,10 +62,10 @@ function vestride_theme_options_do_page() {
             
             <table class="form-table">
             
-                <tr valign="top"><th scope="row"><?php _e('Google Analytics', 'jt'); ?></th>
+                <tr valign="top"><th scope="row"><?php _e('Google Analytics', 'vestride'); ?></th>
                     <td>
-                        <input id="jt_theme_options[ga]" name="jt_theme_options[ga]" type="text" value="<?php echo $options['ga']; ?>" placeholder="UA-XXXXX-X" />
-                        <label class="description" for="jt_theme_options[ga]"></label>
+                        <input id="vestride_theme_options[ga]" name="vestride_theme_options[ga]" type="text" value="<?php echo $options['ga']; ?>" placeholder="UA-XXXXX-X" />
+                        <label class="description" for="vestride_theme_options[ga]"></label>
                     </td>
                 </tr>
                 

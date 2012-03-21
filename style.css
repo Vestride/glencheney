@@ -1506,7 +1506,7 @@ footer .fb-like-box {
     margin: 40px 0;
 }
 
-.project-sidebar h2:first-of-type {
+.project-sidebar section:first-child h2 {
     margin-top: 0;
 }
 
