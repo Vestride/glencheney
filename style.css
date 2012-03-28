@@ -527,59 +527,65 @@ p {
  =About
 \*=============================================*/
 
-.about-us .hero {
-    border: 8px solid #2D2D2D;
-    box-shadow: 5px 5px 8px rgba(0,0,0,0.75);
+.about-me-text p:first-of-type {
+    margin-top: 0;
 }
 
-.section-info {
-    margin: 0 0 35px;
-    padding-top: 35px;
-    border-top: 1px solid #2D2D2D;
-}
-
-.section-info:first-of-type {
-    margin-top: 35px;
-}
-
-.article-title {
-    font-size: 30px;
-    display: block;
-    color: #F0F0F0;
-}
-
-.article-subtitle {
-    font-size: 16px;
-    color: #E4950C;
-    display: block;
-}
-
-.section-details {
-    width: 640px;
-}
-
-.section-details.section-with-title .article-subtitle {
-    margin-bottom: 20px;
-}
-
-.section-info .hero-person img {
-    width: 214px; /* 8px of padding on each side to add up to 230px */
-    height: auto;
-}
-
-.section-overview {
+.infographics > div {
+    position: relative;
+    margin-right: 145px;
     width: 230px;
 }
 
-.section-overview ul {
-    margin: 20px 0 0;
-    padding: 0;
+.infographics > div:last-child {
+    margin-right: 0;
 }
 
-.section-overview li {
-    float: left;
+.infographics h4 .sprite {
+    margin-right: 10px;
 }
 
+.infographics svg {
+    display: block;
+}
+
+#svg-usa {
+    width: 184px;
+    height: 113px;
+    margin-top: 40px;
+}
+
+#svg-australia {
+    width: 126px;
+    height: 116px;
+    float: right;
+}
+
+#ring-brain {
+    margin-top: 60px;
+    width: 184px;
+    height: 183px;
+}
+
+#ring-skills {
+    margin-top: 60px;
+    width: 189px;
+    height: 187px;
+}
+
+.text-oregon {
+    position: absolute;
+    left: 75px;
+    margin: 0;
+    top: 51px;
+}
+
+.text-sydney {
+    position: absolute;
+    top: 302px;
+    margin: 0;
+    left: 45px;
+}
 /*=============================================*\
  =Featured
 \*=============================================*/
@@ -1737,10 +1743,26 @@ p.comment-form-comment {
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 .block { display: block; }
+.inline-block { display: inline-block; }
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 .semi-bold-italic { font-style: italic; font-weight: 600; }
+.text-normal { font-weight: normal; }
+.color-primary { color: #E4950C; }
+.color-secondary { color: #2D2D2D; }
+.color-tertiary { color: #9B9B9B; }
+.margin-30 { margin-right: 30px; }
+.margin-60 { margin-right: 60px; }
+.grid-full { margin-bottom: 40px; }
+.grid-2 {
+    width: 230px;
+}
+
+.grid-5 {
+    width: 640px;
+}
+
 .divider {
     height: 2px;
     width: 100%;
@@ -1959,6 +1981,62 @@ p.comment-form-comment {
     width: 40px;
     height: 40px;
     background-position: -707px -430px;
+}
+
+.sprite-skills {
+    width: 40px;
+    height: 40px;
+    background-position: -660px -521px;
+}
+
+.sprite-glasses {
+    width: 40px;
+    height: 40px;
+    background-position: -660px -475px;
+}
+
+.sprite-flag {
+    width: 40px;
+    height: 40px;
+    background-position: -706px -521px;
+}
+
+.sprite-oregon-text {
+    position: absolute;
+    left: 15px;
+    top: 60px;
+    pointer-events: none;
+    width: 45px;
+    height: 41px;
+    background-position: -601px -428px;
+}
+
+.sprite-sydney-text {
+    position: absolute;
+    top: 265px;
+    left: 147px;
+    width: 72px;
+    height: 47px;
+    background-position: -574px -475px;
+}
+
+.sprite-ring-brain {
+    position: absolute;
+    top: 80px;
+    left: 35px;
+    pointer-events: none;
+    width: 249px;
+    height: 174px;
+    background-position: 0 -588px;
+}
+
+.sprite-ring-skills {
+    position: absolute;
+    top: 75px;
+    left: -130px;
+    width: 264px;
+    height: 225px;
+    background-position: -258px -584px;
 }
 
 .sprite-miscellaneous {
