@@ -589,24 +589,116 @@ var Vestride = {
     },
 
     initScreenshots : function() {
-        var $tiles = $('.project-sidebar .tiles li')
-          , $container = $('.project-hero');
-
-        $tiles.on('click', function() {
-            var $tile = $(this)
-              , isVideo = $tile.hasClass('is-video')
-              , title = $tile.attr('title');
-
-            $tiles.removeClass('active');
-            $tile.addClass('active');
-            $container.animate({opacity: 0}, 300, function() {
-                if (isVideo) {
-                    $container.html($tile.find('.embed').html());
-                }
+        var $projectCarousel = $('.js-project-carousel')
+          , $cycle = $projectCarousel.cycle({
+            timeout:  0,
+            speed:  400,
+            center: true,
+            width: 980,
+            fx : 'scrollHorz',
+            activePagerClass : 'js-current activeSlide',
+            pager: '.carousel-control',
+            next: '.js-carousel-next',
+            prev: '.js-carousel-prev',
+            before : function(currSlideElement, nextSlideElement, options, forwardFlag) {
+                var $container = $('.js-project-carousel-container')
+                  , $curr = $(currSlideElement)
+                  , $next = $(nextSlideElement)
+                  , anim = function() {
+                        $curr.animate({
+                            opacity: 0
+                        }, 300).removeClass('js-current');
+                    };
+                
+                if ($curr.height() != $next.height()) {
+                    // Pause the slide in until the animation is done
+                    $projectCarousel.cycle('pause'); // This doesn't pause the animation... ugh
+                    $container.animate({
+                        height: $next.height()
+                    }, 200, function() {
+                        anim();
+                        $projectCarousel.cycle('resume');
+                    });
+                } 
+                
                 else {
-                    $container.html($('<img>', {'src' : $tile.find('img').attr('data-promo'), alt : title, title: title}));
+                    anim();
                 }
-                $container.animate({opacity: 1}, 300);
+            },
+            after : function(currSlideElement, nextSlideElement, options, forwardFlag) {
+                $(nextSlideElement).animate({
+                    opacity: 1
+                }, 400).addClass('js-current');
+            },
+            pagerAnchorBuilder : function(index, el) {
+                Vestride.cycleNoLinks(this, index, el);
+            },
+            updateActivePagerLink : function(pager, index, active) {
+                $(pager).children().removeClass(active).eq(index).addClass(active);
+            }
+        });
+        
+        // Fades out the view images button and fades in the image navigation
+        $('.js-project-hero, .js-view-images').on('click', function() {
+            Vestride.showScreenshots();
+        });
+        
+        // Add click to image to make it go to the next in carousel
+        $('.js-project-carousel').on('click', '.js-current', function() {
+            $cycle.cycle('next');
+        });
+        
+        $('.carousel-control span').on('click', function() {
+            var zeroBasedIndex = parseInt($(this).text()) - 1;
+            $cycle.cycle(zeroBasedIndex);
+        });
+        
+        // Fades out the image navigation on click and fades in the view screenshots button
+        $('.js-close-slideshow').on('click', function() {
+            Vestride.hideScreenshots();
+        });
+        
+        // Hide carousel at start
+        $('.js-project-carousel, .js-slideshow-nav').hide();
+    },
+    
+    showScreenshots : function() {
+        var $hero = $('.js-project-hero')
+          , $viewImages = $('.js-view-images-container')
+          , $nav = $('.js-slideshow-nav')
+          , $carousel = $('.js-project-carousel')
+          , $container = $('.js-project-carousel-container');
+          
+        // Save height so we can use it again
+        Vestride.containerHeight = $container.height();
+        
+        // Fade out hero and view images button
+        $hero.add($viewImages).fadeOut(function() {
+            // Animate the height of the container
+            $container.animate({
+                height: $carousel.find('.js-current img').height()
+            }, 400, function() {
+                // Fade in the image gallery
+                $carousel.add($nav).fadeIn();
+            });
+        });
+    },
+    
+    hideScreenshots : function() {
+        var $hero = $('.js-project-hero')
+          , $viewImages = $('.js-view-images-container')
+          , $nav = $('.js-slideshow-nav')
+          , $carousel = $('.js-project-carousel')
+          , $container = $('.js-project-carousel-container');
+        
+        // Fade out carousel and nav buttons
+        $carousel.add($nav).fadeOut(function() {
+            // Animate the height of the container
+            $container.animate({
+                height: Vestride.containerHeight
+            }, 400, function() {
+                // Fade in the hero image
+                $hero.add($viewImages).fadeIn();
             });
         });
     }

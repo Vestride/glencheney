@@ -3,8 +3,18 @@
         <h2 class="short">Glen Cheney</h2>
         <div class="grid-full about-me-text clearfix">
             <img class="lfloat margin-60" src="<?php echo get_template_directory_uri(); ?>/img/blue-sky_red-beard.png" alt="Glen Cheney" width="230" height="230" />
-            <p>Some information about myself and it's not lorem ipsum but it's also not much better right now... blah blah Some information about myself and it's not lorem ipsum but it's also not much better right now... blah blah Some information about myself and it's not lorem ipsum but it's also not much better right now... blah blah</p>
-            <p>Some information about myself and it's not lorem ipsum but it's also not much better right now... blah blah Some information about myself and it's not lorem ipsum but it's also not much better right now... blah blah Some information about myself and it's not lorem ipsum but it's also not much better right now... blah blah</p>
+            <p>
+                I&rsquo;m a New Media Interactive Development student, graduating from <a href="http://rit.edu">RIT</a>, with a passion for front-end web development.
+                I enjoy keeping up with new technologies and making the web awesome.
+                Growing up in Corvallis, Oregon, I attended <a href="http://en.wikipedia.org/wiki/Crescent_Valley_High_School">Crescent Valley High School</a> and
+                played baseball from the age of 4 until sophomore year when I played lacrosse for <a href="http://www.facebook.com/pages/Corvallis-Lacrosse/184614569083">Corvallis Lacrosse</a> instead.
+                I played ice hockey from 7 years old until freshman year of RIT (12 years) and I have been assistant captain on multiple teams.
+            </p>
+            <p>
+                I love to play and work in teams while striving to make everyone around me better. I am often a quiet and focused individual and am very good at managing my time.
+                I hope to work at a company who is passionate about their work and to improve my skills by learning from them.
+            </p>
+            <p><a download href="/downloads/GlenCheneyResume2012.pdf">Download my resume.</a></p>
         </div>
         
         <div class="infographics color-tertiary clearfix">
@@ -20,13 +30,13 @@
                 </div>
                 <svg version="1.1" id="ring-brain" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     width="184px" height="183.927px" viewBox="0 0 184 183.927" enable-background="new 0 0 184 183.927" xml:space="preserve">
-                <g>
-                    <path fill="#2C2C2C" d="M27.644,157.662l18.411-18.014c-12.516-12.054-20.316-28.972-20.316-47.721 c0-35.421,27.793-64.348,62.761-66.168V0C39.312,1.841,0,42.29,0,91.927C0,117.683,10.588,140.961,27.644,157.662z"/>
-                    <path fill="#4C4C4D" d="M154.396,69.591l25.229-5.756C168.088,27.827,134.978,1.477,95.5,0v25.759 C122.73,27.176,145.603,45.033,154.396,69.591z"/>
-                    <path fill="#727373" d="M156.402,76.313c1.21,5.008,1.859,10.234,1.859,15.614c0,9.063-1.824,17.698-5.118,25.566l23.404,10.753 c4.793-11.143,7.452-23.42,7.452-36.319c0-7.348-0.868-14.491-2.495-21.341L156.402,76.313z"/>
-                    <path fill="#8A8A8A" d="M150.099,123.798c-11.268,20.496-33.058,34.391-58.099,34.391c-15.319,0-29.412-5.213-40.635-13.941 l-18.529,18.128C48.832,175.823,69.468,183.927,92,183.927c35.42,0,66.16-20.021,81.535-49.359L150.099,123.798z"/>
-                </g>
-                <path fill="#E29725" d="M138.562,82.029c0-5.333-2.85-10.279-7.52-13.193C128.564,58.699,119,51.473,107.798,51.473
+                    <g>
+                        <path fill="#2C2C2C" d="M27.644,157.662l18.411-18.014c-12.516-12.054-20.316-28.972-20.316-47.721 c0-35.421,27.793-64.348,62.761-66.168V0C39.312,1.841,0,42.29,0,91.927C0,117.683,10.588,140.961,27.644,157.662z"/>
+                        <path fill="#4C4C4D" d="M154.396,69.591l25.229-5.756C168.088,27.827,134.978,1.477,95.5,0v25.759 C122.73,27.176,145.603,45.033,154.396,69.591z"/>
+                        <path fill="#727373" d="M156.402,76.313c1.21,5.008,1.859,10.234,1.859,15.614c0,9.063-1.824,17.698-5.118,25.566l23.404,10.753 c4.793-11.143,7.452-23.42,7.452-36.319c0-7.348-0.868-14.491-2.495-21.341L156.402,76.313z"/>
+                        <path fill="#8A8A8A" d="M150.099,123.798c-11.268,20.496-33.058,34.391-58.099,34.391c-15.319,0-29.412-5.213-40.635-13.941 l-18.529,18.128C48.832,175.823,69.468,183.927,92,183.927c35.42,0,66.16-20.021,81.535-49.359L150.099,123.798z"/>
+                    </g>
+                    <path fill="#E29725" d="M138.562,82.029c0-5.333-2.85-10.279-7.52-13.193C128.564,58.699,119,51.473,107.798,51.473
                         c-2.694,0-5.325,0.418-7.846,1.246c-3.125-2.951-7.332-4.61-11.823-4.61c-5.188,0-10.109,2.315-13.257,6.145
                         c-0.698-0.083-1.4-0.125-2.1-0.125c-7.604,0-14.109,4.734-16.121,11.486c-6.684,2.188-11.214,8.108-11.214,14.925
                         c0,2.021,0.416,4.037,1.213,5.907c-0.796,1.871-1.213,3.887-1.213,5.906c0,5.863,3.365,11.158,8.814,13.926

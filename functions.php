@@ -488,7 +488,7 @@ function add_info_meta() {
         <p>
             <label for="video_meta"><strong>Video embed code:</strong></label>
             <br />
-            <em>The video should be embedded with a width of 640 pixels.</em>
+            <em>The video should be embedded with a width of 980 pixels.</em>
             <br />
             <textarea id="video_meta" name="video" style="width:400px;height:100px;"><?php echo $video; ?></textarea>
         </p>

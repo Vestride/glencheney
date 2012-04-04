@@ -11,22 +11,25 @@ $args = array(
     'post_type' => 'attachment',
     'numberposts' => -1,
     'post_status' => null,
-    'post_parent' => $post->ID
+    'post_parent' => $post->ID,
+    'post_mime_type' => 'image',
+    'orderby' => 'menu_order'
 );
 $attachments = get_posts($args);
-$thumbnails = array();
-$promos = array();
+$screenshots = array();
 foreach ($attachments as $attachment) {
-    $thumbnail = wp_get_attachment_image_src($attachment->ID, 'work-thumb');
-    $thumbnail['title'] = $attachment->post_title;
-    $thumbnail['caption'] = $attachment->post_excerpt;
-    $thumbnail['description'] = $attachment->post_content;
-    $thumbnails[] = $thumbnail;
-    $promos[] = wp_get_attachment_image_src($attachment->ID, 'work-promo');
+    $screenshot = wp_get_attachment_image_src($attachment->ID, 'featured');
+    $screenshot['full'] = $attachment->guid;
+    $screenshot['title'] = $attachment->post_title;
+    $screenshot['caption'] = $attachment->post_excerpt;
+    $screenshot['description'] = $attachment->post_content;
+    $screenshot['alt'] = $screenshot['caption'] != '' ? $screenshot['caption'] : $screenshot['title'];
+    $screenshots[] = $screenshot;
 }
+$screenshots = array_reverse($screenshots);
 $videoEmbed = wp_specialchars_decode(get_metadata('post', $post->ID, 'video', true), ENT_QUOTES);
 $hasVideo = $videoEmbed != '' ? true : false;
-$hero = $hasVideo ? $videoEmbed : get_the_post_thumbnail(get_the_ID(), 'work-promo');
+$hero = get_the_post_thumbnail(get_the_ID(), 'featured');
 $externalLink = get_metadata('post', $post->ID, 'external', true);
 $tag_list = get_the_tag_list('', ', ', '');
 ?>
@@ -43,45 +46,58 @@ $tag_list = get_the_tag_list('', ', ', '');
 
     <div class="entry-content">
         
-        <section class="clearfix">
-            <div class="project-hero rfloat"><? echo $hero; ?></div>
-            <div class="project-sidebar project-specs lfloat">
-                <section class="clearfix">
-                    <h2 class="short">Screenshots</h2>
-                    <ul class="tiles">
-                        <? if ($hasVideo) : ?>
-                        <li class="tile is-video active"><div class="sprite sprite-play"></div><span>Play Video</span><div class="embed hidden"><?php echo $videoEmbed; ?></div></li>
-                        <? endif; ?>
-                        <? for ($i = 0; $i < count($thumbnails); $i++) : ?>
-                        <li class="tile" title="<?php echo $thumbnails[$i]['title']; ?>">
-                            <img src="<?php echo $thumbnails[$i][0]; ?>"
-                                alt="<?php echo $thumbnails[$i]['caption'] != '' ? $thumbnails[$i]['caption'] : $thumbnails[$i]['title'] ; ?>"
-                                data-promo="<?php echo $promos[$i][0]; ?>"
-                                data-thumb="<?php echo $thumbnails[$i][0]; ?>"
-                                height="114"
-                                data-caption="<?php echo $thumbnails[$i]['catption']; ?>"
-                                data-description="<?php echo $thumbnails[$i]['description']; ?>" />
-                        </li>
-                        <? endfor; ?>
-                    </ul>
-                </section>
+        <section class="project-images">
+            <div class="project-carousel-container js-project-carousel-container">
                 
-                <section>
-                    <h2 class="short">Tags</h2>
-                    <p class="tiles"><?php echo $tag_list; ?></p>
-                </section>
+                <div class="project-hero js-project-hero <?php echo $hasVideo ? 'is-video' : ''; ?>">
+                    <?php
+                        if ($hasVideo) echo $videoEmbed;
+                        else echo $hero;
+                    ?>
+                </div>
+                
+                <ul class="js-project-carousel project-carousel">
+                    <?php foreach ($screenshots as $screenshot) : ?>
+                    <li>
+                        <img src="<?php echo $screenshot[0]; ?>" alt="<?php echo $screenshot['alt']; ?>" 
+                             title="<?php echo $screenshot['title']; ?>" width="<?php echo $screenshot[1]; ?>"
+                             height="<?php echo $screenshot[2]; ?>" />
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            
+            <div class="js-slideshow-nav carousel-nav">
+                <div class="carousel-control"></div>
+                <div class="text-center">
+                    <span class="js-carousel-prev arrow arrow-left lfloat">Prev Image</span>
+                    <button class="js-close-slideshow">Close</button>
+                    <span class="js-carousel-next arrow rfloat">Next Image</span>
+                </div>
+            </div>
+            
+            <div class="js-view-images-container text-center">
+                <button class="js-view-images view-images text-center">View Project Images</button>
             </div>
         </section>
         
-        
-        
-        <section>
-            <h2 class="short">Details</h2>
-            <?php if ($externalLink != '') : ?>
-            <a href="<?php echo $externalLink; ?>" class="arrow rfloat" target="_blank">Launch Site</a>
-            <?php endif; ?>
-            <div class="post-content"><?php the_content(); ?></div>
+        <?php if ($externalLink != '') : ?>
+        <section class="clearfix">
+            <a href="<?php echo $externalLink; ?>" class="arrow launch-site rfloat" target="_blank">Launch Site</a>
         </section>
+        <?php endif; ?>
+        
+        <div class="clearfix">
+            <section class="project-content lfloat">
+                <h2>Details</h2>
+                <div class="post-content"><?php the_content(); ?></div>
+            </section>
+
+            <section class="grid-2 rfloat">
+                <h2 class="short">Tags</h2>
+                <p><?php echo $tag_list; ?></p>
+            </section>
+        </div>
 
         
     </div><!-- .entry-content -->
