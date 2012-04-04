@@ -442,20 +442,9 @@ function custom_columns($column, $post_id) {
 }
 
 function project_init() {
-    add_meta_box("year_completed_meta", "Year Completed", "year_completed", "project", "side", "low");
     add_meta_box("credits_meta", "Additional Info", "add_info_meta", "project", "normal", "low");
 }
 add_action("admin_init", "project_init");
-
-function year_completed() {
-    global $post;
-    $custom = get_post_custom($post->ID);
-    $year_completed = $custom["year_completed"][0];
-    ?>
-        <label>Year:</label>
-        <input name="year_completed" value="<?php echo $year_completed; ?>" />
-    <?php
-}
 
 function add_info_meta() {
     global $post;
@@ -463,6 +452,7 @@ function add_info_meta() {
     $featured = $custom["featured"][0];
     $video = $custom["video"][0];
     $external = $custom["external"][0];
+    $featured_order = $custom['featured_order'][0];
     /*$programs = $custom["programs"][0];
     $programs = maybe_unserialize($programs);
     if (empty($programs)) {
@@ -478,7 +468,11 @@ function add_info_meta() {
                 <input type="checkbox" name="featured" value="featured" <? echo $featured === 'featured' ? 'checked' : ''; ?> />
                 Featured
             </label>
-            
+            <br />
+            <br />
+            <label for="featured_order_meta"><strong>Featured Order (1 is first):</strong></label>
+            <br />
+            <input id="featured_order" name="featured_order" value="<?php echo $featured_order; ?>" />
         </p>
         <p>
             <label for="external_meta"><strong>External Link:</strong></label>
@@ -528,6 +522,8 @@ function save_details($post_id) {
         if ($post->post_type === 'project') {
             update_post_meta($post_id, "year_completed", $_POST["year_completed"]);
             update_post_meta($post_id, "featured", $_POST["featured"]);
+            $featured_order = $_POST["featured_order"] != '' ? $_POST["featured_order"] : 10;
+            update_post_meta($post_id, "featured_order", $featured_order);
             update_post_meta($post_id, "video", esc_html($_POST["video"]));
             update_post_meta($post_id, "external", $_POST["external"]);
             //update_post_meta($post_id, "programs", $_POST["programs"]);
@@ -535,6 +531,13 @@ function save_details($post_id) {
     }
 }
 add_action('save_post', 'save_details');
+
+function sort_featured_order($a, $b) {
+    if ($a->featured_order == $b->featured_order) {
+        return 0;
+    }
+    return ($a->featured_order < $b->featured_order) ? -1 : 1;
+}
 
 /**
  *
@@ -572,8 +575,17 @@ function vestride_get_project_posts($posts_per_page = null, $img_size = 'work-th
         $project->term_slugs = $term_slugs;
         $project->img = get_the_post_thumbnail($project->ID, $img_size);
         $project->permalink = get_permalink($project->ID);
+        
+        $project->is_featured = get_metadata('post', $project->ID, 'featured', true) == 'featured' ? true : false;
+        $project->featured_order = (int) get_metadata('post', $project->ID, 'featured_order', true);
     }
     unset($project);
+    
+    // Sort by featured order
+    if ($onlyFeatured) {
+        usort($projects, 'sort_featured_order');
+    }
+    
     return $projects;
 }
 
