@@ -54,11 +54,11 @@ if ($paged >= 2 || $page >= 2)
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="apple-touch-icon-precomposed" href="<?php bloginfo('url'); ?>/apple-touch-icon-precomposed.png" />
         
-        <link rel="stylesheet" href="<? bloginfo('stylesheet_url'); ?>" />
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css" />
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,300,400,700,800' />
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
         
-        <script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr-2.5.3.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr-2.6.2.min.js"></script>
         <?php
         /* We add some JavaScript to pages with the comment form
          * to support sites with threaded comments (when in use).

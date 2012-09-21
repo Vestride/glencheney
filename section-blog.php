@@ -1,6 +1,6 @@
 
     <section id="blog">
-        <h3 class="section-title text-right"><span>Blog<span class="title-icon icon-blog"></span></span></h3>
+        <h3 class="section-title text-right"><span>Blog<span class="circle-icon title-icon icon-comments"></span></span></h3>
         
         <?php if (have_posts()) : ?>
 

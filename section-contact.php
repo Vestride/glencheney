@@ -1,5 +1,5 @@
     <section id="contact">
-        <h3 class="section-title text-right"><span>Contact<span class="title-icon icon-message"></span></span></h3>
+        <h3 class="section-title text-right"><span>Contact<span class="circle-icon title-icon icon-envelope-alt"></span></span></h3>
         <div class="contact">
             <div class="contact-form">
                 <h2>Message Me</h2>
@@ -9,24 +9,24 @@
                     <input type="hidden" name="name" value="" />
                     <div class="inputs">
                         <div class="input-wrapper">
-                            <div class="arrow-container"><span class="arrow-down"></span></div>
-                            <input type="text" data-placeholder="Name*" name="actual_name" tabindex="1" required class="input-dark" id="f-name" />
+                            <div class="arrow-container"><span class="arrow-down icon-caret-down"></span></div>
+                            <input type="text" placeholder="Name*" name="actual_name" tabindex="1" required class="input-dark" id="f-name" />
                         </div>
                         <div class="input-wrapper">
-                            <div class="arrow-container"><span class="arrow-down"></span></div>
-                            <input type="email" data-placeholder="Email*" name="email" tabindex="2" required class="input-dark" id="f-email" />
+                            <div class="arrow-container"><span class="arrow-down icon-caret-down"></span></div>
+                            <input type="email" placeholder="Email*" name="email" tabindex="2" required class="input-dark" id="f-email" />
                         </div>
                         <div class="input-wrapper">
-                            <div class="arrow-container"><span class="arrow-down"></span></div>
-                            <input type="text" data-placeholder="Subject" name="subject" tabindex="3" class="input-dark" id="f-subject" />
+                            <div class="arrow-container"><span class="arrow-down icon-caret-down"></span></div>
+                            <input type="text" placeholder="Subject" name="subject" tabindex="3" class="input-dark" id="f-subject" />
                         </div>
                         <div class="input-wrapper">
-                            <div class="arrow-container"><span class="arrow-down"></span></div>
-                            <input type="tel" data-placeholder="Phone" name="phone" tabindex="4" class="input-dark" id="f-phone" />
+                            <div class="arrow-container"><span class="arrow-down icon-caret-down"></span></div>
+                            <input type="tel" placeholder="Phone" name="phone" tabindex="4" class="input-dark" id="f-phone" />
                         </div>
                         <div class="textarea-container">
-                            <div class="arrow-container"><span class="arrow-down"></span></div>
-                            <textarea data-placeholder="Message*" name="message" tabindex="5" required class="input-dark" id="f-textarea"></textarea>
+                            <div class="arrow-container"><span class="arrow-down icon-caret-down"></span></div>
+                            <textarea placeholder="Message*" name="message" tabindex="5" required class="input-dark" id="f-textarea"></textarea>
                         </div>
                     </div>
                     <p class="main-color"><em>* Required fields</em></p>

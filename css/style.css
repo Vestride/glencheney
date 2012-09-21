@@ -1,0 +1,4484 @@
+/*
+Theme Name: Vestride
+Theme URI: http://glencheney.com
+Description: This is the theme for glencheney.com, based off the html5boilerplate
+Author: Glen Cheney
+Version: 1.0.1
+License: GNU General Public License
+License URI: license.txt
+*/
+/* line 19, style.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/* line 20, style.scss */
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 21, style.scss */
+audio:not([controls]) {
+  display: none;
+}
+
+/* line 22, style.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 23, style.scss */
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 24, style.scss */
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.231;
+  color: #f0f0f0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #0f0f0f;
+}
+
+/* line 32, style.scss */
+button, input, select, textarea {
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+}
+
+/* line 33, style.scss */
+::-moz-selection {
+  background: #e4950c;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 34, style.scss */
+::selection {
+  background: #e4950c;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 36, style.scss */
+a {
+  color: #e4950c;
+  text-decoration: none;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* line 46, style.scss */
+a:visited {
+  color: #e4950c;
+}
+
+/* line 47, style.scss */
+a:hover {
+  color: #f0f0f0;
+}
+
+/* line 48, style.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 49, style.scss */
+a:hover, a:active {
+  outline: 0;
+}
+
+/* line 51, style.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 52, style.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 53, style.scss */
+blockquote {
+  margin: 1em 40px;
+}
+
+/* line 54, style.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 55, style.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 56, style.scss */
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 57, style.scss */
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 58, style.scss */
+pre, code, kbd, samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/* line 59, style.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 60, style.scss */
+q {
+  quotes: none;
+}
+
+/* line 61, style.scss */
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 62, style.scss */
+small {
+  font-size: 85%;
+}
+
+/* line 63, style.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 64, style.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 65, style.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 67, style.scss */
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+/* line 68, style.scss */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/* line 69, style.scss */
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 71, style.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/* line 72, style.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 74, style.scss */
+figure {
+  margin: 0;
+}
+
+/* line 76, style.scss */
+form {
+  margin: 0;
+}
+
+/* line 77, style.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 78, style.scss */
+label {
+  cursor: pointer;
+}
+
+/* line 79, style.scss */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+}
+
+/* line 80, style.scss */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/* line 81, style.scss */
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+
+/* line 82, style.scss */
+table button, table input {
+  *overflow: auto;
+}
+
+/* line 83, style.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+/* line 85, style.scss */
+* {
+  /* IE got something right!? */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+/* line 93, style.scss */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+}
+
+/* line 94, style.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 95, style.scss */
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 97, style.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 99, style.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/* Colors for form validity */
+/* line 102, style.scss */
+input:valid, textarea:valid {
+  /*background-color: #17C70A;*/
+}
+
+/* line 103, style.scss */
+input:invalid, textarea:invalid {
+  /*background-color: #f0dddd;*/
+}
+
+/* line 105, style.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 106, style.scss */
+td {
+  vertical-align: top;
+}
+
+/*  Font Awesome
+    the iconic font designed for use with Twitter Bootstrap
+    -------------------------------------------------------
+    The full suite of pictographic icons, examples, and documentation
+    can be found at: http://fortawesome.github.com/Font-Awesome/
+
+    License
+    -------------------------------------------------------
+    The Font Awesome webfont, CSS, and LESS files are licensed under CC BY 3.0:
+    http://creativecommons.org/licenses/by/3.0/ A mention of
+    'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable
+    source code is considered acceptable attribution (most common on the web).
+    If human readable source code is not available to the end user, a mention in
+    an 'About' or 'Credits' screen is considered acceptable (most common in desktop
+    or mobile software).
+
+    Contact
+    -------------------------------------------------------
+    Email: dave@davegandy.com
+    Twitter: http://twitter.com/fortaweso_me
+    Work: Lead Product Designer @ http://kyruus.com
+
+    */
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../font/fontawesome-webfont.eot");
+  src: url("../font/fontawesome-webfont.eot?#iefix") format("eot"), url("../font/fontawesome-webfont.woff") format("woff"), url("../font/fontawesome-webfont.ttf") format("truetype"), url("../font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*  Font Awesome styles
+    ------------------------------------------------------- */
+/* line 42, _font-awesome.scss */
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+/* line 51, _font-awesome.scss */
+a [class^="icon-"],
+a [class*=" icon-"] {
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+/* makes the font 33% larger relative to the icon container */
+/* line 57, _font-awesome.scss */
+.icon-large:before {
+  vertical-align: middle;
+  font-size: 4/3em;
+}
+
+/* line 64, _font-awesome.scss */
+.btn [class^="icon-"],
+.btn [class*=" icon-"], .nav-tabs [class^="icon-"], .nav-tabs [class*=" icon-"] {
+  /* keeps button heights with and without icons the same */
+  line-height: .9em;
+}
+
+/* line 72, _font-awesome.scss */
+li [class^="icon-"],
+li [class*=" icon-"] {
+  display: inline-block;
+  width: 1.25em;
+  text-align: center;
+}
+/* line 78, _font-awesome.scss */
+li .icon-large:before,
+li .icon-large:before {
+  /* 1.5 increased font size for icon-large * 1.25 width */
+  width: 1.875em;
+}
+
+/* line 84, _font-awesome.scss */
+ul.icons {
+  list-style-type: none;
+  margin-left: 2em;
+  text-indent: -0.8em;
+}
+/* line 91, _font-awesome.scss */
+ul.icons li [class^="icon-"],
+ul.icons li [class*=" icon-"] {
+  width: .8em;
+}
+/* line 95, _font-awesome.scss */
+ul.icons li .icon-large:before,
+ul.icons li .icon-large:before {
+  /* 1.5 increased font size for icon-large * 1.25 width */
+  vertical-align: initial;
+}
+
+/*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+    readers do not read off random characters that represent icons */
+/* line 105, _font-awesome.scss */
+.icon-glass:before {
+  content: "\f000";
+}
+
+/* line 106, _font-awesome.scss */
+.icon-music:before {
+  content: "\f001";
+}
+
+/* line 107, _font-awesome.scss */
+.icon-search:before {
+  content: "\f002";
+}
+
+/* line 108, _font-awesome.scss */
+.icon-envelope:before {
+  content: "\f003";
+}
+
+/* line 109, _font-awesome.scss */
+.icon-heart:before {
+  content: "\f004";
+}
+
+/* line 110, _font-awesome.scss */
+.icon-star:before {
+  content: "\f005";
+}
+
+/* line 111, _font-awesome.scss */
+.icon-star-empty:before {
+  content: "\f006";
+}
+
+/* line 112, _font-awesome.scss */
+.icon-user:before {
+  content: "\f007";
+}
+
+/* line 113, _font-awesome.scss */
+.icon-film:before {
+  content: "\f008";
+}
+
+/* line 114, _font-awesome.scss */
+.icon-th-large:before {
+  content: "\f009";
+}
+
+/* line 115, _font-awesome.scss */
+.icon-th:before {
+  content: "\f00a";
+}
+
+/* line 116, _font-awesome.scss */
+.icon-th-list:before {
+  content: "\f00b";
+}
+
+/* line 117, _font-awesome.scss */
+.icon-ok:before {
+  content: "\f00c";
+}
+
+/* line 118, _font-awesome.scss */
+.icon-remove:before {
+  content: "\f00d";
+}
+
+/* line 119, _font-awesome.scss */
+.icon-zoom-in:before {
+  content: "\f00e";
+}
+
+/* line 121, _font-awesome.scss */
+.icon-zoom-out:before {
+  content: "\f010";
+}
+
+/* line 122, _font-awesome.scss */
+.icon-off:before {
+  content: "\f011";
+}
+
+/* line 123, _font-awesome.scss */
+.icon-signal:before {
+  content: "\f012";
+}
+
+/* line 124, _font-awesome.scss */
+.icon-cog:before {
+  content: "\f013";
+}
+
+/* line 125, _font-awesome.scss */
+.icon-trash:before {
+  content: "\f014";
+}
+
+/* line 126, _font-awesome.scss */
+.icon-home:before {
+  content: "\f015";
+}
+
+/* line 127, _font-awesome.scss */
+.icon-file:before {
+  content: "\f016";
+}
+
+/* line 128, _font-awesome.scss */
+.icon-time:before {
+  content: "\f017";
+}
+
+/* line 129, _font-awesome.scss */
+.icon-road:before {
+  content: "\f018";
+}
+
+/* line 130, _font-awesome.scss */
+.icon-download-alt:before {
+  content: "\f019";
+}
+
+/* line 131, _font-awesome.scss */
+.icon-download:before {
+  content: "\f01a";
+}
+
+/* line 132, _font-awesome.scss */
+.icon-upload:before {
+  content: "\f01b";
+}
+
+/* line 133, _font-awesome.scss */
+.icon-inbox:before {
+  content: "\f01c";
+}
+
+/* line 134, _font-awesome.scss */
+.icon-play-circle:before {
+  content: "\f01d";
+}
+
+/* line 135, _font-awesome.scss */
+.icon-repeat:before {
+  content: "\f01e";
+}
+
+/* \f020 doesn't work in Safari. all shifted one down */
+/* line 138, _font-awesome.scss */
+.icon-refresh:before {
+  content: "\f021";
+}
+
+/* line 139, _font-awesome.scss */
+.icon-list-alt:before {
+  content: "\f022";
+}
+
+/* line 140, _font-awesome.scss */
+.icon-lock:before {
+  content: "\f023";
+}
+
+/* line 141, _font-awesome.scss */
+.icon-flag:before {
+  content: "\f024";
+}
+
+/* line 142, _font-awesome.scss */
+.icon-headphones:before {
+  content: "\f025";
+}
+
+/* line 143, _font-awesome.scss */
+.icon-volume-off:before {
+  content: "\f026";
+}
+
+/* line 144, _font-awesome.scss */
+.icon-volume-down:before {
+  content: "\f027";
+}
+
+/* line 145, _font-awesome.scss */
+.icon-volume-up:before {
+  content: "\f028";
+}
+
+/* line 146, _font-awesome.scss */
+.icon-qrcode:before {
+  content: "\f029";
+}
+
+/* line 147, _font-awesome.scss */
+.icon-barcode:before {
+  content: "\f02a";
+}
+
+/* line 148, _font-awesome.scss */
+.icon-tag:before {
+  content: "\f02b";
+}
+
+/* line 149, _font-awesome.scss */
+.icon-tags:before {
+  content: "\f02c";
+}
+
+/* line 150, _font-awesome.scss */
+.icon-book:before {
+  content: "\f02d";
+}
+
+/* line 151, _font-awesome.scss */
+.icon-bookmark:before {
+  content: "\f02e";
+}
+
+/* line 152, _font-awesome.scss */
+.icon-print:before {
+  content: "\f02f";
+}
+
+/* line 154, _font-awesome.scss */
+.icon-camera:before {
+  content: "\f030";
+}
+
+/* line 155, _font-awesome.scss */
+.icon-font:before {
+  content: "\f031";
+}
+
+/* line 156, _font-awesome.scss */
+.icon-bold:before {
+  content: "\f032";
+}
+
+/* line 157, _font-awesome.scss */
+.icon-italic:before {
+  content: "\f033";
+}
+
+/* line 158, _font-awesome.scss */
+.icon-text-height:before {
+  content: "\f034";
+}
+
+/* line 159, _font-awesome.scss */
+.icon-text-width:before {
+  content: "\f035";
+}
+
+/* line 160, _font-awesome.scss */
+.icon-align-left:before {
+  content: "\f036";
+}
+
+/* line 161, _font-awesome.scss */
+.icon-align-center:before {
+  content: "\f037";
+}
+
+/* line 162, _font-awesome.scss */
+.icon-align-right:before {
+  content: "\f038";
+}
+
+/* line 163, _font-awesome.scss */
+.icon-align-justify:before {
+  content: "\f039";
+}
+
+/* line 164, _font-awesome.scss */
+.icon-list:before {
+  content: "\f03a";
+}
+
+/* line 165, _font-awesome.scss */
+.icon-indent-left:before {
+  content: "\f03b";
+}
+
+/* line 166, _font-awesome.scss */
+.icon-indent-right:before {
+  content: "\f03c";
+}
+
+/* line 167, _font-awesome.scss */
+.icon-facetime-video:before {
+  content: "\f03d";
+}
+
+/* line 168, _font-awesome.scss */
+.icon-picture:before {
+  content: "\f03e";
+}
+
+/* line 170, _font-awesome.scss */
+.icon-pencil:before {
+  content: "\f040";
+}
+
+/* line 171, _font-awesome.scss */
+.icon-map-marker:before {
+  content: "\f041";
+}
+
+/* line 172, _font-awesome.scss */
+.icon-adjust:before {
+  content: "\f042";
+}
+
+/* line 173, _font-awesome.scss */
+.icon-tint:before {
+  content: "\f043";
+}
+
+/* line 174, _font-awesome.scss */
+.icon-edit:before {
+  content: "\f044";
+}
+
+/* line 175, _font-awesome.scss */
+.icon-share:before {
+  content: "\f045";
+}
+
+/* line 176, _font-awesome.scss */
+.icon-check:before {
+  content: "\f046";
+}
+
+/* line 177, _font-awesome.scss */
+.icon-move:before {
+  content: "\f047";
+}
+
+/* line 178, _font-awesome.scss */
+.icon-step-backward:before {
+  content: "\f048";
+}
+
+/* line 179, _font-awesome.scss */
+.icon-fast-backward:before {
+  content: "\f049";
+}
+
+/* line 180, _font-awesome.scss */
+.icon-backward:before {
+  content: "\f04a";
+}
+
+/* line 181, _font-awesome.scss */
+.icon-play:before {
+  content: "\f04b";
+}
+
+/* line 182, _font-awesome.scss */
+.icon-pause:before {
+  content: "\f04c";
+}
+
+/* line 183, _font-awesome.scss */
+.icon-stop:before {
+  content: "\f04d";
+}
+
+/* line 184, _font-awesome.scss */
+.icon-forward:before {
+  content: "\f04e";
+}
+
+/* line 186, _font-awesome.scss */
+.icon-fast-forward:before {
+  content: "\f050";
+}
+
+/* line 187, _font-awesome.scss */
+.icon-step-forward:before {
+  content: "\f051";
+}
+
+/* line 188, _font-awesome.scss */
+.icon-eject:before {
+  content: "\f052";
+}
+
+/* line 189, _font-awesome.scss */
+.icon-chevron-left:before {
+  content: "\f053";
+}
+
+/* line 190, _font-awesome.scss */
+.icon-chevron-right:before {
+  content: "\f054";
+}
+
+/* line 191, _font-awesome.scss */
+.icon-plus-sign:before {
+  content: "\f055";
+}
+
+/* line 192, _font-awesome.scss */
+.icon-minus-sign:before {
+  content: "\f056";
+}
+
+/* line 193, _font-awesome.scss */
+.icon-remove-sign:before {
+  content: "\f057";
+}
+
+/* line 194, _font-awesome.scss */
+.icon-ok-sign:before {
+  content: "\f058";
+}
+
+/* line 195, _font-awesome.scss */
+.icon-question-sign:before {
+  content: "\f059";
+}
+
+/* line 196, _font-awesome.scss */
+.icon-info-sign:before {
+  content: "\f05a";
+}
+
+/* line 197, _font-awesome.scss */
+.icon-screenshot:before {
+  content: "\f05b";
+}
+
+/* line 198, _font-awesome.scss */
+.icon-remove-circle:before {
+  content: "\f05c";
+}
+
+/* line 199, _font-awesome.scss */
+.icon-ok-circle:before {
+  content: "\f05d";
+}
+
+/* line 200, _font-awesome.scss */
+.icon-ban-circle:before {
+  content: "\f05e";
+}
+
+/* line 202, _font-awesome.scss */
+.icon-arrow-left:before {
+  content: "\f060";
+}
+
+/* line 203, _font-awesome.scss */
+.icon-arrow-right:before {
+  content: "\f061";
+}
+
+/* line 204, _font-awesome.scss */
+.icon-arrow-up:before {
+  content: "\f062";
+}
+
+/* line 205, _font-awesome.scss */
+.icon-arrow-down:before {
+  content: "\f063";
+}
+
+/* line 206, _font-awesome.scss */
+.icon-share-alt:before {
+  content: "\f064";
+}
+
+/* line 207, _font-awesome.scss */
+.icon-resize-full:before {
+  content: "\f065";
+}
+
+/* line 208, _font-awesome.scss */
+.icon-resize-small:before {
+  content: "\f066";
+}
+
+/* line 209, _font-awesome.scss */
+.icon-plus:before {
+  content: "\f067";
+}
+
+/* line 210, _font-awesome.scss */
+.icon-minus:before {
+  content: "\f068";
+}
+
+/* line 211, _font-awesome.scss */
+.icon-asterisk:before {
+  content: "\f069";
+}
+
+/* line 212, _font-awesome.scss */
+.icon-exclamation-sign:before {
+  content: "\f06a";
+}
+
+/* line 213, _font-awesome.scss */
+.icon-gift:before {
+  content: "\f06b";
+}
+
+/* line 214, _font-awesome.scss */
+.icon-leaf:before {
+  content: "\f06c";
+}
+
+/* line 215, _font-awesome.scss */
+.icon-fire:before {
+  content: "\f06d";
+}
+
+/* line 216, _font-awesome.scss */
+.icon-eye-open:before {
+  content: "\f06e";
+}
+
+/* line 218, _font-awesome.scss */
+.icon-eye-close:before {
+  content: "\f070";
+}
+
+/* line 219, _font-awesome.scss */
+.icon-warning-sign:before {
+  content: "\f071";
+}
+
+/* line 220, _font-awesome.scss */
+.icon-plane:before {
+  content: "\f072";
+}
+
+/* line 221, _font-awesome.scss */
+.icon-calendar:before {
+  content: "\f073";
+}
+
+/* line 222, _font-awesome.scss */
+.icon-random:before {
+  content: "\f074";
+}
+
+/* line 223, _font-awesome.scss */
+.icon-comment:before {
+  content: "\f075";
+}
+
+/* line 224, _font-awesome.scss */
+.icon-magnet:before {
+  content: "\f076";
+}
+
+/* line 225, _font-awesome.scss */
+.icon-chevron-up:before {
+  content: "\f077";
+}
+
+/* line 226, _font-awesome.scss */
+.icon-chevron-down:before {
+  content: "\f078";
+}
+
+/* line 227, _font-awesome.scss */
+.icon-retweet:before {
+  content: "\f079";
+}
+
+/* line 228, _font-awesome.scss */
+.icon-shopping-cart:before {
+  content: "\f07a";
+}
+
+/* line 229, _font-awesome.scss */
+.icon-folder-close:before {
+  content: "\f07b";
+}
+
+/* line 230, _font-awesome.scss */
+.icon-folder-open:before {
+  content: "\f07c";
+}
+
+/* line 231, _font-awesome.scss */
+.icon-resize-vertical:before {
+  content: "\f07d";
+}
+
+/* line 232, _font-awesome.scss */
+.icon-resize-horizontal:before {
+  content: "\f07e";
+}
+
+/* line 234, _font-awesome.scss */
+.icon-bar-chart:before {
+  content: "\f080";
+}
+
+/* line 235, _font-awesome.scss */
+.icon-twitter-sign:before {
+  content: "\f081";
+}
+
+/* line 236, _font-awesome.scss */
+.icon-facebook-sign:before {
+  content: "\f082";
+}
+
+/* line 237, _font-awesome.scss */
+.icon-camera-retro:before {
+  content: "\f083";
+}
+
+/* line 238, _font-awesome.scss */
+.icon-key:before {
+  content: "\f084";
+}
+
+/* line 239, _font-awesome.scss */
+.icon-cogs:before {
+  content: "\f085";
+}
+
+/* line 240, _font-awesome.scss */
+.icon-comments:before {
+  content: "\f086";
+}
+
+/* line 241, _font-awesome.scss */
+.icon-thumbs-up:before {
+  content: "\f087";
+}
+
+/* line 242, _font-awesome.scss */
+.icon-thumbs-down:before {
+  content: "\f088";
+}
+
+/* line 243, _font-awesome.scss */
+.icon-star-half:before {
+  content: "\f089";
+}
+
+/* line 244, _font-awesome.scss */
+.icon-heart-empty:before {
+  content: "\f08a";
+}
+
+/* line 245, _font-awesome.scss */
+.icon-signout:before {
+  content: "\f08b";
+}
+
+/* line 246, _font-awesome.scss */
+.icon-linkedin-sign:before {
+  content: "\f08c";
+}
+
+/* line 247, _font-awesome.scss */
+.icon-pushpin:before {
+  content: "\f08d";
+}
+
+/* line 248, _font-awesome.scss */
+.icon-external-link:before {
+  content: "\f08e";
+}
+
+/* line 250, _font-awesome.scss */
+.icon-signin:before {
+  content: "\f090";
+}
+
+/* line 251, _font-awesome.scss */
+.icon-trophy:before {
+  content: "\f091";
+}
+
+/* line 252, _font-awesome.scss */
+.icon-github-sign:before {
+  content: "\f092";
+}
+
+/* line 253, _font-awesome.scss */
+.icon-upload-alt:before {
+  content: "\f093";
+}
+
+/* line 254, _font-awesome.scss */
+.icon-lemon:before {
+  content: "\f094";
+}
+
+/* line 255, _font-awesome.scss */
+.icon-phone:before {
+  content: "\f095";
+}
+
+/* line 256, _font-awesome.scss */
+.icon-check-empty:before {
+  content: "\f096";
+}
+
+/* line 257, _font-awesome.scss */
+.icon-bookmark-empty:before {
+  content: "\f097";
+}
+
+/* line 258, _font-awesome.scss */
+.icon-phone-sign:before {
+  content: "\f098";
+}
+
+/* line 259, _font-awesome.scss */
+.icon-twitter:before {
+  content: "\f099";
+}
+
+/* line 260, _font-awesome.scss */
+.icon-facebook:before {
+  content: "\f09a";
+}
+
+/* line 261, _font-awesome.scss */
+.icon-github:before {
+  content: "\f09b";
+}
+
+/* line 262, _font-awesome.scss */
+.icon-unlock:before {
+  content: "\f09c";
+}
+
+/* line 263, _font-awesome.scss */
+.icon-credit-card:before {
+  content: "\f09d";
+}
+
+/* line 264, _font-awesome.scss */
+.icon-rss:before {
+  content: "\f09e";
+}
+
+/* line 266, _font-awesome.scss */
+.icon-hdd:before {
+  content: "\f0a0";
+}
+
+/* line 267, _font-awesome.scss */
+.icon-bullhorn:before {
+  content: "\f0a1";
+}
+
+/* line 268, _font-awesome.scss */
+.icon-bell:before {
+  content: "\f0a2";
+}
+
+/* line 269, _font-awesome.scss */
+.icon-certificate:before {
+  content: "\f0a3";
+}
+
+/* line 270, _font-awesome.scss */
+.icon-hand-right:before {
+  content: "\f0a4";
+}
+
+/* line 271, _font-awesome.scss */
+.icon-hand-left:before {
+  content: "\f0a5";
+}
+
+/* line 272, _font-awesome.scss */
+.icon-hand-up:before {
+  content: "\f0a6";
+}
+
+/* line 273, _font-awesome.scss */
+.icon-hand-down:before {
+  content: "\f0a7";
+}
+
+/* line 274, _font-awesome.scss */
+.icon-circle-arrow-left:before {
+  content: "\f0a8";
+}
+
+/* line 275, _font-awesome.scss */
+.icon-circle-arrow-right:before {
+  content: "\f0a9";
+}
+
+/* line 276, _font-awesome.scss */
+.icon-circle-arrow-up:before {
+  content: "\f0aa";
+}
+
+/* line 277, _font-awesome.scss */
+.icon-circle-arrow-down:before {
+  content: "\f0ab";
+}
+
+/* line 278, _font-awesome.scss */
+.icon-globe:before {
+  content: "\f0ac";
+}
+
+/* line 279, _font-awesome.scss */
+.icon-wrench:before {
+  content: "\f0ad";
+}
+
+/* line 280, _font-awesome.scss */
+.icon-tasks:before {
+  content: "\f0ae";
+}
+
+/* line 282, _font-awesome.scss */
+.icon-filter:before {
+  content: "\f0b0";
+}
+
+/* line 283, _font-awesome.scss */
+.icon-briefcase:before {
+  content: "\f0b1";
+}
+
+/* line 284, _font-awesome.scss */
+.icon-fullscreen:before {
+  content: "\f0b2";
+}
+
+/* line 286, _font-awesome.scss */
+.icon-group:before {
+  content: "\f0c0";
+}
+
+/* line 287, _font-awesome.scss */
+.icon-link:before {
+  content: "\f0c1";
+}
+
+/* line 288, _font-awesome.scss */
+.icon-cloud:before {
+  content: "\f0c2";
+}
+
+/* line 289, _font-awesome.scss */
+.icon-beaker:before {
+  content: "\f0c3";
+}
+
+/* line 290, _font-awesome.scss */
+.icon-cut:before {
+  content: "\f0c4";
+}
+
+/* line 291, _font-awesome.scss */
+.icon-copy:before {
+  content: "\f0c5";
+}
+
+/* line 292, _font-awesome.scss */
+.icon-paper-clip:before {
+  content: "\f0c6";
+}
+
+/* line 293, _font-awesome.scss */
+.icon-save:before {
+  content: "\f0c7";
+}
+
+/* line 294, _font-awesome.scss */
+.icon-sign-blank:before {
+  content: "\f0c8";
+}
+
+/* line 295, _font-awesome.scss */
+.icon-reorder:before {
+  content: "\f0c9";
+}
+
+/* line 296, _font-awesome.scss */
+.icon-list-ul:before {
+  content: "\f0ca";
+}
+
+/* line 297, _font-awesome.scss */
+.icon-list-ol:before {
+  content: "\f0cb";
+}
+
+/* line 298, _font-awesome.scss */
+.icon-strikethrough:before {
+  content: "\f0cc";
+}
+
+/* line 299, _font-awesome.scss */
+.icon-underline:before {
+  content: "\f0cd";
+}
+
+/* line 300, _font-awesome.scss */
+.icon-table:before {
+  content: "\f0ce";
+}
+
+/* line 302, _font-awesome.scss */
+.icon-magic:before {
+  content: "\f0d0";
+}
+
+/* line 303, _font-awesome.scss */
+.icon-truck:before {
+  content: "\f0d1";
+}
+
+/* line 304, _font-awesome.scss */
+.icon-pinterest:before {
+  content: "\f0d2";
+}
+
+/* line 305, _font-awesome.scss */
+.icon-pinterest-sign:before {
+  content: "\f0d3";
+}
+
+/* line 306, _font-awesome.scss */
+.icon-google-plus-sign:before {
+  content: "\f0d4";
+}
+
+/* line 307, _font-awesome.scss */
+.icon-google-plus:before {
+  content: "\f0d5";
+}
+
+/* line 308, _font-awesome.scss */
+.icon-money:before {
+  content: "\f0d6";
+}
+
+/* line 309, _font-awesome.scss */
+.icon-caret-down:before {
+  content: "\f0d7";
+}
+
+/* line 310, _font-awesome.scss */
+.icon-caret-up:before {
+  content: "\f0d8";
+}
+
+/* line 311, _font-awesome.scss */
+.icon-caret-left:before {
+  content: "\f0d9";
+}
+
+/* line 312, _font-awesome.scss */
+.icon-caret-right:before {
+  content: "\f0da";
+}
+
+/* line 313, _font-awesome.scss */
+.icon-columns:before {
+  content: "\f0db";
+}
+
+/* line 314, _font-awesome.scss */
+.icon-sort:before {
+  content: "\f0dc";
+}
+
+/* line 315, _font-awesome.scss */
+.icon-sort-down:before {
+  content: "\f0dd";
+}
+
+/* line 316, _font-awesome.scss */
+.icon-sort-up:before {
+  content: "\f0de";
+}
+
+/* line 318, _font-awesome.scss */
+.icon-envelope-alt:before {
+  content: "\f0e0";
+}
+
+/* line 319, _font-awesome.scss */
+.icon-linkedin:before {
+  content: "\f0e1";
+}
+
+/* line 320, _font-awesome.scss */
+.icon-undo:before {
+  content: "\f0e2";
+}
+
+/* line 321, _font-awesome.scss */
+.icon-legal:before {
+  content: "\f0e3";
+}
+
+/* line 322, _font-awesome.scss */
+.icon-dashboard:before {
+  content: "\f0e4";
+}
+
+/* line 323, _font-awesome.scss */
+.icon-comment-alt:before {
+  content: "\f0e5";
+}
+
+/* line 324, _font-awesome.scss */
+.icon-comments-alt:before {
+  content: "\f0e6";
+}
+
+/* line 325, _font-awesome.scss */
+.icon-bolt:before {
+  content: "\f0e7";
+}
+
+/* line 326, _font-awesome.scss */
+.icon-sitemap:before {
+  content: "\f0e8";
+}
+
+/* line 327, _font-awesome.scss */
+.icon-umbrella:before {
+  content: "\f0e9";
+}
+
+/* line 328, _font-awesome.scss */
+.icon-paste:before {
+  content: "\f0ea";
+}
+
+/* line 330, _font-awesome.scss */
+.icon-user-md:before {
+  content: "\f200";
+}
+
+/* ==|== primary styles =====================================================
+   Author: Glen Cheney
+   ========================================================================== */
+/* line 116, style.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin: 0;
+  color: #f0f0f0;
+}
+
+/* line 122, style.scss */
+h2 {
+  position: relative;
+  display: inline-block;
+  /* for min-width to work */
+  min-width: 296px;
+  height: 42px;
+  font-size: 22px;
+  font-weight: 400;
+  padding: 7px 2px 0 10px;
+  margin: 30px 0;
+  color: #f0f0f0;
+  background-color: #e4950c;
+  box-shadow: 4px 4px 0 #2d2d2d;
+  text-shadow: 1px 1px 1px #6B4606;
+}
+
+/* line 137, style.scss */
+h2:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #2d2d2d;
+  bottom: -14px;
+  left: 24px;
+}
+
+/* line 149, style.scss */
+h2:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e4950c;
+  bottom: -10px;
+  left: 20px;
+}
+
+/* line 161, style.scss */
+h2.inverted {
+  background-color: #2d2d2d;
+  box-shadow: 4px 4px 0 #e4950c;
+  text-shadow: 1px 1px 1px #1293AC;
+}
+
+/* line 167, style.scss */
+h2.inverted:before {
+  border-top-color: #e4950c;
+}
+
+/* line 171, style.scss */
+h2.inverted:after {
+  border-top-color: #2d2d2d;
+}
+
+/* line 175, style.scss */
+h2.short {
+  min-width: 226px;
+}
+
+/* line 179, style.scss */
+h3 {
+  color: #e4950c;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+/* line 185, style.scss */
+h4 {
+  color: #f0f0f0;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* line 191, style.scss */
+h5 {
+  color: #e4950c;
+  font-weight: 300;
+}
+
+/* line 196, style.scss */
+p {
+  margin: 10px 0;
+}
+
+/* line 200, style.scss */
+#container {
+  overflow: hidden;
+}
+
+/*=============================================*\
+ =Header
+\*=============================================*/
+/* line 208, style.scss */
+#container > header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 5;
+  background-color: #0f0f0f;
+}
+
+/* line 218, style.scss */
+#nav {
+  width: 980px;
+  margin: auto;
+}
+
+/* line 223, style.scss */
+#nav .logo {
+  float: left;
+  margin-top: 5px;
+  font-size: 20px;
+  text-transform: uppercase;
+  opacity: 0;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* line 237, style.scss */
+#nav .logo.visible {
+  opacity: 1;
+}
+
+/* line 241, style.scss */
+#nav .logo img {
+  margin-top: -5px;
+  margin-right: 5px;
+}
+
+/* line 246, style.scss */
+#nav .logo strong {
+  font-weight: 800;
+}
+
+/* line 250, style.scss */
+#nav .logo .main-color {
+  font-weight: 300;
+}
+
+/* line 254, style.scss */
+#nav ul {
+  float: right;
+}
+
+/* line 258, style.scss */
+#nav li {
+  display: inline;
+  list-style: none;
+}
+
+/* line 263, style.scss */
+#nav li a {
+  font-weight: 300;
+  font-size: 16px;
+  padding: 8px 10px;
+  display: block;
+  float: left;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+/* line 278, style.scss */
+#nav li a.in,
+#nav li a:hover {
+  color: #f0f0f0;
+  background-color: #2d2d2d;
+}
+
+/* line 283, style.scss */
+#nav .logo a strong {
+  color: #f0f0f0;
+}
+
+/* line 287, style.scss */
+#nav .logo a:hover strong {
+  color: #e4950c;
+}
+
+/* line 291, style.scss */
+#nav .logo a .main-color {
+  color: #e4950c;
+}
+
+/* line 295, style.scss */
+#nav .logo a:hover .main-color {
+  color: #f0f0f0;
+}
+
+/* line 299, style.scss */
+#nav .nav-view {
+  display: none;
+  background-color: #0f0f0f;
+  padding: 7px 0;
+}
+
+/* line 305, style.scss */
+#nav .sidebar-nav-button {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 40px;
+  height: 28px;
+  border-radius: 3px;
+  background-color: #2d2d2d;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.95) inset;
+  text-align: center;
+}
+
+/* line 317, style.scss */
+#nav .sidebar-nav-button .sprite {
+  margin-top: 6px;
+}
+
+/* line 321, style.scss */
+#nav .nav-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*=============================================*\
+ =Backdrop
+\*=============================================*/
+/* line 332, style.scss */
+.backdrop {
+  position: fixed;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: #e4950c;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6b4606), to(#e4950c));
+  background-image: -webkit-linear-gradient(top, #6b4606, #e4950c);
+  background-image: -moz-linear-gradient(top, #6b4606, #e4950c);
+  background-image: -ms-linear-gradient(top, #6b4606, #e4950c);
+  background-image: -o-linear-gradient(top, #6b4606, #e4950c);
+  background-image: linear-gradient(to bottom, #6b4606, #e4950c);
+  z-index: 1;
+}
+
+/* line 351, style.scss */
+.backdrop-inside {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+  z-index: 4;
+}
+
+/* line 358, style.scss */
+.backdrop .city {
+  height: 91px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-image: url(../img/city.png);
+  background-repeat: repeat-x;
+  background-position: center;
+  opacity: 0;
+  z-index: 3;
+}
+
+/* line 371, style.scss */
+.backdrop .city-compact {
+  height: 36px;
+  background-image: url(../img/city-compact.png);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+/* line 384, style.scss */
+.backdrop .sunburst {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -960px;
+  width: 1920px;
+  height: 252px;
+  background-image: url(../img/sunburst.png);
+  z-index: 1;
+}
+
+/* line 395, style.scss */
+.backdrop-small {
+  height: 101px;
+}
+
+/* line 399, style.scss */
+.backdrop-small .city {
+  opacity: 1;
+}
+
+/* line 403, style.scss */
+.backdrop-small .sunburst {
+  background-position: -176px 0;
+}
+
+/* line 407, style.scss */
+.backdrop-small + #main {
+  margin-top: 100px;
+}
+
+/* line 411, style.scss */
+.tagline {
+  position: relative;
+  margin: 20px auto 0;
+}
+
+/* line 416, style.scss */
+.tagline-img {
+  display: block;
+  margin: auto;
+  width: 120px;
+}
+
+/* line 422, style.scss */
+.tagline-title {
+  width: 500px;
+  height: 112px;
+  margin: auto;
+  background-image: url(../img/banner.png);
+  position: relative;
+  top: -66px;
+  left: 50%;
+  margin-left: -250px;
+}
+
+/* line 433, style.scss */
+#main {
+  width: 980px;
+  margin: 160px auto 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* line 440, style.scss */
+#main:before {
+  display: block;
+  content: "";
+  height: 160px;
+  margin: -160px 0 0;
+}
+
+/* line 447, style.scss */
+#main.homepage {
+  margin: 250px auto auto;
+}
+
+/* line 451, style.scss */
+#main.homepage:before {
+  height: 250px;
+  margin: -250px 0 0;
+}
+
+/* line 456, style.scss */
+#sections > section {
+  margin-bottom: 400px;
+}
+
+/* line 460, style.scss */
+#sections > section:last-child {
+  margin-bottom: 20px;
+}
+
+/** Little hacky. The global nav is on top of the title **/
+/* line 465, style.scss */
+#sections > section:before {
+  display: block;
+  content: "";
+  height: 100px;
+  margin: -100px 0 0;
+}
+
+/* line 472, style.scss */
+.section-title {
+  font-size: 45px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #2d2d2d;
+  color: #f0f0f0;
+  font-weight: 800;
+  text-shadow: 1px 1px 0 #0f0f0f, 2px 2px 0 #e4950c;
+  /*white-space: nowrap; /* Stop wrapping (especially the border) */
+}
+
+/**
+ * bottom border on title. We have to wrap the text in a span to get the
+ * width of the span instead of the block level element
+ */
+/* line 487, style.scss */
+.section-title > * {
+  border-bottom: 5px solid #e4950c;
+  position: relative;
+  top: -6px;
+}
+
+/* line 493, style.scss */
+.title-icon {
+  vertical-align: 5px;
+  margin-left: 10px;
+  text-shadow: none;
+  background: #2d2d2d;
+}
+
+/* line 500, style.scss */
+.circle-icon {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: 23px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/*=============================================*\
+ =About
+\*=============================================*/
+/* line 514, style.scss */
+.about-me-text p:first-of-type {
+  margin-top: 0;
+}
+
+/* line 518, style.scss */
+.infographics > div {
+  position: relative;
+  margin-right: 145px;
+  width: 230px;
+}
+
+/* line 524, style.scss */
+.infographics > div:last-child {
+  margin-right: 0;
+}
+
+/* line 528, style.scss */
+.infographics h4 .sprite {
+  margin-right: 10px;
+}
+
+/* line 532, style.scss */
+.infographics svg {
+  display: block;
+}
+
+/* line 536, style.scss */
+#svg-usa {
+  width: 184px;
+  height: 113px;
+  margin-top: 40px;
+}
+
+/* line 542, style.scss */
+#svg-australia {
+  width: 126px;
+  height: 116px;
+  float: right;
+}
+
+/* line 548, style.scss */
+#ring-brain {
+  margin-top: 60px;
+  width: 184px;
+  height: 183px;
+}
+
+/* line 554, style.scss */
+#ring-skills {
+  margin-top: 60px;
+  width: 189px;
+  height: 187px;
+}
+
+/* line 560, style.scss */
+.text-oregon {
+  position: absolute;
+  left: 75px;
+  margin: 0;
+  top: 51px;
+}
+
+/* line 567, style.scss */
+.text-sydney {
+  position: absolute;
+  top: 302px;
+  margin: 0;
+  left: 45px;
+}
+
+/*=============================================*\
+ =Featured
+\*=============================================*/
+/* line 576, style.scss */
+.slideshow {
+  display: inline-block;
+}
+
+/* line 580, style.scss */
+.carousel-container {
+  position: relative;
+  /* So we can put the controls at the bottom with abs positioning */
+  background-color: #2d2d2d;
+  border: 1px solid #f0f0f0;
+}
+
+/* line 586, style.scss */
+.carousel, .carousel li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-image: none;
+}
+
+/* line 587, style.scss */
+.carousel > * {
+  display: none;
+}
+
+/* line 589, style.scss */
+.carousel {
+  height: 500px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* line 596, style.scss */
+.carousel li {
+  width: 980px;
+  overflow: hidden;
+}
+
+/* line 601, style.scss */
+.carousel-next {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  right: 10px;
+  margin-top: -20px;
+  cursor: pointer;
+}
+
+/* line 610, style.scss */
+.carousel-prev {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 10px;
+  margin-top: -20px;
+  cursor: pointer;
+}
+
+/* line 619, style.scss */
+.carousel-item-title {
+  position: absolute;
+  z-index: 3;
+  bottom: 5px;
+  right: 20px;
+  color: #f0f0f0;
+  font-size: 25px;
+  text-shadow: 1px 1px 2px #0f0f0f;
+}
+
+/* line 629, style.scss */
+.carousel-control-container {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* line 637, style.scss */
+.carousel-control {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* line 642, style.scss */
+.carousel-control > * {
+  background-color: #2d2d2d;
+  margin: 0 10px 0 0;
+  text-decoration: none;
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  text-indent: -9999px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+/* line 661, style.scss */
+.carousel-control > *:last-child {
+  margin-right: 0;
+}
+
+/* line 666, style.scss */
+.carousel-control > *:hover,
+.carousel-control .activeSlide {
+  background-color: #e4950c;
+  -moz-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* line 676, style.scss */
+.quick-links {
+  margin-top: 20px;
+}
+
+/* line 680, style.scss */
+.quick-links div {
+  float: left;
+  margin-right: 20px;
+  width: 220px;
+}
+
+/* line 686, style.scss */
+.quick-links div:last-child {
+  margin-right: 0;
+}
+
+/* line 690, style.scss */
+.quick-links h4 {
+  font-weight: 400;
+}
+
+/* line 694, style.scss */
+.quick-links h4 span {
+  margin-top: -8px;
+}
+
+/* line 698, style.scss */
+.quick-links p {
+  color: #9B9B9B;
+}
+
+/* line 702, style.scss */
+.quick-links a span {
+  margin-left: 10px;
+  margin-top: -3px;
+}
+
+/*=============================================*\
+ =Work
+\*=============================================*/
+/* line 712, style.scss */
+.filter-options {
+  padding: 0;
+  margin: 0 0 20px;
+  list-style: none;
+}
+
+/* line 718, style.scss */
+.filter-option {
+  float: left;
+  position: relative;
+  padding: 10px 20px;
+  color: #f0f0f0;
+  background-color: #2d2d2d;
+  border-bottom: 0 solid #e4950c;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* line 728, style.scss */
+.filter-option::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 1px;
+  height: 50%;
+  background: #606060;
+}
+
+/* line 738, style.scss */
+.filter-options .filter-option:last-child::before {
+  content: none;
+}
+
+/* line 743, style.scss */
+.filter-options li:hover,
+.filter-options li.active {
+  cursor: pointer;
+  border-bottom-width: 4px;
+  padding-bottom: 6px;
+}
+
+/* line 749, style.scss */
+#grid .item {
+  float: left;
+  margin: 20px 20px 0 0;
+  width: 230px;
+  height: 221px;
+}
+
+/* line 756, style.scss */
+#grid .item-img {
+  position: relative;
+  z-index: 1;
+  width: 230px;
+  height: 221px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* line 765, style.scss */
+#grid .item-details-container {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 0px;
+  background-color: rgba(45, 45, 45, 0.7);
+  overflow: hidden;
+  -webkit-transition: height 0.3s ease-out;
+  -moz-transition: height 0.3s ease-out;
+  -ms-transition: height 0.3s ease-out;
+  -o-transition: height 0.3s ease-out;
+  transition: height 0.3s ease-out;
+}
+
+/* line 778, style.scss */
+#grid .item:hover .item-details-container {
+  height: 221px;
+  -webkit-transition-timing-function: cubic-bezier(0.73, 1.89, 0.45, 0.4);
+  -moz-transition-timing-function: cubic-bezier(0.73, 1.89, 0.45, 0.4);
+  -ms-transition-timing-function: cubic-bezier(0.73, 1.89, 0.45, 0.4);
+  -o-transition-timing-function: cubic-bezier(0.73, 1.89, 0.45, 0.4);
+  transition-timing-function: cubic-bezier(0.73, 1.89, 0.45, 0.4);
+}
+
+/* line 784, style.scss */
+#grid .item-details {
+  padding: 15px 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-out;
+  -webkit-transition-delay: 0.3s;
+  -moz-transition: opacity 0.2s ease-out 0.3s;
+  -ms-transition: opacity 0.2s ease-out 0.3s;
+  -o-transition: opacity 0.2s ease-out 0.3s;
+  transition: opacity 0.2s ease-out 0.3s;
+}
+
+/* line 791, style.scss */
+#grid .item:hover .item-details {
+  opacity: 1;
+}
+
+/* line 795, style.scss */
+#grid .item-title a {
+  color: #f0f0f0;
+}
+
+/* line 799, style.scss */
+#grid .item-title a:hover {
+  color: #e4950c;
+  text-decoration: underline;
+}
+
+/* line 804, style.scss */
+#grid .item-post-excerpt {
+  color: #9B9B9B;
+}
+
+/* line 808, style.scss */
+#grid .item-link {
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 813, style.scss */
+#grid .item-link span {
+  margin-left: 10px;
+  margin-top: -3px;
+}
+
+/*=============================================*\
+ =Contact
+\*=============================================*/
+/* line 822, style.scss */
+.contact {
+  margin-top: 30px;
+}
+
+/* line 826, style.scss */
+.follow-us {
+  margin-right: 40px;
+  width: 230px;
+  list-style-type: none;
+}
+
+/* line 832, style.scss */
+.contact-form {
+  float: right;
+  width: 640px;
+}
+
+/* line 838, style.scss */
+.contact-form h2,
+.follow-us h2 {
+  margin-top: 0;
+}
+
+/*=============================================*\
+ =Contact Form
+\*=============================================*/
+/* line 846, style.scss */
+.contact-form .error-notification {
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* line 860, style.scss */
+input[type="text"], input[type="search"], input[type="tel"], input[type="url"],
+input[type="email"], input[type="number"], input[type="password"],
+textarea {
+  border: none;
+  width: 259px;
+  height: 38px;
+  font-size: 15px;
+  padding: 7px 5px;
+  color: #f0f0f0;
+  position: relative;
+  z-index: 2;
+  background-color: #2d2d2d;
+  background-repeat: no-repeat;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* line 883, style.scss */
+input[type="text"]:focus, input[type="search"]:focus, input[type="tel"]:focus,
+input[type="url"]:focus, input[type="email"]:focus, input[type="number"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  background-color: #f0f0f0;
+  color: #0f0f0f;
+}
+
+/* line 888, style.scss */
+textarea {
+  width: 600px;
+  height: 112px;
+  display: block;
+}
+
+/* line 894, style.scss */
+.input-dark {
+  background-position: 217px;
+  /* Width of input - width of icon - 10px of extra space */
+}
+
+/* line 898, style.scss */
+textarea.input-dark {
+  background-position: 545px 3px;
+}
+
+/* line 902, style.scss */
+.sticky-placeholder {
+  cursor: text;
+  position: absolute;
+  top: 11px;
+  left: 46px;
+  color: #f0f0f0;
+  opacity: 0.8;
+  z-index: 3;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* line 919, style.scss */
+input:focus + .sticky-placeholder,
+textarea:focus + .sticky-placeholder {
+  color: #666666;
+  opacity: 0.5;
+}
+
+/* line 925, style.scss */
+input + .sticky-placeholder.has-text,
+textarea + .sticky-placeholder.has-text {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Background images for inputs */
+/* line 931, style.scss */
+#f-name {
+  background-image: url(../img/icon-person.png);
+}
+
+/* line 935, style.scss */
+#f-subject {
+  background-image: url(../img/icon-subject.png);
+}
+
+/* line 939, style.scss */
+#f-phone {
+  background-image: url(../img/icon-phone.png);
+}
+
+/* line 943, style.scss */
+#f-email {
+  background-image: url(../img/icon-envelope.png);
+}
+
+/* line 947, style.scss */
+#f-textarea {
+  background-image: url(../img/icon-message-round.png);
+}
+
+/* line 951, style.scss */
+#f-textarea:focus {
+  background-position: 605px -50px;
+}
+
+/* line 955, style.scss */
+.contact-form .greeting {
+  margin: 0 0 38px;
+  font-size: 19px;
+  border-top: 2px solid #2d2d2d;
+  border-bottom: 2px solid #2d2d2d;
+  padding: 15px 0;
+}
+
+/* line 963, style.scss */
+.contact-form form p {
+  float: left;
+  margin-left: 40px;
+}
+
+/* line 970, style.scss */
+.contact-form .input-wrapper,
+.contact-form .textarea-container,
+.contact-form .send-wrapper {
+  margin: 0 0 20px;
+  position: relative;
+}
+
+/* line 975, style.scss */
+.contact-form .input-wrapper {
+  display: inline-block;
+}
+
+/* line 979, style.scss */
+.contact-form .input-wrapper:nth-child(even) {
+  margin-left: 38px;
+  /* would be 40, but lost 1px on each arrow margin */
+}
+
+/* line 983, style.scss */
+.contact-form .send-wrapper {
+  height: 97px;
+}
+
+/* line 987, style.scss */
+.contact-form .send {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  outline: 0;
+  background: url(../img/envelope.png) no-repeat 0 0;
+  width: 100px;
+  height: 97px;
+  -moz-transition: right 0.4s ease-in;
+  -o-transition: right 0.4s ease-in;
+  -webkit-transition: right 0.4s ease-in;
+  -ms-transition: right 0.4s ease-in;
+  transition: right 0.4s ease-in;
+}
+
+/* line 1005, style.scss */
+.contact-form .send:hover,
+.contact-form .send:focus {
+  background-position: 0 -102px;
+}
+
+/* line 1009, style.scss */
+.contact-form .send.closed {
+  background-position: 0 -214px;
+  margin-top: 40px;
+  height: 57px;
+}
+
+/* line 1015, style.scss */
+.contact-form .send.animate {
+  right: -3000px;
+}
+
+/* line 1019, style.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  height: 38px;
+  font-weight: 400;
+  font-size: 22px;
+  border: 1px solid rgba(240, 240, 240, 0.2);
+  color: #f0f0f0;
+  background-color: #e4950c;
+  box-shadow: 4px 4px 0 #2d2d2d;
+  text-shadow: 1px 1px 0 #0f0f0f;
+}
+
+/* line 1031, style.scss */
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
+button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus {
+  border: 1px solid rgba(240, 240, 240, 0.8);
+  background-color: #f0f0f0;
+  color: #e4950c;
+  text-shadow: 1px 1px 0 #2d2d2d;
+}
+
+/* line 1038, style.scss */
+button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
+  background-color: #e4950c;
+  color: #2d2d2d;
+  text-shadow: 0 1px 0 rgba(240, 240, 240, 0.7);
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.8), 4px 4px 0 #2d2d2d;
+}
+
+/*=============================================*\
+ =Follow us
+\*=============================================*/
+/* line 1049, style.scss */
+.follow-us a {
+  float: left;
+  height: 114px;
+  width: 114px;
+  margin: 0 2px 2px 0;
+  display: block;
+  text-indent: -999em;
+  background-color: #2d2d2d;
+  outline: 0;
+  background-image: url(../img/sprites.png);
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 750px;
+}
+
+/* line 1064, style.scss */
+.follow-us a:nth-of-type(even) {
+  margin-right: 0;
+}
+
+/* line 1068, style.scss */
+.follow-us-small a {
+  margin-right: 2px;
+}
+
+/* line 1072, style.scss */
+.follow-us-small li:last-child a {
+  margin-right: 0;
+}
+
+/* line 1076, style.scss */
+.follow-us a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 114px;
+  width: 114px;
+  background-image: url(../img/sprites.png);
+  background-repeat: no-repeat;
+  opacity: 0;
+  background-size: 750px;
+  -moz-transition: opacity 0.4s ease-out;
+  -o-transition: opacity 0.4s ease-out;
+  -webkit-transition: opacity 0.4s ease-out;
+  -ms-transition: opacity 0.4s ease-out;
+  transition: opacity 0.4s ease-out;
+}
+
+/* line 1095, style.scss */
+.follow-us-small a,
+.follow-us-small a span {
+  width: 56px;
+  height: 56px;
+  background-size: 375px;
+}
+
+/* line 1101, style.scss */
+.follow-us a:hover span {
+  opacity: 1;
+}
+
+/* line 1105, style.scss */
+.follow-us .facebook {
+  background-position: 0 0;
+}
+
+/* line 1106, style.scss */
+.follow-us .facebook span {
+  background-position: -232px 0;
+}
+
+/* line 1107, style.scss */
+.follow-us-small .facebook span {
+  background-position: -117px 0;
+}
+
+/* line 1109, style.scss */
+.follow-us .twitter {
+  background-position: -116px 0;
+}
+
+/* line 1110, style.scss */
+.follow-us .twitter span {
+  background-position: -348px 0;
+}
+
+/* line 1111, style.scss */
+.follow-us-small .twitter {
+  background-position: -58px 0;
+}
+
+/* line 1112, style.scss */
+.follow-us-small .twitter span {
+  background-position: -174px 0;
+}
+
+/* line 1114, style.scss */
+.follow-us .xbox {
+  background-position: 0 -232px;
+}
+
+/* line 1115, style.scss */
+.follow-us .xbox span {
+  background-position: -232px -232px;
+}
+
+/* line 1116, style.scss */
+.follow-us-small .xbox {
+  background-position: 0 -117px;
+}
+
+/* line 1117, style.scss */
+.follow-us-small .xbox span {
+  background-position: -117px -117px;
+}
+
+/* line 1119, style.scss */
+.follow-us .linkedin {
+  background-position: -116px -116px;
+}
+
+/* line 1120, style.scss */
+.follow-us .linkedin span {
+  background-position: -348px -116px;
+}
+
+/* line 1121, style.scss */
+.follow-us-small .linkedin {
+  background-position: -58px -58px;
+}
+
+/* line 1122, style.scss */
+.follow-us-small .linkedin span {
+  background-position: -174px -58px;
+}
+
+/* line 1124, style.scss */
+.follow-us .youtube {
+  background-position: -116px -232px;
+}
+
+/* line 1125, style.scss */
+.follow-us .youtube span {
+  background-position: -348px -232px;
+}
+
+/* line 1126, style.scss */
+.follow-us-small .youtube {
+  background-position: -58px -117px;
+}
+
+/* line 1127, style.scss */
+.follow-us-small .youtube span {
+  background-position: -174px -117px;
+}
+
+/* line 1129, style.scss */
+.follow-us .googleplus {
+  background-position: 0 -116px;
+}
+
+/* line 1130, style.scss */
+.follow-us .googleplus span {
+  background-position: -232px -116px;
+}
+
+/* line 1131, style.scss */
+.follow-us-small .googleplus {
+  background-position: 0 -58px;
+}
+
+/* line 1132, style.scss */
+.follow-us-small .googleplus span {
+  background-position: -116px -58px;
+}
+
+/* line 1134, style.scss */
+.follow-us .vimeo {
+  background-position: 0 -348px;
+}
+
+/* line 1135, style.scss */
+.follow-us .vimeo span {
+  background-position: -232px -348px;
+}
+
+/* line 1136, style.scss */
+.follow-us-small .vimeo {
+  background-position: 0 -174px;
+}
+
+/* line 1137, style.scss */
+.follow-us-small .vimeo span {
+  background-position: -116px -174px;
+}
+
+/* line 1139, style.scss */
+.follow-us .dribbble {
+  background-position: -116px -348px;
+}
+
+/* line 1140, style.scss */
+.follow-us .dribbble span {
+  background-position: -348px -348px;
+}
+
+/* line 1141, style.scss */
+.follow-us-small .dribbble {
+  background-position: -58px -174px;
+}
+
+/* line 1142, style.scss */
+.follow-us-small .dribbble span {
+  background-position: -174px -174px;
+}
+
+/* line 1144, style.scss */
+.follow-us .flickr {
+  background-position: 0 -464px;
+}
+
+/* line 1145, style.scss */
+.follow-us .flickr span {
+  background-position: -232px -464px;
+}
+
+/* line 1146, style.scss */
+.follow-us-small .flickr {
+  background-position: 0 -232px;
+}
+
+/* line 1147, style.scss */
+.follow-us-small .flickr span {
+  background-position: -116px -232px;
+}
+
+/* line 1149, style.scss */
+.follow-us .github {
+  background-position: -116px -464px;
+}
+
+/* line 1150, style.scss */
+.follow-us .github span {
+  background-position: -348px -464px;
+}
+
+/* line 1151, style.scss */
+.follow-us-small .github {
+  background-position: -58px -232px;
+}
+
+/* line 1152, style.scss */
+.follow-us-small .github span {
+  background-position: -174px -232px;
+}
+
+/* line 1154, style.scss */
+.arrow-container .arrow-down {
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+
+/* line 1162, style.scss */
+.csstransforms .arrow-down.active {
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+/* line 1170, style.scss */
+.csstransforms3d .arrow-down.active {
+  -moz-transform: rotateZ(-90deg);
+  -webkit-transform: rotateZ(-90deg);
+  -o-transform: rotateZ(-90deg);
+  -ms-transform: rotateZ(-90deg);
+  transform: rotateZ(-90deg);
+}
+
+/*=============================================*\
+ =Footer
+\*=============================================*/
+/* line 1181, style.scss */
+.footer-inside {
+  width: 980px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 1188, style.scss */
+.footer-inside .fb-like {
+  margin: auto;
+}
+
+/* line 1192, style.scss */
+.footer-header {
+  background-color: #2d2d2d;
+  padding: 50px 0;
+}
+
+/* line 1197, style.scss */
+footer .fb-like-box {
+  display: block;
+  margin: auto;
+  width: 292px;
+}
+
+/* line 1203, style.scss */
+.tiles {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 230px;
+}
+
+/* line 1210, style.scss */
+.tiles .tile {
+  float: left;
+  position: relative;
+  margin: 0 2px 2px 0;
+  background-color: #2d2d2d;
+  color: #0f0f0f;
+  width: 114px;
+  height: 114px;
+  overflow: hidden;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* line 1228, style.scss */
+.tiles .tile:nth-child(even) {
+  margin-right: 0;
+}
+
+/* line 1232, style.scss */
+.tiles .tile.is-video .sprite {
+  margin: 10px auto 5px;
+}
+
+/* line 1237, style.scss */
+.tiles .tile:hover,
+.tiles .tile.active {
+  cursor: pointer;
+  background-color: #e4950c;
+  color: #f0f0f0;
+}
+
+/* line 1243, style.scss */
+.tiles .tile img {
+  max-width: none;
+  height: 114px;
+}
+
+/* line 1248, style.scss */
+.tile:not(.is-video):before {
+  content: attr(title);
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(45, 45, 45, 0.7);
+  font-size: 85%;
+  color: #e4950c;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* line 1268, style.scss */
+.tile:not(.is-video):hover:before {
+  padding: 45px 0 0;
+  height: 100%;
+  opacity: 1;
+}
+
+/*=============================================*\
+ =Dialogs
+\*=============================================*/
+/* line 1277, style.scss */
+.es-dialog-mask {
+  width: 100%;
+  height: 100%;
+  background: url(../img/transparent_gray.png) repeat;
+  /* For browsers that cannot handle transparency */
+  background: rgba(82, 82, 82, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+/* line 1288, style.scss */
+.es-dialog-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(15, 15, 15, 0.8);
+  z-index: 2001;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+  padding: 6px;
+}
+
+/* line 1298, style.scss */
+.es-dialog-container.success {
+  background-color: rgba(228, 149, 12, 0.8);
+}
+
+/* line 1302, style.scss */
+.es-dialog-container.error {
+  background-color: rgba(212, 28, 28, 0.8);
+}
+
+/* line 1305, style.scss */
+.error .es-dialog-header .es-dialog-close:hover {
+  color: rgba(212, 28, 28, 0.8);
+}
+
+/* line 1309, style.scss */
+.es-dialog-header {
+  position: relative;
+}
+
+/* line 1313, style.scss */
+.es-dialog-header h3 {
+  margin: 0 0 12px 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+/* line 1321, style.scss */
+.es-dialog-header .es-dialog-close {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 12px;
+}
+
+/* line 1334, style.scss */
+.es-dialog-header .es-dialog-close:hover {
+  color: #e4950c;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* line 1339, style.scss */
+.es-dialog-inside {
+  padding: 10px;
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+/* line 1348, style.scss */
+.error404 .entry-content > .widget,
+.not-found .entry-content > .widget {
+  float: left;
+  margin-right: 20px;
+}
+
+/*=============================================*\
+ =Project
+\*=============================================*/
+/* line 1357, style.scss */
+.entry-content > section {
+  margin: 40px 0;
+}
+
+/* line 1361, style.scss */
+.project-carousel-container {
+  background-color: #2d2d2d;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+/* line 1367, style.scss */
+.project-carousel, .project-carousel li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-image: none;
+}
+
+/* line 1368, style.scss */
+.project-carousel li > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 1373, style.scss */
+.project-carousel .activeSlide, .project-carousel .js-current {
+  cursor: pointer;
+}
+
+/* line 1375, style.scss */
+.project-hero {
+  height: 400px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* line 1380, style.scss */
+.project-hero.is-video {
+  height: auto;
+}
+
+/* line 1383, style.scss */
+.carousel-nav,
+.view-images {
+  margin-top: 10px;
+}
+
+/* line 1387, style.scss */
+.project-content {
+  margin-right: 30px;
+}
+
+/* line 1389, style.scss */
+.entry-content .post-content {
+  margin: 20px 0;
+  max-width: 640px;
+}
+
+/* line 1394, style.scss */
+.entry-content .launch-site {
+  margin-top: 30px;
+}
+
+/*=============================================*\
+ =Blog
+\*=============================================*/
+/* line 1401, style.scss */
+footer.entry-meta {
+  padding-top: 20px;
+  border-top: 2px solid #2d2d2d;
+}
+
+/* line 1406, style.scss */
+.has-posts .entry-title {
+  font-size: 26px;
+}
+
+/* line 1410, style.scss */
+.entry-title a {
+  color: #f0f0f0;
+}
+
+/* line 1414, style.scss */
+.entry-title a:visited {
+  color: #f0f0f0;
+}
+
+/* line 1418, style.scss */
+.entry-title a:hover {
+  color: #e4950c;
+  text-decoration: underline;
+}
+
+/* line 1423, style.scss */
+.entry-img {
+  height: 360px;
+  overflow: hidden;
+}
+
+/* line 1428, style.scss */
+.has-posts article {
+  width: 640px;
+}
+
+/* line 1432, style.scss */
+.has-posts .entry-header {
+  margin-bottom: 20px;
+}
+
+/* line 1436, style.scss */
+.has-posts footer.entry-meta {
+  margin-bottom: 40px;
+  padding: 10px 0 5px;
+  border-top: none;
+  border-bottom: 2px solid #2d2d2d;
+}
+
+/* line 1443, style.scss */
+#nav-single {
+  margin: 20px 0;
+}
+
+/*=============================================*\
+ =Comments
+\*=============================================*/
+/* line 1452, style.scss */
+.nopassword,
+.nocomments {
+  color: #9B9B9B;
+  font-size: 24px;
+  font-weight: 100;
+  margin: 26px 0;
+  text-align: center;
+}
+
+/* line 1459, style.scss */
+.commentlist {
+  list-style: none;
+  margin: 0 auto;
+  width: 68.9%;
+}
+
+/* line 1465, style.scss */
+.content .commentlist,
+.page-template-sidebar-page-php .commentlist {
+  width: 100%;
+  /* reset the width for the one-column and sidebar page layout */
+}
+
+/* line 1468, style.scss */
+.commentlist > li.comment {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+/* line 1473, style.scss */
+.commentlist .pingback {
+  margin: 0 0 1.625em;
+  padding: 0 1.625em;
+}
+
+/* line 1477, style.scss */
+.commentlist .children {
+  list-style: none;
+  margin: 0;
+}
+
+/* line 1481, style.scss */
+.commentlist .children li.comment {
+  border-left: 1px solid #2d2d2d;
+  margin: 1.625em 0 0;
+  padding: 1.625em;
+  position: relative;
+}
+
+/* line 1487, style.scss */
+.commentlist .children li.comment .fn {
+  display: block;
+}
+
+/* line 1491, style.scss */
+.commentlist .children li.comment .comment-meta {
+  line-height: 1.625em;
+  margin-left: 50px;
+}
+
+/* line 1495, style.scss */
+.commentlist .children li.comment .comment-content {
+  margin: 1.625em 0 0;
+}
+
+/* line 1498, style.scss */
+.comment-meta a {
+  font-weight: bold;
+}
+
+/* line 1505, style.scss */
+.commentlist .avatar {
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #ccc;
+  left: -102px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+}
+
+/* line 1513, style.scss */
+.commentlist .children .avatar {
+  background: none;
+  box-shadow: none;
+  left: 2.2em;
+  padding: 0;
+  top: 2.2em;
+}
+
+/* line 1520, style.scss */
+a.comment-reply-link {
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+/* Comment Form */
+/* line 1526, style.scss */
+#respond {
+  margin: 0 auto 60px;
+  padding: 15px;
+  position: relative;
+  width: 68.9%;
+}
+
+/* line 1533, style.scss */
+#respond textarea {
+  resize: vertical;
+  width: 95%;
+}
+
+/* line 1538, style.scss */
+#respond .comment-form-author .required,
+#respond .comment-form-email .required {
+  color: #b41717;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* line 1544, style.scss */
+#respond #cancel-comment-reply-link {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* line 1549, style.scss */
+#respond .logged-in-as a:hover,
+#respond #cancel-comment-reply-link:hover {
+  text-decoration: underline;
+}
+
+/* line 1552, style.scss */
+.commentlist #respond {
+  margin: 1.625em 0 0;
+  width: auto;
+}
+
+/* line 1557, style.scss */
+#reply-title {
+  color: #f0f0f0;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* line 1562, style.scss */
+#cancel-comment-reply-link {
+  display: block;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 2.2em;
+  letter-spacing: 0.05em;
+  position: absolute;
+  right: 1.625em;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 1.1em;
+}
+
+/* line 1574, style.scss */
+#respond label {
+  line-height: 2.2em;
+}
+
+/* line 1577, style.scss */
+#respond input[type=text] {
+  display: block;
+}
+
+/* line 1580, style.scss */
+p.comment-form-comment {
+  margin: 0;
+}
+
+/* line 1583, style.scss */
+.form-allowed-tags {
+  display: none;
+}
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+/* For image replacement */
+/* line 1593, style.scss */
+.ir {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+/* line 1596, style.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+/* line 1599, style.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+/* line 1602, style.scss */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 1605, style.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* Contain floats: h5bp.com/q */
+/* line 1608, style.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 1609, style.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 1610, style.scss */
+.clearfix {
+  zoom: 1;
+}
+
+/* line 1611, style.scss */
+.block {
+  display: block;
+}
+
+/* line 1612, style.scss */
+.inline-block {
+  display: inline-block;
+}
+
+/* line 1613, style.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 1614, style.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 1615, style.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 1616, style.scss */
+.semi-bold-italic {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* line 1617, style.scss */
+.text-normal {
+  font-weight: normal;
+}
+
+/* line 1618, style.scss */
+.color-primary {
+  color: #e4950c;
+}
+
+/* line 1619, style.scss */
+.color-secondary {
+  color: #2d2d2d;
+}
+
+/* line 1620, style.scss */
+.color-tertiary {
+  color: #9B9B9B;
+}
+
+/* line 1621, style.scss */
+.margin-30 {
+  margin-right: 30px;
+}
+
+/* line 1622, style.scss */
+.margin-60 {
+  margin-right: 60px;
+}
+
+/* line 1623, style.scss */
+.grid-full {
+  margin-bottom: 40px;
+}
+
+/* line 1624, style.scss */
+.grid-2 {
+  width: 230px;
+}
+
+/* line 1628, style.scss */
+.grid-5 {
+  width: 640px;
+}
+
+/* line 1632, style.scss */
+.divider {
+  height: 2px;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #2d2d2d;
+}
+
+/* line 1640, style.scss */
+.arrow-container {
+  background-color: #e4950c;
+  float: left;
+  cursor: default;
+  margin-right: 2px;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+}
+
+/* line 1649, style.scss */
+.arrow-container.valid {
+  background-color: #17C70A;
+}
+
+/* line 1653, style.scss */
+.arrow-container.invalid {
+  background-color: #C20A0A;
+}
+
+/* line 1657, style.scss */
+.arrow-down {
+  display: block;
+  height: 38px;
+  width: 38px;
+  font-size: 38px;
+  line-height: 0.9;
+  text-align: center;
+}
+
+/* line 1665, style.scss */
+.can-nav {
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 1670, style.scss */
+.can-nav:hover {
+  background-color: #e4950c;
+}
+
+/* line 1674, style.scss */
+.can-nav:before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-width: 24px;
+  border-bottom-width: 24px;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/* line 1691, style.scss */
+.nav-prev.can-nav:before {
+  border-right-color: #0f0f0f;
+  border-right-width: 42px;
+  border-left-width: 0;
+}
+
+/* line 1697, style.scss */
+.nav-prev.can-nav:hover:before {
+  border-right-color: #f0f0f0;
+}
+
+/* line 1701, style.scss */
+.nav-next.can-nav:before {
+  border-left-color: #0f0f0f;
+  border-left-width: 42px;
+  border-right-width: 0;
+}
+
+/* line 1707, style.scss */
+.nav-next.can-nav:hover:before {
+  border-left-color: #f0f0f0;
+}
+
+/* line 1711, style.scss */
+.main-color {
+  color: #e4950c;
+}
+
+/* line 1715, style.scss */
+.rfloat {
+  float: right;
+}
+
+/* line 1716, style.scss */
+.lfloat {
+  float: left;
+}
+
+/* line 1718, style.scss */
+.notification {
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+/* line 1725, style.scss */
+.success-notification {
+  background-color: #CBF4B2;
+  text-align: center;
+  color: #56684B;
+  border-color: #8CA87B;
+}
+
+/* line 1732, style.scss */
+.error-notification {
+  background-color: #F02403;
+  border-color: #99180F;
+  color: #f0f0f0;
+}
+
+/* line 1738, style.scss */
+.loading {
+  height: 32px;
+  width: 32px;
+  background-image: url(../img/ajax-loaderx32.gif);
+}
+
+/* line 1744, style.scss */
+.drop-cap:first-letter {
+  font-size: 200%;
+  float: left;
+  padding: 0 5px;
+}
+
+/* line 1750, style.scss */
+.plus {
+  background-color: #e4950c;
+  width: 34px;
+  height: 34px;
+  display: block;
+  position: relative;
+}
+
+/* line 1758, style.scss */
+.plus:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 9px;
+  width: 16px;
+  height: 4px;
+  background-color: #f0f0f0;
+}
+
+/* line 1769, style.scss */
+.plus:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 9px;
+  height: 16px;
+  width: 4px;
+  background-color: #f0f0f0;
+}
+
+/* line 1780, style.scss */
+.dark-bg {
+  background-color: #2d2d2d;
+}
+
+/* line 1782, style.scss */
+.left-icon {
+  margin-right: 10px;
+  background: #e4950c;
+}
+
+/* line 1787, style.scss */
+.sprite {
+  background-image: url(../img/sprites.png);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 1793, style.scss */
+.sprite-prev {
+  width: 40px;
+  height: 40px;
+  background-position: -650px 0;
+}
+
+/* line 1799, style.scss */
+.sprite-prev:hover {
+  background-position: -650px -44px;
+}
+
+/* line 1803, style.scss */
+.sprite-next {
+  width: 40px;
+  height: 40px;
+  background-position: -694px 0;
+}
+
+/* line 1809, style.scss */
+.sprite-next:hover {
+  background-position: -694px -44px;
+}
+
+/* line 1813, style.scss */
+.sprite-question {
+  width: 40px;
+  height: 40px;
+  background-position: -467px -44px;
+}
+
+/* line 1819, style.scss */
+.sprite-oregon-text {
+  position: absolute;
+  left: 15px;
+  top: 60px;
+  pointer-events: none;
+  width: 45px;
+  height: 41px;
+  background-position: -601px -428px;
+}
+
+/* line 1829, style.scss */
+.sprite-sydney-text {
+  position: absolute;
+  top: 265px;
+  left: 147px;
+  width: 72px;
+  height: 47px;
+  background-position: -574px -475px;
+}
+
+/* line 1838, style.scss */
+.sprite-ring-brain {
+  position: absolute;
+  top: 80px;
+  left: 35px;
+  pointer-events: none;
+  width: 249px;
+  height: 174px;
+  background-position: 0 -588px;
+}
+
+/* line 1848, style.scss */
+.sprite-ring-skills {
+  position: absolute;
+  top: 75px;
+  left: -130px;
+  width: 264px;
+  height: 225px;
+  background-position: -258px -584px;
+}
+
+/* line 1857, style.scss */
+.sprite-miscellaneous {
+  display: block;
+  width: 56px;
+  height: 40px;
+  background-position: -466px -102px;
+}
+
+/* line 1866, style.scss */
+.sprite-miscellaneous:hover,
+.active .sprite-miscellaneous,
+.filter-option:hover .sprite-miscellaneous {
+  background-position: -466px -182px;
+}
+
+/* line 1870, style.scss */
+.sprite-design {
+  display: block;
+  width: 62px;
+  height: 65px;
+  background-position: -530px -88px;
+}
+
+/* line 1879, style.scss */
+.sprite-design:hover,
+.active .sprite-design,
+.filter-option:hover .sprite-design {
+  background-position: -530px -166px;
+}
+
+/* line 1883, style.scss */
+.sprite-web {
+  display: block;
+  width: 61px;
+  height: 61px;
+  background-position: -606px -91px;
+}
+
+/* line 1892, style.scss */
+.sprite-web:hover,
+.active .sprite-web,
+.filter-option:hover .sprite-web {
+  background-position: -606px -170px;
+}
+
+/* line 1896, style.scss */
+.sprite-videos {
+  display: block;
+  width: 59px;
+  height: 24px;
+  background-position: -683px -110px;
+}
+
+/* line 1905, style.scss */
+.sprite-videos:hover,
+.active .sprite-videos,
+.filter-option:hover .sprite-videos {
+  background-position: -683px -189px;
+}
+
+/* line 1909, style.scss */
+.sprite-code {
+  display: block;
+  width: 59px;
+  height: 26px;
+  background-position: -467px -271px;
+}
+
+/* line 1918, style.scss */
+.sprite-code:hover,
+.active .sprite-code,
+.filter-option:hover .sprite-code {
+  background-position: -467px -356px;
+}
+
+/* line 1922, style.scss */
+.sprite-recent {
+  display: block;
+  width: 58px;
+  height: 59px;
+  background-position: -534px -255px;
+}
+
+/* line 1931, style.scss */
+.sprite-recent:hover,
+.active .sprite-recent,
+.filter-option:hover .sprite-recent {
+  background-position: -535px -338px;
+}
+
+/* line 1935, style.scss */
+.sprite-play {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-position: -608px -254px;
+}
+
+/* line 1944, style.scss */
+.sprite-play:hover,
+.active .sprite-play,
+.tile:hover .sprite-play {
+  background-position: -608px -338px;
+}
+
+/* line 1948, style.scss */
+.sprite-illustrator {
+  width: 52px;
+  height: 47px;
+  background-position: -548px -405px;
+}
+
+/* line 1954, style.scss */
+.sprite-arrow-right {
+  width: 10px;
+  height: 13px;
+  background-position: -689px -361px;
+}
+
+/* line 1960, style.scss */
+.sprite-arrow-up {
+  width: 16px;
+  height: 16px;
+  background-position: -685px -386px;
+}
+
+/* line 1966, style.scss */
+.sprite-arrow-up:hover {
+  background-position: -685px -407px;
+}
+
+/* line 1970, style.scss */
+.sprite-arrow-down {
+  width: 15px;
+  height: 16px;
+  background-position: -720px -408px;
+}
+
+/* line 1976, style.scss */
+.sprite-fullscreen-enter {
+  width: 16px;
+  height: 16px;
+  background-position: -718px -360px;
+}
+
+/* line 1982, style.scss */
+.sprite-fullscreen-enter:hover {
+  background-position: -719px -387px;
+}
+
+/* line 1986, style.scss */
+.sprite-lines {
+  width: 19px;
+  height: 17px;
+  background-position: -718px -478px;
+}
+
+/* line 1993, style.scss */
+.arrow,
+#nav-single a {
+  position: relative;
+  display: inline-block;
+  height: 42px;
+  font-size: 20px;
+  background-color: #e4950c;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 0 #0f0f0f;
+  box-shadow: 4px 4px 0 #2d2d2d;
+  padding-top: 9px;
+  padding-left: 5px;
+  padding-right: 2px;
+  margin-right: 21px;
+  cursor: pointer;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+
+/* line 2016, style.scss */
+.arrow:visited,
+#nav-single a:visited {
+  color: #f0f0f0;
+}
+
+/* line 2021, style.scss */
+.arrow-left,
+#nav-single .nav-previous a {
+  padding-right: 5px;
+  padding-left: 2px;
+  margin-right: 0;
+  margin-left: 21px;
+  box-shadow: -4px 4px 0 #2d2d2d;
+}
+
+/* line 2030, style.scss */
+.arrow:before,
+#nav-single a:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 21px solid #2d2d2d;
+  border-bottom: 21px solid transparent;
+  border-top: 21px solid transparent;
+  top: 4px;
+  right: -25px;
+}
+
+/* line 2043, style.scss */
+.arrow-left:before,
+#nav-single .nav-previous a:before {
+  border-left: none;
+  border-right: 21px solid #2d2d2d;
+  right: auto;
+  left: -25px;
+}
+
+/* line 2051, style.scss */
+.arrow:after,
+#nav-single a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 21px solid #e4950c;
+  border-bottom: 21px solid transparent;
+  border-top: 21px solid transparent;
+  top: 0;
+  right: -21px;
+}
+
+/* line 2064, style.scss */
+.arrow-left:after,
+#nav-single .nav-previous a:after {
+  border-left: none;
+  border-right: 21px solid #e4950c;
+  right: auto;
+  left: -21px;
+}
+
+/* line 2072, style.scss */
+.arrow:hover,
+#nav-single a:hover {
+  background-color: #f0f0f0;
+  color: #e4950c;
+  text-shadow: 1px 1px 0 #2d2d2d;
+}
+
+/* line 2079, style.scss */
+.arrow:hover:after,
+#nav-single a:hover:after {
+  border-left-color: #f0f0f0;
+  border-right-color: #f0f0f0;
+}
+
+/* line 2085, style.scss */
+.arrow:active,
+#nav-single a:active {
+  background-color: #e4950c;
+  color: #2d2d2d;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* line 2092, style.scss */
+.arrow:active:after,
+#nav-single a:active:after {
+  border-left-color: #e4950c;
+  border-right-color: #e4950c;
+}
+
+@media screen and (max-width: 860px) {
+  /* line 2105, style.scss */
+  #nav,
+  .backdrop-inside,
+  .footer-inside,
+  #main {
+    width: auto;
+  }
+
+  /* line 2109, style.scss */
+  .backdrop {
+    top: 38px;
+  }
+
+  /* line 2113, style.scss */
+  #main {
+    padding: 0 2%;
+  }
+
+  /* line 2117, style.scss */
+  #nav .nav-inside {
+    position: fixed;
+    z-index: 2;
+    width: 85%;
+    height: 100%;
+    margin-left: -100%;
+    background-color: #0f0f0f;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.75);
+    -moz-transition: margin-left 0.2s ease-out;
+    -o-transition: margin-left 0.2s ease-out;
+    -webkit-transition: margin-left 0.2s ease-out;
+    -ms-transition: margin-left 0.2s ease-out;
+    transition: margin-left 0.2s ease-out;
+  }
+
+  /* line 2133, style.scss */
+  #nav .nav-inside.on-screen {
+    margin-left: 0;
+  }
+
+  /* line 2137, style.scss */
+  #nav .logo {
+    opacity: 1;
+    float: none;
+    margin-top: 0;
+    padding: 7px 0;
+  }
+
+  /* line 2148, style.scss */
+  #nav ul,
+  .has-posts,
+  .widget-area,
+  .project-hero,
+  .project-sidebar {
+    float: none;
+  }
+
+  /* line 2152, style.scss */
+  #nav li a {
+    float: none;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-top: 1px solid #0D0D0D;
+    border-bottom: 1px solid #4D4D4D;
+  }
+
+  /* line 2160, style.scss */
+  #nav li a:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: -5px;
+    background-image: url(../img/sprites.png);
+  }
+
+  /* line 2172, style.scss */
+  #a-home:before {
+    background-position: -707px -430px;
+  }
+
+  /* line 2173, style.scss */
+  #a-about:before {
+    background-position: -682px -231px;
+  }
+
+  /* line 2174, style.scss */
+  #a-work:before {
+    background-position: -514px -44px;
+  }
+
+  /* line 2175, style.scss */
+  #a-contact:before {
+    background-position: -682px -271px;
+  }
+
+  /* line 2176, style.scss */
+  #a-blog:before {
+    background-position: -606px -44px;
+  }
+
+  /* line 2178, style.scss */
+  #nav .nav-view {
+    display: block;
+  }
+
+  /* line 2185, style.scss */
+  .carousel-container,
+  .carousel,
+  .carousel li,
+  .carousel li img {
+    height: 400px !important;
+    width: auto;
+  }
+
+  /* line 2189, style.scss */
+  .carousel-container {
+    margin-bottom: 70px;
+  }
+
+  /* line 2193, style.scss */
+  .carousel-item-title {
+    position: static;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  /* line 2199, style.scss */
+  .section-details {
+    width: 50%;
+  }
+
+  /* line 2203, style.scss */
+  .quick-links {
+    width: 460px;
+    margin: auto;
+  }
+
+  /* line 2208, style.scss */
+  .quick-links > div {
+    margin-bottom: 20px;
+  }
+
+  /* line 2212, style.scss */
+  .quick-links div:nth-child(even) {
+    margin-right: 0;
+  }
+
+  /* line 2216, style.scss */
+  .filter-options {
+    width: auto;
+    float: none;
+    margin: 20px auto;
+  }
+
+  /* Clearfix */
+  /* line 2223, style.scss */
+  .filter-options:before, .filter-options:after {
+    content: "";
+    display: table;
+  }
+
+  /* line 2224, style.scss */
+  .filter-options:after {
+    clear: both;
+  }
+
+  /* line 2226, style.scss */
+  .filter-options li {
+    width: 49%;
+    margin: 0 1% 1% 0;
+  }
+
+  /* line 2232, style.scss */
+  .filter-options .paginate-nav,
+  .paginate-controls {
+    display: none;
+  }
+
+  /* line 2236, style.scss */
+  .paginate-container .pages {
+    display: none;
+  }
+
+  /* line 2240, style.scss */
+  #grid {
+    width: auto;
+    height: auto;
+    position: static;
+    text-align: center;
+  }
+
+  /* line 2247, style.scss */
+  #grid .item.concealed {
+    height: 0;
+  }
+
+  /* line 2252, style.scss */
+  #grid .item.stage-right,
+  #grid .item.stage-left {
+    opacity: 1;
+  }
+
+  /* line 2256, style.scss */
+  #grid .item.filtered {
+    position: static;
+    display: inline-block;
+    margin: 20px auto;
+    height: 442px;
+    float: none;
+    vertical-align: top;
+    text-align: left;
+    -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) !important;
+    -moz-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) !important;
+    -ms-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) !important;
+    -o-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) !important;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) !important;
+  }
+
+  /* line 2272, style.scss */
+  #grid .item.stage-center {
+    opacity: 1;
+  }
+
+  /* line 2276, style.scss */
+  #grid .item-details-container {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  /* line 2282, style.scss */
+  #grid .item-details {
+    opacity: 1;
+  }
+
+  /* line 2286, style.scss */
+  .contact-form {
+    float: none;
+    margin: auto;
+  }
+
+  /* line 2291, style.scss */
+  .follow-us {
+    margin: 40px auto;
+  }
+
+  /* line 2295, style.scss */
+  .has-posts article {
+    width: auto;
+  }
+
+  /* line 2299, style.scss */
+  .entry-img {
+    height: auto;
+  }
+
+  /* line 2303, style.scss */
+  #nav-single span {
+    display: block;
+    margin: 20px 0;
+  }
+
+  /* line 2308, style.scss */
+  article img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* line 2313, style.scss */
+  .project-sidebar section {
+    margin-top: 40px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /* line 2319, style.scss */
+  .project-sidebar section:last-child {
+    margin-left: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* line 2328, style.scss */
+  .backdrop {
+    top: 0;
+  }
+
+  /* line 2332, style.scss */
+  #main {
+    padding: 0 3%;
+  }
+
+  /* line 2336, style.scss */
+  .quick-links {
+    width: auto;
+  }
+
+  /* line 2340, style.scss */
+  .quick-links > div {
+    float: none;
+    margin: 40px auto;
+    width: 80%;
+  }
+
+  /* line 2347, style.scss */
+  .quick-links div:nth-child(even),
+  .quick-links div:last-child {
+    margin-right: auto;
+  }
+
+  /* line 2351, style.scss */
+  .contact-form {
+    width: auto;
+  }
+
+  /* line 2355, style.scss */
+  .contact-form .input-wrapper {
+    width: 100%;
+  }
+
+  /* line 2359, style.scss */
+  .contact-form .input-wrapper:nth-child(even) {
+    margin-left: 0;
+  }
+
+  /* line 2363, style.scss */
+  .arrow-container {
+    width: 12%;
+    margin-right: 1%;
+    max-width: 38px;
+  }
+
+  /* line 2369, style.scss */
+  .contact-form .input-dark {
+    width: 87%;
+    background-position: 95%;
+  }
+
+  /* line 2374, style.scss */
+  .contact-form textarea.input-dark {
+    background-position: 95% 0;
+  }
+
+  /* line 2378, style.scss */
+  .contact-form textarea.input-dark:focus {
+    background-position: 135% -70%;
+  }
+
+  /* line 2382, style.scss */
+  .es-dialog-container {
+    width: 96% !important;
+    margin-left: -48% !important;
+  }
+
+  /* line 2387, style.scss */
+  .project-sidebar section {
+    display: block;
+  }
+
+  /* line 2391, style.scss */
+  .project-sidebar section:last-child {
+    margin-left: 0;
+  }
+
+  /* line 2395, style.scss */
+  .entry-content .arrow.rfloat {
+    float: none;
+    margin-top: 10px;
+  }
+}
+@media print {
+  /* line 2403, style.scss */
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* Black prints faster: h5bp.com/s */
+  /* line 2404, style.scss */
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 2405, style.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 2406, style.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* line 2407, style.scss */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  /* line 2408, style.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 2409, style.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* h5bp.com/t */
+  /* line 2410, style.scss */
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  /* line 2411, style.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 2413, style.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 2414, style.scss */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}

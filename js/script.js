@@ -382,13 +382,13 @@ var Vestride = {
             $('.filter-title').text($this.text());
 
             // Filter elements
-            $grid.paginate('paginate', $this.attr('data-key'));
+            $grid.shuffle($this.data('group'));
         });
 
-        $('#grid').paginate({
-            itemWidth : 230,
-            margins : 20,
-            key : 'all'
+        $('#grid').shuffle({
+            easing: 'ease-out',
+            speed: 800,
+            group : 'all'
         });
     },
 
@@ -419,8 +419,6 @@ var Vestride = {
         var $submit = $('#contact-submit'),
             $form = $('#contact form'),
             $formElements = $form.find('input, textarea').not('[type=submit],[type=hidden]');
-
-        $formElements.stickyholder();
 
         // make it so hitting enter while the submit div is focused submits the data
         $submit.keyup(function(evt) {

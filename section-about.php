@@ -1,8 +1,8 @@
     <section id="about">
-        <h3 class="section-title text-right"><span>About Me<span class="title-icon icon-person"></span></span></h3>
+        <h3 class="section-title text-right"><span>About Me<span class="circle-icon title-icon icon-user"></span></span></h3>
         <h2 class="short">Glen Cheney</h2>
         <div class="grid-full about-me-text clearfix">
-            <img class="lfloat margin-60" src="<?php echo get_template_directory_uri(); ?>/img/blue-sky_red-beard.png" alt="Glen Cheney" width="230" height="230" />
+            <img class="lfloat margin-60" src="<?php echo get_template_directory_uri(); ?>/img/orange-beard.png" alt="Glen Cheney" width="230" height="230" />
             <p>
                 I&rsquo;m a New Media Interactive Development student, graduating from <a href="http://rit.edu">RIT</a>, with a passion for front-end web development.
                 I enjoy keeping up with new technologies and making the web awesome.
@@ -19,7 +19,7 @@
         
         <div class="infographics color-tertiary clearfix">
             <div class="lfloat">
-                <h4><span class="sprite sprite-glasses"></span> <span class="text-normal">My</span> Hobbies</h4>
+                <h4><span class="left-icon circle-icon icon-certificate"></span> <span class="text-normal">My</span> Hobbies</h4>
                 <div class="sprite sprite-ring-brain ir">
                     <ul>
                         <li>Gaming</li>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="lfloat">
-                <h4><span class="sprite sprite-flag"></span> <span class="text-normal">My</span> Heritage</h4>
+                <h4><span class="left-icon circle-icon icon-flag"></span> <span class="text-normal">My</span> Heritage</h4>
                 <p class="text-oregon">Corvallis, OR</p>
                 <span class="sprite sprite-oregon-text"></span>
                 <p class="text-sydney">Sydney, NSW</p>
@@ -406,7 +406,7 @@
             </div>
             
             <div class="lfloat">
-                <h4><span class="sprite sprite-skills"></span> <span class="text-normal">My</span> Skills</h4>
+                <h4><span class="left-icon circle-icon icon-tasks"></span> <span class="text-normal">My</span> Skills</h4>
                 <div class="sprite sprite-ring-skills ir">
                     <ul>
                         <li>JavaScript</li>
