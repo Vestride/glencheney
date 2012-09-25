@@ -28,8 +28,8 @@ $google_analytics = $theme_options['ga'];
     </div> <!-- end of #container -->
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
-    <script>window.jQuery || document.write('<script src="<? echo get_template_directory_uri(); ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="<? echo get_template_directory_uri(); ?>/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
 
 
     <script defer src="<? echo get_template_directory_uri(); ?>/js/plugins.js"></script>

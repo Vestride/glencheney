@@ -69,7 +69,7 @@ var Dialog = {
         };
 
         // Mask
-        settings.$mask = $('<div></div>', {"class" : settings.maskClass}).css({
+        settings.$mask = $('<div/>', {"class" : settings.maskClass}).css({
             'background' : settings.maskBackground
         });
 
@@ -81,7 +81,7 @@ var Dialog = {
         }
 
         // Container
-        settings.$container = $('<div></div>', {"class" : settings.containerClass}).css({
+        settings.$container = $('<div/>', {"class" : settings.containerClass}).css({
             'margin-left' : settings.leftMargin + 'px',
             'width' : defaults.width + 'px'
         });
@@ -102,13 +102,13 @@ var Dialog = {
         }
 
         // Dialog Header
-        settings.$header = $('<div></div>', {"class" : 'es-dialog-header'});
-        settings.$h3 = $('<h3></h3>').text(defaults.title);
+        settings.$header = $('<div/>', {"class" : 'es-dialog-header'});
+        settings.$h3 = $('<h3/>').text(defaults.title);
         settings.$header.append(settings.$h3);
 
 
         // Close Link
-        settings.$x = $('<a></a>', {
+        settings.$x = $('<a/>', {
             'href' : '#',
             'title' : 'Close',
             'class' : settings.closeClass
@@ -163,16 +163,16 @@ var Dialog = {
      * Adds a function to the callbacks array
      */
     addCallback : function(fn) {
-    	if (typeof fn === "function") {
+        if (typeof fn === 'function') {
             this.callbacks.push = fn;
-    	}
+        }
     },
 
     centerVertically : function() {
         var container = this.getContainer().get(0);
-        container.style.height = "";
+        container.style.height = '';
         container.style.height = container.offsetHeight + 'px';
-        container.style.marginTop = (parseInt(container.style.height) / 2) * -1 + 'px';
+        container.style.marginTop = (parseInt(container.style.height, 10) / 2) * -1 + 'px';
     },
 
     callbacks : [],
@@ -192,6 +192,8 @@ var Dialog = {
 
 var Vestride = {
 
+    Modules: {},
+
     /**
      * Base url for the site, e.g. http://eightfoldstudios.com
      */
@@ -210,73 +212,6 @@ var Vestride = {
         speed: 1, // Rounds per second
         trail: 100, // Afterglow percentage
         shadow: true // Whether to render a shadow
-    },
-
-    backdrop : {
-        fullHeight : null,
-        minHeight : null,
-        availableToScroll : null,
-        friction : 0.3,
-        $backdrop : null,
-        $city : null,
-        $cityCompact : null,
-        $sunburst : null,
-        $navLogo : null,
-        centered : 0,
-        left : -180
-    },
-
-    initBackdrop : function() {
-        this.backdrop.$backdrop = $('.backdrop');
-        this.backdrop.$city = this.backdrop.$backdrop.find('.city');
-        this.backdrop.$cityCompact = this.backdrop.$backdrop.find('.city-compact');
-        this.backdrop.$sunburst = this.backdrop.$backdrop.find('.sunburst');
-        this.backdrop.$navLogo = $('nav .logo');
-        this.backdrop.fullHeight = this.backdrop.$backdrop.height();
-        this.backdrop.minHeight = this.backdrop.$city.height() + 10;
-        this.backdrop.availableToScroll = this.backdrop.fullHeight - this.backdrop.minHeight;
-    },
-
-    modifyBackdrop : function() {
-        var scrolled = $(window).scrollTop(),
-            newHeight = this.backdrop.fullHeight - (scrolled * this.backdrop.friction),
-            amountScrolledWithFriction,
-            leftToScroll,
-            percentScrolled,
-            backdropX,
-            compactOpacity;
-
-
-        if (newHeight < this.backdrop.minHeight) {
-            newHeight = this.backdrop.minHeight;
-            this.backdrop.$backdrop.addClass('minimized');
-            this.backdrop.$navLogo.addClass('visible');
-        } else {
-            this.backdrop.$backdrop.removeClass('minimized');
-            this.backdrop.$navLogo.removeClass('visible');
-        }
-
-        leftToScroll = newHeight - this.backdrop.minHeight;
-        amountScrolledWithFriction = this.backdrop.availableToScroll - leftToScroll;
-        percentScrolled = compactOpacity = amountScrolledWithFriction / this.backdrop.availableToScroll;
-
-        // Constrain the opacity of the compact city to .3 opacity;
-        if (compactOpacity > 0.7) compactOpacity = 0.7;
-        this.backdrop.$cityCompact.css('opacity', 1 - compactOpacity);
-        this.backdrop.$city.css('opacity', percentScrolled);
-
-        backdropX = this.backdrop.centered + Math.round(percentScrolled * this.backdrop.left);
-
-        if (backdropX < this.backdrop.left) newHeight = this.backdrop.left;
-
-        // Move the text at the same speed as regular scrolling
-        this.backdrop.$backdrop.children().first().css('bottom', scrolled);
-
-        // Move the city over
-        this.backdrop.$sunburst.css('background-position', backdropX + 'px 0');
-
-        // Move Backdrop at half speed
-        this.backdrop.$backdrop.css('height', newHeight);
     },
 
     titles : {
@@ -304,7 +239,7 @@ var Vestride = {
             }
         });
 
-        this.modifyBackdrop();
+        Vestride.Modules.Backdrop.update();
     },
     
     initMobileNav : function() {
@@ -505,9 +440,9 @@ var Vestride = {
                 return;
             }
 
-            if (name === 'name' && value !== "") {
+            if (name === 'name' && value !== '') {
                 ok = false;
-                errors.push("Are you sure you're not a bot? You should not have been able to change that field");
+                errors.push('Are you sure you\'re not a bot? You should not have been able to change that field');
                 return;
             }
 
@@ -516,7 +451,7 @@ var Vestride = {
         if (ok) {
             sendEnvelope();
             $.ajax({
-                url : Vestride.themeUrl + "/ajax.php",
+                url : Vestride.themeUrl + '/ajax.php',
                 dataType : 'json',
                 data : 'method=sendContactMessage&data=' + JSON.stringify(message),
                 success : function(response) {
@@ -702,9 +637,105 @@ var Vestride = {
     }
 };
 
+Vestride.Modules.Backdrop = (function($, window) {
+    var fullHeight = null,
+        minHeight = null,
+        availableToScroll = null,
+        friction = 0.3,
+        $backdrop = null,
+        $city = null,
+        $cityCompact = null,
+        $sunburst = null,
+        $navLogo = null,
+        centered = 0,
+        left = -180,
+
+    initBackdrop = function() {
+        $backdrop = $('.backdrop');
+        $city = $backdrop.find('.city');
+        $cityCompact = $backdrop.find('.city-compact');
+        $sunburst = $backdrop.find('.sunburst');
+        $navLogo = $('nav .logo');
+        fullHeight = $backdrop.height();
+        minHeight = $city.height() + 10;
+        availableToScroll = fullHeight - minHeight;
+    },
+
+    modifyBackdrop = function() {
+        var scrolled = $(window).scrollTop(),
+            newHeight = fullHeight - (scrolled * friction),
+            amountScrolledWithFriction,
+            leftToScroll,
+            percentScrolled,
+            backdropX,
+            compactOpacity;
+
+
+        if (newHeight < minHeight) {
+            newHeight = minHeight;
+            $backdrop.addClass('minimized');
+            $navLogo.addClass('visible');
+        } else {
+            $backdrop.removeClass('minimized');
+            $navLogo.removeClass('visible');
+        }
+
+        leftToScroll = newHeight - minHeight;
+        amountScrolledWithFriction = availableToScroll - leftToScroll;
+        percentScrolled = compactOpacity = amountScrolledWithFriction / availableToScroll;
+
+        // Constrain the opacity of the compact city to .3 opacity;
+        if (compactOpacity > 0.7) compactOpacity = 0.7;
+        $cityCompact.css('opacity', 1 - compactOpacity);
+        $city.css('opacity', percentScrolled);
+
+        backdropX = centered + Math.round(percentScrolled * left);
+
+        if (backdropX < left) newHeight = left;
+
+        // Move the text at the same speed as regular scrolling
+        $backdrop.children().first().css('bottom', scrolled);
+
+        // Move the city over
+        $sunburst.css('background-position', backdropX + 'px 0');
+
+        // Move Backdrop at half speed
+        $backdrop.css('height', newHeight);
+    };
+
+    return {
+        init: initBackdrop,
+        update: modifyBackdrop
+    };
+}(jQuery, window));
+
 $(document).ready(function() {
-    if (!Vestride.onHomePage) {
+    if (Vestride.onHomePage) {
+        // Smooth scrolling
+        Vestride.initLocalScroll();
+        $.localScroll.hash({
+            duration: 600
+        });
+        
+        // Parallax city scape
+        Vestride.Modules.Backdrop.init();
+
+        // Check to see if sections are in the viewport on scroll
+        $(window).scroll(function() {
+            Vestride.scrolledIt();
+        });
+        
+        // Set up 'Featured' carousel
+        Vestride.initCycle('cycleWithLinks', '.carousel');
+        
+        // Add work filter functionality
+        Vestride.initWorkFiltering();
+        
+        // Set up ajax form
+        Vestride.initContactSubmit();
+    } else {
         $('header .logo').addClass('visible');
+
     }
     Vestride.initMobileNav();
 });
