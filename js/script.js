@@ -190,6 +190,7 @@ var Dialog = {
     }
 };
 
+/*global jQuery, Modernizr */
 var Vestride = {
 
     Modules: {},
@@ -219,119 +220,6 @@ var Vestride = {
         'about' : 'About',
         'work' : 'Work',
         'contact' : 'Contact'
-    },
-
-    scrolledIt : function() {
-        var title = 'Glen Cheney';
-        // Highlight which section we're in
-        $('#sections > section').each(function() {
-            var $this = $(this)
-              , id = $this.attr('id')
-              , navId = '#a-' + id
-              , label = title + ' | ' + Vestride.titles[id];
-
-            if ($.inviewport($this, {threshold : 0})) {
-                $(navId).addClass('in');
-                $('title').text(label);
-                Vestride.setNavTitle(id);
-            } else {
-                $(navId).removeClass('in');
-            }
-        });
-
-        Vestride.Modules.Backdrop.update();
-    },
-    
-    initMobileNav : function() {
-        var $body = $('body')
-          , $navInside = $('#nav .nav-inside')
-          , $navButton = $('#nav .sidebar-nav-button');
-          
-        $navButton.on('click', function(evt) {
-            $navInside.addClass('on-screen');
-            evt.stopPropagation(); // Stop bubbling
-            $body.on('click', function() {
-                $navInside.removeClass('on-screen');
-                $body.off('click');
-            });
-        });
-        
-        if (this.onHomePage) {
-            $('#nav .nav-title').text(Vestride.titles['home']);
-        }
-    },
-    
-    setNavTitle : function(id) {
-        if (Modernizr.mq('only screen and (max-width: 600px)')) {
-            $('#nav .nav-title').text(Vestride.titles[id]);
-        }
-    },
-
-    initCycle : function(anchorBuilder, selector) {
-        if (!selector) {
-            selector = '.carousel';
-        }
-        var $cycle = $(selector).cycle({
-            timeout:  6000,
-            speed:  400,
-            pause: 1,
-            pager: selector + '-control',
-            next: '.carousel-next',
-            prev: '.carousel-prev',
-            pagerAnchorBuilder : function(index, el) {
-                Vestride[anchorBuilder](this, index, el);
-            },
-            updateActivePagerLink : function(pager, index, active) {
-                var title = $('.carousel a').eq(index).attr('data-title');
-                $(pager).children().removeClass(active).eq(index).addClass(active);
-
-                $('.carousel-item-title').fadeOut('fast', function() {
-                    $(this).text(title).fadeIn();
-                });
-            }
-        });
-
-        // Change carousel item on hover
-        $(selector + '-control > *').mouseover(function(){
-            var zeroBasedIndex = parseInt($(this).text()) - 1;
-            $cycle.cycle(zeroBasedIndex);
-        });
-    },
-
-    cycleWithLinks : function(self, index, el) {
-        $(self.pager).append('<a href="' + $(el).find('a').attr('href') + '">' + (index + 1) + '</a>');
-    },
-
-    cycleNoLinks : function(self, index, el) {
-        $(self.pager).append('<span>' + (index + 1) + '</span>');
-    },
-
-    initWorkFiltering : function() {
-        $('.filter-options li').not('.paginate-nav').click(function() {
-            var $this = $(this),
-                $grid = $('#grid');
-
-            // Hide current label, show current label in title
-            $('.filter-options .active').removeClass('active');
-            $this.addClass('active');
-            $('.filter-title').text($this.text());
-
-            // Filter elements
-            $grid.shuffle($this.data('group'));
-        });
-
-        $('#grid').shuffle({
-            easing: 'ease-out',
-            speed: 800,
-            group : 'all'
-        });
-    },
-
-    initLocalScroll : function() {
-        $('#nav, .quick-links').localScroll({
-            hash:true,
-            duration:300
-        });
     },
 
     initContactSubmit : function() {
@@ -425,7 +313,7 @@ var Vestride = {
             }
 
             // Check browser support for email type
-            if (type == 'email' && !Modernizr.inputtypes.email && !Vestride.email_is_valid(value)) {
+            if (type == 'email' && !Modernizr.inputtypes.email && !Vestride.isEmailValid(value)) {
                 this.focus();
                 ok = false;
                 errors.push(nameUp + " is invalid");
@@ -513,7 +401,7 @@ var Vestride = {
         }
     },
 
-    email_is_valid : function(email) {
+    isEmailValid : function(email) {
         var emailRegEx = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if (!emailRegEx.test(email)) {
             return false;
@@ -522,8 +410,8 @@ var Vestride = {
     },
 
     initScreenshots : function() {
-        var $projectCarousel = $('.js-project-carousel')
-          , $cycle = $projectCarousel.cycle({
+        var $projectCarousel = $('.js-project-carousel'),
+        $cycle = $projectCarousel.cycle({
             timeout:  0,
             speed:  400,
             center: true,
@@ -534,10 +422,10 @@ var Vestride = {
             next: '.js-carousel-next',
             prev: '.js-carousel-prev',
             before : function(currSlideElement, nextSlideElement, options, forwardFlag) {
-                var $container = $('.js-project-carousel-container')
-                  , $curr = $(currSlideElement)
-                  , $next = $(nextSlideElement)
-                  , anim = function() {
+                var $container = $('.js-project-carousel-container'),
+                    $curr = $(currSlideElement),
+                    $next = $(nextSlideElement),
+                    anim = function() {
                         $curr.animate({
                             opacity: 0
                         }, 300).removeClass('js-current');
@@ -552,7 +440,7 @@ var Vestride = {
                         anim();
                         $projectCarousel.cycle('resume');
                     });
-                } 
+                }
                 
                 else {
                     anim();
@@ -571,71 +459,244 @@ var Vestride = {
             }
         });
         
+        
+    },
+    
+    showScreenshots : function() {
+        
+    },
+    
+    hideScreenshots : function() {
+        
+    }
+};
+
+Vestride.Modules.Project = (function($) {
+    var $hero = null,
+    $viewImages = null,
+    $nav = null,
+    $carousel = null,
+    $container = null,
+    containerHeight = 0,
+    speed = 400,
+
+    _init = function() {
+        var $projectCarousel = $('.js-project-carousel');
+        $hero = $('.js-project-hero');
+        $viewImages = $('.js-view-images-container');
+        $nav = $('.js-slideshow-nav');
+        $carousel = $('.js-project-carousel');
+        $container = $('.js-project-carousel-container');
+
+        $carousel.carousel({
+            transition: 'slide',
+            duration: speed,
+            autoResize: true,
+            generateNav: false,
+            activeClass: 'js-current active',
+            prevButtonClass: '.js-carousel-prev',
+            nextButtonClass: '.js-carousel-next'
+        });
+
         // Fades out the view images button and fades in the image navigation
         $('.js-project-hero, .js-view-images').on('click', function() {
-            Vestride.showScreenshots();
+            screenshots.show();
         });
         
-        // Add click to image to make it go to the next in carousel
-        $('.js-project-carousel').on('click', '.js-current', function() {
-            $cycle.cycle('next');
-        });
-        
-        $('.carousel-control span').on('click', function() {
-            var zeroBasedIndex = parseInt($(this).text()) - 1;
-            $cycle.cycle(zeroBasedIndex);
-        });
         
         // Fades out the image navigation on click and fades in the view screenshots button
         $('.js-close-slideshow').on('click', function() {
-            Vestride.hideScreenshots();
+            screenshots.hide();
         });
         
         // Hide carousel at start
         $('.js-project-carousel, .js-slideshow-nav').hide();
     },
-    
-    showScreenshots : function() {
-        var $hero = $('.js-project-hero')
-          , $viewImages = $('.js-view-images-container')
-          , $nav = $('.js-slideshow-nav')
-          , $carousel = $('.js-project-carousel')
-          , $container = $('.js-project-carousel-container');
-          
+
+    screenshots = {
         // Save height so we can use it again
-        Vestride.containerHeight = $container.height();
-        
-        // Fade out hero and view images button
-        $hero.add($viewImages).fadeOut(function() {
-            // Animate the height of the container
-            $container.animate({
-                height: $carousel.find('.js-current img').height()
-            }, 400, function() {
-                // Fade in the image gallery
-                $carousel.add($nav).fadeIn();
-            });
-        });
-    },
-    
-    hideScreenshots : function() {
-        var $hero = $('.js-project-hero')
-          , $viewImages = $('.js-view-images-container')
-          , $nav = $('.js-slideshow-nav')
-          , $carousel = $('.js-project-carousel')
-          , $container = $('.js-project-carousel-container');
-        
+        show: function() {
+            $hero.add($viewImages).hide();
+            $carousel.add($nav).show();
+            $(window).trigger('resize');
+            // containerHeight = $container.height();
+            
+            // // Fade out hero and view images button
+            // $hero.add($viewImages).fadeOut(function() {
+            //     // Animate the height of the container
+            //     $container.animate({
+            //         height: $carousel.find('.js-current img').attr('height')
+            //     }, speed, function() {
+            //         // Fade in the image gallery
+            //         $carousel.add($nav).fadeIn();
+            //     });
+            // });
+        },
+
         // Fade out carousel and nav buttons
-        $carousel.add($nav).fadeOut(function() {
-            // Animate the height of the container
-            $container.animate({
-                height: Vestride.containerHeight
-            }, 400, function() {
-                // Fade in the hero image
-                $hero.add($viewImages).fadeIn();
+        hide: function() {
+            $carousel.add($nav).hide();
+            $hero.add($viewImages).show();
+        //     $carousel.add($nav).fadeOut(function() {
+        //         // Animate the height of the container
+        //         $container.animate({
+        //             height: containerHeight
+        //         }, speed, function() {
+        //             // Fade in the hero image
+        //             $hero.add($viewImages).fadeIn();
+        //         });
+        //     });
+        }
+    };
+
+    return {
+        init: _init
+    };
+}(jQuery));
+
+Vestride.Modules.Nav = (function($, Modernizr) {
+    var _init = function(isHome) {
+        if (isHome) {
+            $('#nav a, .quick-links a').on('click', function(evt) {
+                if (this.href.indexOf('#') === -1) {
+                    return true;
+                }
+                var target = this.href.replace(/.*#/, '#');
+                evt.preventDefault();
+                $.simplescroll({
+                    target: target,
+                    speed: 600,
+                    easing: 'easeOutQuad'
+                });
+            });
+
+            $.simplescroll.initial({
+                speed: 600,
+                easing: 'easeOutQuad'
+            });
+
+            // Check to see if sections are in the viewport on scroll
+            $(window).scroll(function() {
+                _scrolled();
+            });
+        }
+
+        _mobile();
+    },
+
+    _scrolled = function() {
+        var title = 'Glen Cheney';
+        // Highlight which section we're in
+        $('#sections > section').each(function() {
+            var $this = $(this),
+                id = $this.attr('id'),
+                navId = '#a-' + id,
+                label = title + ' | ' + Vestride.titles[id];
+
+            if ($.inviewport($this, {threshold : 0})) {
+                $(navId).addClass('in');
+                $('title').text(label);
+                _setTitle(id);
+            } else {
+                $(navId).removeClass('in');
+            }
+        });
+
+        Vestride.Modules.Backdrop.update();
+    },
+
+    _setTitle = function(id) {
+        if (Modernizr.mq('only screen and (max-width: 600px)')) {
+            $('#nav .nav-title').text(Vestride.titles[id]);
+        }
+    },
+
+    _mobile = function() {
+        var $body = $('body'),
+            $navInside = $('#nav .nav-inside'),
+            $navButton = $('#nav .sidebar-nav-button');
+          
+        $navButton.on('click', function(evt) {
+            $navInside.addClass('on-screen');
+            evt.stopPropagation(); // Stop bubbling
+            $body.on('click', function() {
+                $navInside.removeClass('on-screen');
+                $body.off('click');
             });
         });
-    }
-};
+        
+        if (Vestride.onHomePage) {
+            $('#nav .nav-title').text(Vestride.titles['home']);
+        }
+    };
+
+    return {
+        init: _init,
+        setTitle: _setTitle
+    };
+}(jQuery, Modernizr));
+
+Vestride.Modules.Carousel = (function($) {
+    var timeout = 5000,
+
+    _init = function() {
+        var $carousel = $('.carousel').carousel({
+            transition: 'convex',
+            cssEasing: 'cubic-bezier(0.190, 1.000, 0.220, 1.000)', // ease-out-expo
+            duration: 500,
+            showIndexBtns: true,
+            timeout: timeout,
+            pauseOnHover: true,
+            useTitles: true,
+            genButtonClass: 'carousel-btn circle-icon',
+            prevButtonClass: 'icon-chevron-left carousel-btn-prev',
+            nextButtonClass: 'icon-chevron-right carousel-btn-next',
+            putControlsInside: true
+        });
+
+        $('.carousel-btn').text('');
+
+        var $navButtons = $carousel.find('.carousel-index-btn');
+        $navButtons.each(function(i, li) {
+            $(li).wrapInner('<span class="title"/>').append('<span class="progress" />');
+            $(li).find('.title').click(function() {
+                $(this).parent().click();
+            });
+        }).css('width', (100 / $navButtons.length) + '%');
+
+        // If we don't have css animations, we have some work to do with the progress bar
+        if (!Modernizr.cssanimations) {
+            var complete = function() {
+                this.style.width = 0;
+            };
+
+            // Might have to reset all index buttons on slide start
+            $carousel.on('slideStart.Carousel', function(evt, index, prevIndex, direction, slider) {
+                var $progress = slider.$el.find('.carousel-index-btn').eq(index).find('.progress');
+                $progress.animate({
+                    width: '100%'
+                }, timeout, 'linear', complete);
+            });
+
+            $carousel.on('paused.Carousel', function(evt, remaining, slider) {
+                var $progress = slider.$el.find('.carousel-index-btn').eq(slider.currIndex).find('.progress');
+                $progress.stop();
+            });
+
+            $carousel.on('resumed.Carousel', function(evt, remaining, slider) {
+                var $progress = slider.$el.find('.carousel-index-btn').eq(slider.currIndex).find('.progress');
+                $progress.animate({
+                    width: '100%'
+                }, remaining, 'linear', complete);
+            });
+            
+        }
+    };
+
+    return {
+        init: _init
+    };
+}(jQuery));
 
 Vestride.Modules.Backdrop = (function($, window) {
     var fullHeight = null,
@@ -692,6 +753,7 @@ Vestride.Modules.Backdrop = (function($, window) {
         backdropX = centered + Math.round(percentScrolled * left);
 
         if (backdropX < left) newHeight = left;
+        newHeight = Math.round(newHeight);
 
         // Move the text at the same speed as regular scrolling
         $backdrop.children().first().css('bottom', scrolled);
@@ -709,27 +771,44 @@ Vestride.Modules.Backdrop = (function($, window) {
     };
 }(jQuery, window));
 
+Vestride.Modules.Work = (function($) {
+    var _init = function() {
+        $('.filter-options li').not('.paginate-nav').click(function() {
+            var $this = $(this),
+                $grid = $('#grid');
+
+            // Hide current label, show current label in title
+            $('.filter-options .active').removeClass('active');
+            $this.addClass('active');
+            $('.filter-title').text($this.text());
+
+            // Filter elements
+            $grid.shuffle($this.data('group'));
+        });
+
+        $('#grid').shuffle({
+            easing: 'cubic-bezier(0.190, 1.000, 0.220, 1.000)',
+            speed: 800,
+            group : 'all'
+        });
+    };
+
+    return {
+        init: _init
+    };
+}(jQuery));
+
 $(document).ready(function() {
     if (Vestride.onHomePage) {
-        // Smooth scrolling
-        Vestride.initLocalScroll();
-        $.localScroll.hash({
-            duration: 600
-        });
-        
         // Parallax city scape
         Vestride.Modules.Backdrop.init();
 
-        // Check to see if sections are in the viewport on scroll
-        $(window).scroll(function() {
-            Vestride.scrolledIt();
-        });
-        
         // Set up 'Featured' carousel
-        Vestride.initCycle('cycleWithLinks', '.carousel');
+        Vestride.Modules.Carousel.init();
+
         
         // Add work filter functionality
-        Vestride.initWorkFiltering();
+        Vestride.Modules.Work.init();
         
         // Set up ajax form
         Vestride.initContactSubmit();
@@ -737,5 +816,6 @@ $(document).ready(function() {
         $('header .logo').addClass('visible');
 
     }
-    Vestride.initMobileNav();
+    // Smooth scrolling
+    Vestride.Modules.Nav.init(Vestride.onHomePage);
 });

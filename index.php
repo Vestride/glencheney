@@ -19,5 +19,4 @@ get_template_part('backdrop');
     </div>
 </div>
 <?php get_footer(); ?>
-<script defer src="<? echo get_template_directory_uri(); ?>/js/index.js"></script>
 <?php vestride_end(); ?>

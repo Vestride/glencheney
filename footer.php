@@ -41,11 +41,12 @@ $google_analytics = $theme_options['ga'];
         Vestride.themeUrl = '<? echo get_template_directory_uri(); ?>';
     });
     
-    <?php if ($google_analytics != '') : ?>
+    <?php if (false/*$google_analytics != ''*/) : ?>
     var _gaq=[['_setAccount','<?php echo $google_analytics; ?>'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
     <? endif; ?>
     </script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 <?php wp_footer(); ?>

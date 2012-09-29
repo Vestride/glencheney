@@ -545,7 +545,7 @@ function sort_featured_order($a, $b) {
  * @param string $img_size size of the thumbnail. Default = 'work-thumb'
  * @param bool $onlyFeatured only retrieve projects that are 'featured'. Default = false.
  */
-function vestride_get_project_posts($posts_per_page = null, $img_size = 'work-thumb', $onlyFeatured = false) {
+function vestride_get_project_posts($posts_per_page = null, $img_size = 'work-thumb@2x', $onlyFeatured = false) {
     if (is_null($posts_per_page)) {
         $posts_per_page = -1;
     }
@@ -558,6 +558,8 @@ function vestride_get_project_posts($posts_per_page = null, $img_size = 'work-th
         $args['meta_key'] = 'featured';
         $args['meta_value'] = 'featured';
     }
+
+    $retina = preg_match('/@2x$/', $img_size);
     
     $projects = get_posts($args);
     
@@ -573,7 +575,30 @@ function vestride_get_project_posts($posts_per_page = null, $img_size = 'work-th
 
         $project->terms = $term_names;
         $project->term_slugs = $term_slugs;
-        $project->img = get_the_post_thumbnail($project->ID, $img_size);
+
+        // Get image id
+        $post_thumbnail_id = get_post_thumbnail_id($project->ID);
+
+        // Get src
+        $image = wp_get_attachment_image_src($post_thumbnail_id, $img_size);
+        list($src, $width, $height) = $image;
+        if ($retina) {
+            $width /= 2;
+            $height /= 2;
+        }
+
+        // Get title and alt
+        $attachment =& get_post($post_thumbnail_id);
+        $alt = trim(strip_tags( get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true) ));
+        $title = $onlyFeatured ? $project->title : trim(strip_tags( $attachment->post_title ));
+        if (empty($alt)) {
+            $alt = $title;
+        }
+
+        // Save as html string
+        $project->img = '<img class="attachment-' . $img_size . ' wp-post-image" src="' . $src . '" width="' . $width . '" height="' . $height . '" alt="' . $alt . '" title="' . $title . '" />';
+
+
         $project->permalink = get_permalink($project->ID);
         
         $project->is_featured = get_metadata('post', $project->ID, 'featured', true) == 'featured' ? true : false;
@@ -590,7 +615,7 @@ function vestride_get_project_posts($posts_per_page = null, $img_size = 'work-th
 }
 
 function vestride_get_featured_project_posts() {
-    return vestride_get_project_posts(null, 'featured', true);
+    return vestride_get_project_posts(null, 'featured@2x', true);
 }
 
 
@@ -622,7 +647,7 @@ function vestride_header($page = 'home') {
                         </ul>
                     </div>
                     <div class="nav-view">
-                        <div class="sidebar-nav-button"><div class="sprite sprite-lines"></div></div>
+                        <div class="sidebar-nav-button"><i class="icon-reorder"></i></div>
                         <p class="nav-title"><?php wp_title('', true, 'right'); ?></p>
                     </div>
                 </nav>
@@ -650,8 +675,11 @@ function vestride_end() {
 }
 
 add_image_size('work-promo', 640, 9999);
+add_image_size('work-promo@2x', 1280, 9999);
 add_image_size('work-thumb', 9999, 221);
+add_image_size('work-thumb@2x', 9999, 442);
 add_image_size('featured', 980, 9999);
+add_image_size('featured@2x', 1960, 9999);
 
 /**
  *

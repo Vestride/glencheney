@@ -1,0 +1,228 @@
+/*=============================================*\
+ =Featured
+\*=============================================*/
+
+.carousel-container {
+    position: relative; /* So we can put the controls at the bottom with abs positioning */
+    // overflow: hidden;
+}
+
+.carousel,
+.carousel li {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    list-style-image: none;
+}
+
+.carousel {
+    overflow: hidden;
+}
+
+.carousel li a {
+    display: block;
+    max-height: 500px;
+    overflow: hidden;
+
+    img {
+        width: auto;
+    }
+}
+
+.featured {
+
+    .carousel-btn {
+        position: absolute;
+        z-index: 4;
+        top: 50%;
+        margin-top: -20px;
+        cursor: pointer;
+        background: $lighter-gray;
+        background: rgba($lighter-gray, .8);
+
+        &:hover {
+            background: $orange;
+            background: rgba($orange, .8);
+        }
+    }
+
+    .carousel-btn-next {
+        right: 10px;
+        text-indent: 1px;
+    }
+
+    .carousel-btn-prev {
+        left: 10px;   
+        text-indent: -1px;
+    }
+
+    .carousel-controls {
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .carousel-index-btns {
+        width: 100%;
+        margin: 0;
+        float: none;
+        counter-reset: nav;
+    }
+
+    glen.flexbox .carousel-index-btns {
+        display: -webkit-flex;
+        display:    -moz-flex;
+        display:     -ms-flex;
+        display:      -o-flex;
+        display:         flex;
+    }
+
+    $bar-width: 5px;
+    $index-padding: 20px;
+    .carousel-index-btn {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        color: $white;
+        font-size: 12px;
+        border-bottom: 0 solid $orange;
+        border-bottom: 0 solid rgba($orange, .7);
+        background-color: $lighter-gray;
+        @include transition(all .2s ease);
+
+        // &:before {
+        //     counter-increment: nav;
+        //     content: counter(nav, decimal-leading-zero);
+        //     position: absolute;
+        //     top: $index-padding;
+        //     left: $index-padding / 2;
+        // }
+
+        .title {
+            display: block;
+            padding: $index-padding $index-padding ($index-padding - $bar-width);
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            pointer-events: none;
+            @include transition(all .2s ease);
+        }
+    }
+
+    .carousel-index-btn.s-selected,
+    .carousel-index-btn:hover {
+        color: white;
+        background-color: black;
+        background-color: hsla(0, 0%, 0%, .7);
+        border-bottom-width: $bar-width;
+    }
+
+    glen.flexbox .carousel-index-btn {
+        -webkit-flex: 1;
+           -moz-flex: 1;
+            -ms-flex: 1;
+             -o-flex: 1;
+                flex: 1;
+    }
+
+    /* No flexbox, make border color same as background */
+    .carousel-index-btn {
+        float: left;
+        width: 25%;
+        border-bottom-width: $bar-width;
+        border-bottom-color: $lighter-gray;
+    }
+
+    /* Active */
+    .carousel-index-btn.s-selected,
+    .carousel-index-btn:hover {
+        border-bottom-color: $orange;
+        border-bottom-color: rgba($orange, .7);
+    }
+
+    .carousel-index-btn .progress {
+        position: absolute;
+        bottom: -$bar-width;
+        left: 0;
+        height: 0;
+        width: 0;
+        background-color: $orange;
+    }
+
+    .carousel-index-btn.s-selected .progress {
+        height: $bar-width;
+        -webkit-animation: full-width 5000ms linear;
+           -moz-animation: full-width 5000ms linear;
+             -o-animation: full-width 5000ms linear;
+                animation: full-width 5000ms linear;
+    }
+
+    .paused .progress {
+        -webkit-animation-play-state: paused;
+           -moz-animation-play-state: paused;
+             -o-animation-play-state: paused;
+                animation-play-state: paused;
+    }
+}
+
+@-webkit-keyframes full-width {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@-moz-keyframes full-width {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes full-width {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.quick-links {
+    margin-top: 20px;
+}
+
+.quick-links div {
+    float: left;
+    margin-right: 20px;
+    width: 220px;
+}
+
+.quick-links div:last-child {
+    margin-right: 0;
+}
+
+.quick-links h4 {
+    font-weight: 400;
+}
+
+.quick-links h4 span {
+    margin-top: -8px;
+}
+
+.quick-links p {
+    color: #9B9B9B;
+}
+
+.quick-links a span {
+    margin-left: 10px;
+    margin-top: -3px;
+}

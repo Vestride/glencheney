@@ -24,7 +24,7 @@ get_template_part('backdrop', 'small');
 <script>
 $(document).ready(function() {
     Vestride.onHomePage = false;
-    Vestride.initScreenshots();
+    Vestride.Modules.Project.init();
 });
 </script>
 <?php vestride_end(); ?>

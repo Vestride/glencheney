@@ -1,0 +1,226 @@
+/*=============================================*\
+ =Contact
+\*=============================================*/
+
+.contact {
+    margin-top: 30px;
+}
+
+.follow-us {
+    margin-right: 40px;
+    width: 230px;
+    list-style-type: none;
+}
+
+.contact-form {
+    float: right;
+    width: 640px;
+}
+
+.contact-form h2,
+.follow-us h2 {
+    margin-top: 0;
+}
+
+/*=============================================*\
+ =Contact Form
+\*=============================================*/
+
+.contact-form .error-notification {
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+     -moz-transition: all 0.2s ease-out;
+       -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
+}
+
+input[type="text"], input[type="search"], input[type="tel"], input[type="url"],
+input[type="email"], input[type="number"], input[type="password"],
+textarea {
+    border: none;
+    width: 259px;
+    height: 38px;
+    font-size: 15px;
+    padding: 7px 5px;
+    color: $white;
+    position: relative;
+    z-index: 2;
+
+    background-color: $lighter-gray;
+    background-repeat: no-repeat;
+
+     -moz-transition: all 0.2s ease-out;
+       -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
+}
+
+input[type="text"]:focus, input[type="search"]:focus, input[type="tel"]:focus,
+input[type="url"]:focus, input[type="email"]:focus, input[type="number"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    background-color: $white;
+    color: $dark-gray;
+}
+
+textarea {
+    width: 600px;
+    height: 112px;
+    display: block;
+}
+
+.input-dark {
+    background-position: 217px; /* Width of input - width of icon - 10px of extra space */
+}
+
+textarea.input-dark {
+    background-position: 545px 3px;
+}
+
+.sticky-placeholder {
+    cursor: text;
+    position: absolute;
+    top: 11px;
+    left: 46px;
+    color: $white;
+    opacity: 0.8;
+    z-index: 3;
+
+     -moz-transition: all 0.2s ease-out;
+       -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
+}
+
+input:focus + .sticky-placeholder,
+textarea:focus + .sticky-placeholder {
+    color: #666666;
+    opacity: 0.5;
+}
+
+input + .sticky-placeholder.has-text,
+textarea + .sticky-placeholder.has-text  {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Background images for inputs */
+#f-name {
+    background-image: url(../img/icon-person.png);
+}
+
+#f-subject {
+    background-image: url(../img/icon-subject.png);
+}
+
+#f-phone {
+    background-image: url(../img/icon-phone.png);
+}
+
+#f-email {
+    background-image: url(../img/icon-envelope.png);
+}
+
+#f-textarea {
+    background-image: url(../img/icon-message-round.png);
+}
+
+#f-textarea:focus {
+    background-position: 605px -50px;
+}
+
+.contact-form .greeting {
+    margin: 0 0 38px;
+    font-size: 19px;
+    border-top: 2px solid $lighter-gray;
+    border-bottom: 2px solid $lighter-gray;
+    padding: 15px 0;
+}
+
+.contact-form form p {
+    float: left;
+    margin-left: 40px;
+}
+
+.contact-form .input-wrapper,
+.contact-form .textarea-container,
+.contact-form .send-wrapper {
+    margin: 0 0 20px;
+    position: relative;
+}
+
+.contact-form .input-wrapper {
+    display: inline-block;
+}
+
+.contact-form .input-wrapper:nth-child(even) {
+    margin-left: 38px; /* would be 40, but lost 1px on each arrow margin */
+}
+
+.contact-form .send-wrapper {
+    height: 97px;
+}
+
+.contact-form .send {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    outline: 0;
+    background: url(../img/envelope.png) no-repeat 0 0;
+    width: 100px;
+    height: 97px;
+
+     -moz-transition: right 0.4s ease-in;
+       -o-transition: right 0.4s ease-in;
+  -webkit-transition: right 0.4s ease-in;
+      -ms-transition: right 0.4s ease-in;
+          transition: right 0.4s ease-in;
+}
+
+.contact-form .send:hover,
+.contact-form .send:focus {
+    background-position: 0 -102px;
+}
+
+.contact-form .send.closed {
+    background-position: 0 -214px;
+    margin-top: 40px;
+    height: 57px;
+}
+
+.contact-form .send.animate {
+    right: -3000px;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+    height: 38px;
+    font-weight: 400;
+    font-size: 22px;
+    border: 1px solid rgba(240, 240, 240, .2);
+    color: $white;
+    background-color: $orange;
+    box-shadow: 4px 4px 0 $lighter-gray;
+    text-shadow: 1px 1px 0 $dark-gray;
+}
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
+button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus {
+    border: 1px solid rgba(240, 240, 240, .8);
+    background-color: $white;
+    color: $orange;
+    text-shadow: 1px 1px 0 $lighter-gray;
+}
+
+button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
+    background-color: $orange;
+    color: $lighter-gray;
+    text-shadow: 0 1px 0 rgba(240, 240, 240, 0.7);
+    box-shadow: inset 0 0 7px rgba(0, 0, 0, .8), 4px 4px 0 $lighter-gray;
+}

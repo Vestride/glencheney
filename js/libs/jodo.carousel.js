@@ -10,7 +10,7 @@
 
 (function($, Modernizr, window, undefined) {
 
-    "use strict"; // jshint ;_;
+    'use strict'; // jshint ;_;
 
     var Carousel = function($el, opts) {
         $.extend(this, $.fn.carousel.defaults, opts, $.fn.carousel.settings);
