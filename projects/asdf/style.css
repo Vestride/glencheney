@@ -1,0 +1,279 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+COLORS:
+Tan: edecc2 (content background)
+Light Green: d9ff00 (highlighted menus)
+Olive: a7c400 (resting menus)
+Gray: 333333 (background, text)
+Blue: 75a4c7 (content background accents)
+
+FONTS:
+Porky's (main title)
+Century Gothic (sub title, menus, content)
+*/
+
+body {
+	margin: 0px auto;
+	background-color: #333333;
+	background-image: url(images/bg.gif);
+	font-family: "Century Gothic", "Arial Rounded", sans-serif;
+	color: #333333;
+}
+/*Contains the main portion of the page and centers it*/
+#container {
+	background-color: #edecc2;
+	width: 980px;
+	margin: 0px auto;
+	position: relative;
+	min-height: 400px;
+	clear: both;
+	border: none;
+}
+#breadcrumbs {
+	font-size:8pt;
+	padding-bottom:10px;
+}
+/*Title banner*/
+#banner {
+	height: 100px;
+	width: 980px;
+	margin: 0px auto;
+	border: none;
+}
+/*BEGIN GLOBAL NAV*/
+#globalnav-container {
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 970px;
+	z-index:5;
+	background-color:#a7c400;
+}
+#globalnav {
+	font-size: 16px;
+	width: 745px;
+	margin: 0px;
+	/* margin-right:15px;*/
+	float: right;
+	z-index:5;
+}
+#globalnav a {
+	text-align: center;
+	display: block;
+	white-space: nowrap;
+	margin: 0px;
+	padding: 2.5px;
+	z-index:5;
+}
+#globalnav a:link, #globalnav a:visited	/* menu at rest */ {
+	color: #333333;
+	/*background-color: #a7c400;*/
+	text-decoration: none;
+	z-index:5;
+}
+#globalnav ul a:hover			/* menu on mouse-over  */ {
+	/*background-image: url(images/buttonglobal.png);
+	background-position: center;
+	background-repeat: no-repeat;*/
+	text-decoration: none;
+	background-color: #75a4c7;
+	z-index:5;
+}
+
+#globalnav ul li a { /*Bolds global nav*/
+	font-weight:bold;
+	z-index:5;
+}
+#globalnav ul li ul li a { /*unbolds sub-global nav*/
+	font-weight:normal;
+	z-index:5;
+	font-size:8pt;
+}
+#globalnav ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	width: 19%;
+	z-index:5;
+}
+#globalnav li {
+	position: relative;
+	min-height: 1px;		/* Sophie Dennis contribution for IE7 */
+	vertical-align: bottom;		/* Sophie Dennis contribution for IE7 */
+	z-index:5;
+}
+#globalnav ul ul {
+	position: absolute;
+	z-index: 500;
+	top: auto;
+	display: none;
+	z-index:5;
+	width:100%;
+}
+#globalnav ul ul li a:link, #globalnav ul ul li a:visited {
+	background-color: #d9ff00;
+	top: 0px;
+	left: 100%;
+	border-bottom: 1px solid #fff;
+	z-index:5;
+	padding: 2.5px;
+}
+#globalnav ul ul li a:hover {
+	/*background-image: url(images/buttonglobal.png);
+	background-position: center;
+	background-repeat: no-repeat;*/
+	background-color: #75a4c7;
+	z-index:5;
+}
+#globalnav li:hover ul ul, div#globalnav li li:hover ul ul, div#globalnav li li li:hover ul ul, div#globalnav li li li li:hover ul ul {
+	display: none;
+	z-index:5;
+}
+#globalnav li:hover ul, div#globalnav li li:hover ul, div#globalnav li li li:hover ul, div#globalnav li li li li:hover ul {
+	display: block;
+	z-index:5;
+}
+/*END GLOBAL NAV*/
+
+/*BEGIN LOCAL NAV*/
+#navmenu-container {
+	position: relative;
+	width: 196px;
+	top: 10px;
+	left: 0px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	float: left;
+}
+#navmenu {
+	position: relative;
+	width: 100%;
+	height: auto;
+	color: #333333;
+	background-color: #a7c400;
+	padding: 25px 2.5px 10px 2.5px;
+	/*margin-bottom: 20px;*/
+}
+#navmenu ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#navmenu li a:link, #navmenu li a:visited {
+	color: #333333;
+	font-size: 90%;
+	display: block;
+	padding: .4em 0em .4em .5em;
+	background-color: #a7c400;
+	text-decoration: none;
+	border-bottom: 1px solid #a7c400;
+}
+#navmenu li a:hover {
+	/*background-image: url(images/buttonlocal.png);
+	background-position: center;
+	background-repeat: no-repeat;*/
+	background-color: #75a4c7;
+}
+#navmenu ul ul {
+	margin-left: 12px;
+}
+#navmenu ul ul li {
+	margin: 0px;
+}
+#navmenu ul ul a:link, #navmenu ul ul a:visited {
+	background-color: #d9ff00;
+}
+#navmenu ul ul a:hover {
+	/*background-image: url(images/buttonlocalsub.png);
+	background-position: center;
+	background-repeat: no-repeat;*/
+	background-color: #75a4c7;
+}
+.localnav_first{
+	text-align:center;
+	font-weight:bold;
+}
+
+
+/*END LOCAL NAV*/
+
+#content {
+	margin-top: 0px;
+	margin-right: 0px;
+	width: 760px;
+	float: right;
+}
+/*Bottom blue gradient*/
+/*#bottom {
+	margin: 0px auto;
+	position: relative;
+	bottom: 0px;
+	height: 20px;
+	width: 980px;
+	background-image: url(images/bottom.jpg);
+}*/
+/*BEGIN FOOTER*/
+#footer {
+	font-size: small;
+	width: 980px;
+	height: 40px;
+	margin: 0 auto;
+	text-align: center;
+	padding:0px;
+	background-image: url(images/bottom.png);
+}
+#footer a:link, #footer a:hover, #footer a:visited, #footer a:active {
+	color: #333333;
+	margin-top: 20px;
+}
+/*END FOOTER*/
+
+.shellwindow {
+	background:black;
+	color:white;
+	font-family:courier;
+	font-size:10pt;
+	border:5px solid #999;
+	width:500px;
+	margin: 0 auto;
+}
+#index_page_ul {
+	list-style-type:disc;
+}
+/* Quiz and Notes Styles */
+.save_button {
+	float:right;
+}
+
+.checkButton {
+	border:2px solid #a7c400;
+	font-size:8pt;
+	padding:1px 4px;
+	color:#333;
+	text-decoration:none;	
+}
+/*End Quiz and Notes Styles*/
+
+/*Tables*/
+table {
+	width: 700px;
+	background: #a7c400;
+}
+th {
+	background: #a7c400;
+	color: white;
+	padding: 7px;
+}
+td {
+	width:10em;
+	text-align:Center;
+	background: #edecc2;
+	padding: 7px;
+}
+tr {
+	height:2em;
+}
+

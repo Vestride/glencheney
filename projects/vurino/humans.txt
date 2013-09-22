@@ -1,0 +1,13 @@
+/* TEAM */
+  Developer: Glen Cheney
+  Site: http://glencheney.com
+  Twitter: @Vestride
+  
+  Designer & Developer: Matt Olpinski
+  Site: http://mattolpinksi.com
+  Twitter: @MattOlpinski
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery, jQueryUI
+  Software: Netbeans, Photoshop, Google Chrome Dev Tools

@@ -1,0 +1,14 @@
+.save_button, .ie7_move_up {
+	position:relative;
+	top:-40px;
+}
+
+#this_id_for_ie7 {
+	position:relative;
+	top:-20px;
+}
+
+.ie7_on_button_move {
+	position:relative;
+	top:-24px;
+}
