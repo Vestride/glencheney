@@ -1,42 +1,56 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Glen Cheney &ndash; Frontend Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 300;
+    }
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    .hello {
+      font-size: 1.5rem;
+    }
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    .container {
+      width: 93%;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+    }
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+    @media (min-width: 48rem) {
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+      .hello {
+        font-size: 2rem;
+      }
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
+      .copy {
+        max-width: 60%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main role="main" class="container">
+    <h1 class="hello">Hey I&rsquo;m Glen.</h1>
+    <div class="copy">
+      <p>I&rsquo;m a New Media Interactive Development graduate from <a href="http://www.rit.edu">RIT</a> and I work at <a href="http://nurun.com">Nurun</a> in San Francisco.</p>
+      <p>I&rsquo;m a developer with a passion for the frontend. I enjoy keeping up with new technologies and making the web awesome.</p>
+      <p>You can find me on <a href="https://github.com/Vestride">GitHub</a>, <a href="https://twitter.com/Vestride">Twitter</a>, and <a href="https://account.xbox.com/en-US/Profile?gamerTag=Vestride">Xbox</a> as Vestride.</p>
+    </div>
+  </main>
+
+  <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-24218764-1');ga('send','pageview');
+  </script>
+</body>
 </html>
