@@ -1,0 +1,10 @@
+.project {
+  display: block;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: inherit;
+}
+
+.inner {
+  padding: 10px;
+}

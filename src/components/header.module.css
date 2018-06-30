@@ -1,0 +1,115 @@
+.header {
+  background-color: #f5f5f5;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.link + .link {
+  margin-left: .5rem;
+}
+
+.link {
+  padding: 0.5rem 0;
+}
+
+.link:visited {
+  color: #3498db;
+}
+
+.link:hover {
+  color: #de3d81;
+}
+
+.link:hover .polygon {
+  fill: #de3d81;
+}
+
+.link:hover .polygon:nth-child(2) {
+  fill: #e5669b;
+}
+
+.link:hover .polygon:nth-child(3) {
+  fill: #952352;
+}
+
+.link:hover .polygon:nth-child(4) {
+  fill: #ab1755;
+}
+
+.link:hover .polygon:nth-child(5) {
+  fill: #c42165;
+}
+
+.link:hover .polygon:nth-child(6) {
+  fill: #e04887;
+}
+
+.link:hover .polygon:nth-child(7) {
+  fill: #d82570;
+}
+
+.link:hover .polygon:nth-child(8) {
+  fill: #dd3c7f;
+}
+
+.link:hover .polygon:nth-child(9) {
+  fill: #db2c76;
+}
+
+.link:hover .polygon:nth-child(10) {
+  fill: #c5306e;
+}
+
+.link:hover .polygon:nth-child(11) {
+  fill: #c62267;
+}
+
+.link .text,
+.link svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.link svg {
+  width: 24px;
+  height: 24px;
+}
+
+.link .text,
+.link .polygon {
+  transition: .1s ease-out;
+}
+
+@media (max-width: 767px) {
+  .small {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .link svg {
+    width:32px;
+    height: 32px;
+  }
+
+  .tiny {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .link svg {
+    width:48px;
+    height: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .link svg {
+    width:56px;
+    height: 56px;
+  }
+}

@@ -1,0 +1,9 @@
+.intro {
+  margin-top: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .intro {
+    margin-top: 40px;
+  }
+}
