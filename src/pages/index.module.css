@@ -1,9 +1,19 @@
-.intro {
+/* .intro,
+.outro {
   margin-top: 24px;
 }
 
+.outro {
+  padding-bottom: 24px;
+}
+
 @media screen and (min-width: 768px) {
-  .intro {
+  .intro,
+  .outro {
     margin-top: 40px;
   }
-}
+
+  .outro {
+    padding-bottom: 40px;
+  }
+} */

@@ -54,6 +54,14 @@
   grid-column-start: 1;
 }
 
+.col-start-2 {
+  grid-column-start: 2;
+}
+
+.col-start-3 {
+  grid-column-start: 3;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 86%;
@@ -110,6 +118,14 @@
 
   .col-start-1\@sm {
     grid-column-start: 1;
+  }
+
+  .col-start-2\@sm {
+    grid-column-start: 2;
+  }
+
+  .col-start-3\@sm {
+    grid-column-start: 3;
   }
 }
 
