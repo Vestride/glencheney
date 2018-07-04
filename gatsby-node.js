@@ -23,9 +23,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: {fields: [frontmatter___id], order: ASC}) {
           edges {
             node {
+              frontmatter {
+                title
+              }
               fields {
                 slug
               }
@@ -35,13 +38,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       }
     `
     ).then((result) => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const posts = result.data.allMarkdownRemark.edges;
+      posts.forEach(({ node }, index) => {
+        let nextProject = index === posts.length - 1 ? posts[0] : posts[index + 1];
         createPage({
           path: node.fields.slug,
           component: path.resolve('./src/templates/project.jsx'),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
+            nextProject: nextProject.node,
           },
         });
       });

@@ -1,16 +1,20 @@
 import React from 'react';
-
 import ProjectList from '../components/project-list';
 import styles from './index.module.css';
 
+import github from '../images/github.svg';
+import twitter from '../images/twitter.svg';
+import codepen from '../images/codepen.svg';
+import linkedin from '../images/linkedin.svg';
+
 const IndexPage = ({ data }) => (
-  <div className={styles.intro}>
+  <div>
     <div className="container">
       <div className="col-12">
-        <div className="spacer-large"></div>
-        <h1>Hey, I&rsquo;m Glen, a Frontend Engineer</h1>
+        <div className="spacer-btm-large"></div>
+        <h1 className="type-header-1">Hey, I&rsquo;m Glen, a Frontend Engineer</h1>
         <p className="marginless">I&rsquo;m passionate about performance and delightful interactions. I work at <a href="https://www.odopod.com">Odopod</a> in San Francisco.</p>
-        <div className="spacer-large"></div>
+        <div className="spacer-btm-large"></div>
         <h2>Projects</h2>
         <p>Take a look at some of the work I&rsquo;ve done.</p>
       </div>
@@ -25,11 +29,24 @@ const IndexPage = ({ data }) => (
       data.compdropImage.childImageSharp.sizes,
       data.cssnanoMinifierImage.childImageSharp.sizes,
     ]} />
-    <div className="spacer-large"></div>
+    <div className="spacer-btm-large"></div>
     <div className="container">
       <div className="col-12">
         <h2>Find me elsewhere</h2>
-        <p><a href="https://github.com/Vestride">GitHub</a> <a href="https://twitter.com/Vestride">Twitter</a> <a href="http://codepen.io/Vestride/">CodePen</a> <a href="https://account.xbox.com/en-US/Profile?gamerTag=Vestride">Xbox</a></p>
+        <p className={styles.socials}>
+          <a className={styles.social} title="GitHub" target="_blank" rel="noopener" href="https://github.com/Vestride">
+            <img src={github} alt="GitHub logo" />
+          </a>
+          <a className={styles.social} title="Twitter" target="_blank" rel="noopener" href="https://twitter.com/Vestride">
+            <img src={twitter} alt="Twitter logo" />
+          </a>
+          <a className={styles.social} title="CodePen" target="_blank" rel="noopener" href="http://codepen.io/Vestride/">
+            <img src={codepen} alt="CodePen logo" />
+          </a>
+          <a className={styles.social} title="LinkedIn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/glenium/">
+            <img src={linkedin} alt="LinkedIn logo" />
+          </a>
+        </p>
       </div>
     </div>
   </div>
@@ -107,12 +124,11 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "YYYY")
+            shortDescription
           }
           fields {
             slug
           }
-          excerpt
         }
       }
     }

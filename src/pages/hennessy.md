@@ -4,9 +4,12 @@ date: "2017-08-10"
 id: 1
 href: "https://www.hennessy.com/us/"
 imageDescription: "Screenshot of hennessy.com/us/ home page with Marshall Taylor riding a bicycle."
+shortDescription: "Mobile users dominate the US site for Hennessy."
 ---
 
-This is the US site for Hennessy cognac. Odopod has been Hennessy's digital partner since 2012 and it is one of the few sites Odopod has maintained over the years, allowing us to iterate and improve it over time.
+This is the US site for Hennessy cognac. Odopod has been Hennessy’s digital partner since 2012 and it is one of the few sites Odopod has maintained over the years, allowing us to iterate and improve it over time.
+
+More than 70% of traffic is from mobile devices, making performance and load times even more important.
 
 ## Modernizing the stack
 
@@ -28,7 +31,7 @@ During early 2017, I started work on modernizing the build system:
 I've worked quite a bit on Hennessy. Most of it is still there, but some of the experience pages are gone. Here are some things that are still live:
 
 * [Store Locator](https://www.hennessy.com/us/collection/master-blenders-selection-no-2/) - Using Google Maps and the addresses of locations which sell Hennessy, the user can find stores closest to them and all over the US. Click "Find a Store" to explore it. [permalink](https://www.hennessy.com/us/store-locator/#master-blenders-selection-no-2)
-* [X.O The Odyssey](https://www.hennessy.com/us/xo-the-odyssey/) - An experience page for one of Hennessy's marks. It uses CSS 3D transforms to rotate slices of an image, kind of like a Rubix Cube.
+* [X.O The Odyssey](https://www.hennessy.com/us/xo-the-odyssey/) - An experience page for one of Hennessy’s marks. It uses CSS 3D transforms to rotate slices of an image, kind of like a Rubix Cube.
 * [Modular Campaign](https://www.hennessy.com/us/collection/vs/?reveal) - This section of the campaign features some parallax scrolling and temporary fixed positioning. CMS users add a header and then as many chapters and sections within those chapters as they want and an optional footer.
 * [Hennessy Academy](https://www.hennessy.com/us/heritage/academy/) - The Hennessy Essentials quiz is a Preact app and the other quizzes reuse some of the Preact components from the Essentials quiz.
 * [Cocktail Quiz](https://www.hennessy.com/us/cocktail-quiz/) - The cocktail quiz touched many parts of Hennessy, including the user accounts and lead to some good refactoring of cocktail product tiles. The quiz is also built with Preact.

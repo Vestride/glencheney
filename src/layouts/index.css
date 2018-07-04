@@ -38,12 +38,16 @@ template {
   display: none;
 }
 a {
+  color: #3498db;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
+a:visited {
+  color: #3498db;
+}
 a:active,
 a:hover {
-  outline-width: 0;
+  color: #de3d81;
 }
 abbr[title] {
   border-bottom: none;
@@ -57,10 +61,6 @@ strong {
 }
 dfn {
   font-style: italic;
-}
-h1 {
-  font-size: 2em;
-  margin: .67em 0;
 }
 mark {
   background-color: #ff0;
@@ -219,19 +219,19 @@ h6 {
   line-height: 1.1;
 }
 ul {
-  margin-left: 1.45rem;
+  margin-left: 1.5rem;
   margin-right: 0;
   margin-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.5rem;
   padding: 0;
   list-style-position: outside;
   list-style-image: none;
 }
 ol {
-  margin-left: 1.45rem;
+  margin-left: 1.5rem;
   margin-right: 0;
   margin-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.5rem;
   padding: 0;
   list-style-position: outside;
   list-style-image: none;
@@ -241,46 +241,33 @@ dl {
 }
 p {
   margin-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.5rem;
 }
 figure {
   padding: 0;
 }
-pre {
-  margin-top: 0;
-  margin-bottom: 1.45rem;
-  padding: 0;
-  font-size: 0.85rem;
-  line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
-  overflow: auto;
-  word-wrap: normal;
-  padding: 1.45rem;
-}
 table {
   padding: 0;
   font-size: 1rem;
-  line-height: 1.45rem;
+  line-height: 1.5rem;
   border-collapse: collapse;
   width: 100%;
 }
 blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   margin-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.5rem;
   padding: 0;
 }
 hr {
-  margin-left: 0;
-  margin-right: 0;
   margin-top: 0;
   padding: 0;
-  margin-bottom: calc(1.45rem - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
+  margin-bottom: calc(1.5rem - 1px);
+  background: hsl(0, 0%, 62%);
   border: none;
   height: 1px;
+  width: 100%;
 }
 b {
   font-weight: bold;
@@ -295,7 +282,7 @@ th {
   font-weight: bold;
 }
 li {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: calc(1.5rem / 2);
 }
 ol li {
   padding-left: 0;
@@ -304,14 +291,14 @@ ul li {
   padding-left: 0;
 }
 li > ol {
-  margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  margin-left: 1.5rem;
+  margin-bottom: calc(1.5rem / 2);
+  margin-top: calc(1.5rem / 2);
 }
 li > ul {
-  margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  margin-left: 1.5rem;
+  margin-bottom: calc(1.5rem / 2);
+  margin-top: calc(1.5rem / 2);
 }
 blockquote *:last-child {
   margin-bottom: 0;
@@ -323,19 +310,16 @@ p *:last-child {
   margin-bottom: 0;
 }
 li > p {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: calc(1.5rem / 2);
 }
 code {
   font-size: 0.85rem;
-  line-height: 1.45rem;
 }
 kbd {
   font-size: 0.85rem;
-  line-height: 1.45rem;
 }
 samp {
   font-size: 0.85rem;
-  line-height: 1.45rem;
 }
 abbr {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
@@ -374,32 +358,19 @@ th:last-child,
 td:last-child {
   padding-right: 0;
 }
-tt,
 code {
-  background-color: hsla(0, 0%, 0%, 0.04);
+  margin: 0;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
+  background-color: rgba(27,31,35,0.05);
   border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
 }
 pre code {
   background: none;
-  line-height: 1.42;
-}
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: " ";
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: "";
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: inherit;
 }
 @media only screen and (max-width: 480px) {
   html {
@@ -408,8 +379,25 @@ pre tt:after {
 }
 
 .marginless { margin: 0 !important; }
-.spacer-large { padding-bottom: 48px; }
+.spacer-btm-large { padding-bottom: 48px; }
 
 @media screen and (min-width: 1024px) {
-  .spacer-large { padding-bottom: 64px; }
+  .spacer-btm-large { padding-bottom: 64px; }
+}
+
+.type-header-1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.type-label {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 62%);
+}
+
+.gatsby-highlight {
+  margin-bottom: 1.5rem;
 }

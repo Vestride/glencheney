@@ -1,19 +1,20 @@
-/* .intro,
-.outro {
-  margin-top: 24px;
+.socials {
+  display: flex;
+  align-items: center;
 }
 
-.outro {
-  padding-bottom: 24px;
+.social {
+  width: 60px;
+  height: 60px;
+}
+
+.social + .social {
+  margin-left: 16px;
 }
 
 @media screen and (min-width: 768px) {
-  .intro,
-  .outro {
-    margin-top: 40px;
+  .social {
+    width: 80px;
+    height: 80px;
   }
-
-  .outro {
-    padding-bottom: 40px;
-  }
-} */
+}

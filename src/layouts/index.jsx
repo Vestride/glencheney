@@ -6,6 +6,7 @@ import { initialize, pageview } from 'react-ga';
 import Header from '../components/header';
 import './index.css';
 import './grid.css';
+import './prism-theme.css';
 
 class Layout extends Component {
   componentDidMount() {

@@ -12,7 +12,7 @@ const ProjectList = ({ projects, images }) => (
         <Img outerWrapperClassName={styles['image-outer-wrapper']} className={styles['image-wrapper']} sizes={Object.assign(images[i], { sizes: '(min-width: 768px) calc((86vw - 32px) / 3), 90vw' })} />
         <div className={styles.inner}>
           <h3 className={styles.title}>{node.frontmatter.title}</h3>
-          <p className="marginless">{node.excerpt}</p>
+          <p className="marginless">{node.frontmatter.shortDescription}</p>
         </div>
       </Link>
     ))}
