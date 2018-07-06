@@ -39,7 +39,7 @@ export default ({ data, pathContext }) => {
 };
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!) {
+  query BlogPostQuery($slug: String!, $heroImage: String!) {
     site {
       siteMetadata {
         title
@@ -52,7 +52,7 @@ export const query = graphql`
         imageDescription
       }
     }
-    hero: imageSharp(id: { regex: $slug }) {
+    hero: imageSharp(id: { regex: $heroImage }) {
       sizes(maxWidth: 2560) {
         ...GatsbyImageSharpSizes_withWebp
       }

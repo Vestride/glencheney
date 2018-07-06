@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 const path = require('path');
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
@@ -47,6 +47,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
+            heroImage: `/images/${node.fields.slug.replace(/\//g, '')}.png/`,
             nextProject: nextProject.node,
           },
         });
