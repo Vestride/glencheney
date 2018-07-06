@@ -21,6 +21,12 @@ Along the way, it has also been used in multiple Odopod projects.
 
 Shuffle and its docs site has been a great outlet for me to try new web features and build tools, like Rollup and Gulp, before using them in client projects.
 
+<!-- markdownlint-disable MD033 -->
+<video muted playsinline controls loop poster="/shuffle-poster.png">
+  <source src="shuffle.webm" type="video/webm; codecs=vp9,vorbis">
+  <source src="shuffle.mp4" type="video/mp4">
+</video>
+
 ## Community
 
 GitHub users have opened more than 150 issues with a wide variety of questions, feature requests, and bugs.

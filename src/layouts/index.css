@@ -247,10 +247,10 @@ figure {
   padding: 0;
 }
 table {
-  padding: 0;
   font-size: 1rem;
   line-height: 1.5rem;
   border-collapse: collapse;
+  table-layout: fixed;
   width: 100%;
 }
 blockquote {

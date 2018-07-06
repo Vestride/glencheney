@@ -5,7 +5,12 @@
 }
 
 .markdown video {
-  max-width: 100%;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.markdown table {
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 1200px) {

@@ -30,8 +30,48 @@ During early 2017, I started work on modernizing the build system:
 
 I've worked quite a bit on Hennessy. Most of it is still there, but some of the experience pages are gone. Here are some things that are still live:
 
-* [Store Locator](https://www.hennessy.com/us/collection/master-blenders-selection-no-2/) - Using Google Maps and the addresses of locations which sell Hennessy, the user can find stores closest to them and all over the US. Click "Find a Store" to explore it. [permalink](https://www.hennessy.com/us/store-locator/#master-blenders-selection-no-2)
-* [X.O The Odyssey](https://www.hennessy.com/us/xo-the-odyssey/) - An experience page for one of Hennessy’s marks. It uses CSS 3D transforms to rotate slices of an image, kind of like a Rubix Cube.
-* [Modular Campaign](https://www.hennessy.com/us/collection/vs/?reveal) - This section of the campaign features some parallax scrolling and temporary fixed positioning. CMS users add a header and then as many chapters and sections within those chapters as they want and an optional footer.
-* [Hennessy Academy](https://www.hennessy.com/us/heritage/academy/) - The Hennessy Essentials quiz is a Preact app and the other quizzes reuse some of the Preact components from the Essentials quiz.
-* [Cocktail Quiz](https://www.hennessy.com/us/cocktail-quiz/) - The cocktail quiz touched many parts of Hennessy, including the user accounts and lead to some good refactoring of cocktail product tiles. The quiz is also built with Preact.
+### [Store Locator](https://www.hennessy.com/us/collection/master-blenders-selection-no-2/)
+
+Using Google Maps and the addresses of locations which sell Hennessy, the user can find stores closest to them and all over the US. Click "Find a Store" to explore it. [permalink](https://www.hennessy.com/us/store-locator/#master-blenders-selection-no-2)
+
+<!-- markdownlint-disable MD033 -->
+<video muted playsinline controls loop poster="/hennessy-store-locator-poster.png">
+  <source src="hennessy-store-locator.webm" type="video/webm; codecs=vp9,vorbis">
+  <source src="hennessy-store-locator.mp4" type="video/mp4">
+</video>
+
+### [X.O The Odyssey](https://www.hennessy.com/us/xo-the-odyssey/)
+
+A scroll-jacked experience page for one of Hennessy’s marks. It uses CSS 3D transforms to rotate slices of an image, kind of like a Rubix Cube.
+
+<video muted playsinline controls loop poster="/the-odyssey-poster.png">
+  <source src="the-odyssey.webm" type="video/webm; codecs=vp9,vorbis">
+  <source src="the-odyssey.mp4" type="video/mp4">
+</video>
+
+### [Modular Campaign](https://www.hennessy.com/us/collection/vs/?reveal)
+
+This section of the campaign features some parallax scrolling and temporary fixed positioning. CMS users add a header and then as many chapters and sections within those chapters as they want and an optional footer.
+
+<video muted playsinline controls loop poster="/hennessy-modular-campaign-poster.png">
+  <source src="hennessy-modular-campaign.webm" type="video/webm; codecs=vp9,vorbis">
+  <source src="hennessy-modular-campaign.mp4" type="video/mp4">
+</video>
+
+### [Hennessy Academy](https://www.hennessy.com/us/heritage/academy/)
+
+The Hennessy Essentials quiz is a Preact app and the other quizzes reuse some of the Preact components from the Essentials quiz.
+
+<video muted playsinline controls loop poster="/heritage-culture-poster.png">
+  <source src="heritage-culture.webm" type="video/webm; codecs=vp9,vorbis">
+  <source src="heritage-culture.mp4" type="video/mp4">
+</video>
+
+### [Cocktail Quiz](https://www.hennessy.com/us/cocktail-quiz/)
+
+The cocktail quiz touched many parts of Hennessy, including the user accounts and lead to some good refactoring of cocktail product tiles. The quiz is also built with Preact.
+
+<video muted playsinline controls loop poster="/hennessy-cocktail-quiz-poster.png">
+  <source src="hennessy-cocktail-quiz.webm" type="video/webm; codecs=vp9,vorbis">
+  <source src="hennessy-cocktail-quiz.mp4" type="video/mp4">
+</video>

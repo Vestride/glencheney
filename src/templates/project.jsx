@@ -1,6 +1,7 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import Img from 'gatsby-image';
+import Helmet from 'react-helmet';
 
 import styles from './project.module.css';
 
@@ -8,6 +9,9 @@ export default ({ data, pathContext }) => {
   const post = data.markdownRemark;
   return (
     <div>
+      <Helmet>
+        <title>{`${data.site.siteMetadata.title} · ${post.frontmatter.title}`}</title>
+      </Helmet>
       <article className="spacer-btm-large">
         <div className={styles.hero}>
           <Img alt={post.frontmatter.imageDescription} sizes={data.hero.sizes} />
@@ -36,6 +40,11 @@ export default ({ data, pathContext }) => {
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

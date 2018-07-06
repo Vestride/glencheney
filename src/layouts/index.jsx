@@ -18,12 +18,9 @@ class Layout extends Component {
     const { children, data } = this.props;
     return (
       <div>
-        <Helmet title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        />
+        <Helmet>
+          <title>{data.site.siteMetadata.title}</title>
+        </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main id="main" role="main">
           {children()}
