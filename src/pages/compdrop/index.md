@@ -29,6 +29,12 @@ After soliciting feedback from the designers and watching how they used the old 
 * New keyboard shortcuts.
 * Added support for "collections". Designers used to open multiple tabs of cmpdrp, one for each person to show their work. Now they can drop multiple directories in, each one creates a collection.
 
+<!-- markdownlint-disable MD033 -->
+<video muted playsinline controls loop poster="/compdrop-poster.png">
+  <source src="compdrop.webm" type="video/webm; codecs=vp9,vorbis">
+  <source src="compdrop.mp4" type="video/mp4">
+</video>
+
 ## Thoughts on Vue
 
 Vue was nice to use, but it feels a little too "automagic" for my liking. Using the [`vue-class-component`](https://github.com/vuejs/vue-class-component) decorator was also enjoyable because I was accustomed to components in React. Vuex, the state management library for Vue, was very nice to use and easier for me to grok than Redux.
