@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 import styles from './project-list.module.css';
 
 const ProjectList = ({ projects, images }) => (
-  <div className="container">
+  <div className="container spacer-btm-large">
     {projects.map(({ node }, i) => (
       <Link className={styles.project + ' col-12 col-4@sm'} to={node.fields.slug} key={node.id}>
         <Img outerWrapperClassName={styles['image-outer-wrapper']} className={styles['image-wrapper']} sizes={Object.assign(images[i], { sizes: '(min-width: 768px) calc((86vw - 32px) / 3), 90vw' })} />

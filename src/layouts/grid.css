@@ -11,6 +11,7 @@
 .col-1\@sm, .col-2\@sm, .col-3\@sm, .col-4\@sm, .col-5\@sm, .col-6\@sm, .col-7\@sm, .col-8\@sm, .col-9\@sm, .col-10\@sm, .col-11\@sm, .col-12\@sm {
   display: grid;
   grid-column: 1 / -1;
+  align-content: start;
 }
 
 .col-1 {
@@ -64,6 +65,10 @@
 
 .col-start-4 {
   grid-column-start: 4;
+}
+
+.col-start-5 {
+  grid-column-start: 5;
 }
 
 @media screen and (min-width: 768px) {
@@ -134,6 +139,10 @@
 
   .col-start-4\@sm {
     grid-column-start: 4;
+  }
+
+  .col-start-5\@sm {
+    grid-column-start: 5;
   }
 }
 

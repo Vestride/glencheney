@@ -17,16 +17,18 @@ export default ({ data, pathContext }) => {
           <Img alt={post.frontmatter.imageDescription} sizes={data.hero.sizes} />
         </div>
         <div className="spacer-btm-large"></div>
-        <div className="container">
+        <div className={`container ${styles.tombstone}`}>
           <div className="col-3@sm">
-            <div className="no-min-width">
-              <p className="type-label">URL</p>
-              <p>
-                <a target="_blank" rel="noopener" className={styles['text-overflow']} href={post.frontmatter.href}>{post.frontmatter.href}</a>
-              </p>
-              <p className="type-label">Tags</p>
-              <p>{post.frontmatter.tags.join(', ')}</p>
-            </div>
+            <p className="type-label">URL</p>
+            <p>
+              <a target="_blank" rel="noopener" className={styles['text-overflow']} href={post.frontmatter.href}>{post.frontmatter.href}</a>
+            </p>
+            <p className="type-label">Tags</p>
+            <p className={styles.tags}>
+              {post.frontmatter.tags.map((tag) => (
+                <span key={tag} className={styles.tag}>{tag}</span>
+              ))}
+            </p>
           </div>
           <div className="col-8@sm col-start-4@sm">
             <h1 className="type-header-1">{post.frontmatter.title}</h1>

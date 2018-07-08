@@ -1,16 +1,11 @@
 import React from 'react';
 import ProjectList from '../components/project-list';
-import styles from './index.module.css';
-
-import github from '../images/github.svg';
-import twitter from '../images/twitter.svg';
-import codepen from '../images/codepen.svg';
-import linkedin from '../images/linkedin.svg';
+import About from '../components/about';
 
 const IndexPage = ({ data }) => (
   <div>
     <div className="container">
-      <div className="col-12">
+      <div className="col-12 col-10@sm">
         <div className="spacer-btm-large"></div>
         <h1 className="type-header-1">Hey, I&rsquo;m Glen, a Frontend Engineer</h1>
         <p className="marginless">I&rsquo;m passionate about performance and delightful interactions. I work at <a href="https://www.odopod.com">Odopod</a> in San Francisco.</p>
@@ -29,26 +24,7 @@ const IndexPage = ({ data }) => (
       data.compdropImage.childImageSharp.sizes,
       data.cssnanoMinifierImage.childImageSharp.sizes,
     ]} />
-    <div className="spacer-btm-large"></div>
-    <div className="container spacer-btm-large">
-      <div className="col-12">
-        <h2>Find me elsewhere</h2>
-        <p className={styles.socials}>
-          <a className={styles.social} title="GitHub" target="_blank" rel="noopener" href="https://github.com/Vestride">
-            <img src={github} alt="GitHub logo" />
-          </a>
-          <a className={styles.social} title="Twitter" target="_blank" rel="noopener" href="https://twitter.com/Vestride">
-            <img src={twitter} alt="Twitter logo" />
-          </a>
-          <a className={styles.social} title="CodePen" target="_blank" rel="noopener" href="http://codepen.io/Vestride/">
-            <img src={codepen} alt="CodePen logo" />
-          </a>
-          <a className={styles.social} title="LinkedIn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/glenium/">
-            <img src={linkedin} alt="LinkedIn logo" />
-          </a>
-        </p>
-      </div>
-    </div>
+    <About profilePhoto={data.profilePhoto.childImageSharp.sizes} />
   </div>
 );
 
@@ -113,6 +89,13 @@ export const query = graphql`
     weDotOdopodImage: file(relativePath: { eq: "images/we-dot-odopod.png" }) {
       childImageSharp {
         sizes(maxWidth: 664) {
+          ...GatsbyImageSharpSizes_withWebp
+        }
+      }
+    }
+    profilePhoto: file(relativePath: { eq: "images/odoshoot.jpg" }) {
+      childImageSharp {
+        sizes(maxWidth: 304) {
           ...GatsbyImageSharpSizes_withWebp
         }
       }

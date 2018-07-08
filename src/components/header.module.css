@@ -1,18 +1,17 @@
 .header {
+  border-top: 4px solid #3498db;
   background-color: #f5f5f5;
 }
 
 .nav {
   display: flex;
   align-items: center;
-}
-
-.link + .link {
-  margin-left: .5rem;
+  justify-content: space-between;
 }
 
 .link {
   padding: 0.5rem 0;
+  text-decoration: none;
 }
 
 .link:visited {

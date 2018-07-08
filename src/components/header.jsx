@@ -27,6 +27,7 @@ const Header = ({ siteTitle }) => (
           </svg>
           <span className={styles.text}>{siteTitle}</span>
         </Link>
+        <Link className={styles.link} to="/#about">About</Link>
       </nav>
     </div>
   </header>

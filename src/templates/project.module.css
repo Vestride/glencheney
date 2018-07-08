@@ -1,3 +1,11 @@
+.tombstone {
+  position: relative;
+  z-index: 1;
+  /* padding-top: 36px; */
+  /* margin-top: -64px; */
+  /* background-color: white; */
+}
+
 /* https://stackoverflow.com/a/43312314/373422 */
 
 .markdown video {
@@ -14,6 +22,31 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.hero {
+  position: relative;
+  z-index: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 4px 8px;
+  white-space: nowrap;
+  background-color: hsl(204, 70%, 95%);
+  color: hsl(204, 49%, 30%);
+  border-radius: 10px;
+  font-size: 80%;
+}
+
+.tag.tag {
+  margin-top: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
 }
 
 @media screen and (min-width: 1200px) {

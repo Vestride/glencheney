@@ -4,8 +4,8 @@
 }
 
 .social {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
 }
 
 .social + .social {
@@ -14,7 +14,7 @@
 
 @media screen and (min-width: 768px) {
   .social {
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
   }
 }
