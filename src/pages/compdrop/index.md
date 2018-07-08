@@ -3,7 +3,13 @@ title: "Compdrop"
 date: "2017-09-01"
 id: 7
 href: "https://compdrop.io/"
-imageDescription: ""
+tags:
+  - open source
+  - drag-n-drop
+  - TypeScript
+  - Vue
+  - PWA
+imageDescription: "Screenshot of the compdrop app without any files added yet."
 shortDescription: "Compdrop is a drag and drop web app to view website designs in the browser."
 ---
 

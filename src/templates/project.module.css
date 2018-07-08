@@ -1,8 +1,4 @@
 /* https://stackoverflow.com/a/43312314/373422 */
-.markdown {
-  min-width: 0;
-  min-height: 0;
-}
 
 .markdown video {
   width: 100%;
@@ -11,6 +7,13 @@
 
 .markdown table {
   margin-bottom: 1.5rem;
+}
+
+.text-overflow {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (min-width: 1200px) {

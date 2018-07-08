@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => (
       data.cssnanoMinifierImage.childImageSharp.sizes,
     ]} />
     <div className="spacer-btm-large"></div>
-    <div className="container">
+    <div className="container spacer-btm-large">
       <div className="col-12">
         <h2>Find me elsewhere</h2>
         <p className={styles.socials}>

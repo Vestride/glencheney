@@ -3,7 +3,10 @@ title: "Odopod Code Library"
 date: "2017-10-01"
 id: 2
 href: "https://code.odopod.com/"
-imageDescription: ""
+tags:
+  - open source
+  - components
+imageDescription: "Screenshot of the odopod code library directory page."
 shortDescription: "A collection of vanilla JavaScript components used in Odopod web projects."
 ---
 

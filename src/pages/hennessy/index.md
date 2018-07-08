@@ -3,6 +3,11 @@ title: "hennessy.com"
 date: "2017-08-10"
 id: 1
 href: "https://www.hennessy.com/us/"
+tags:
+  - build systems
+  - maintenance
+  - Preact
+  - parallax scrolling
 imageDescription: "Screenshot of hennessy.com/us/ home page with Marshall Taylor riding a bicycle."
 shortDescription: "Mobile users dominate the US site for Hennessy."
 ---

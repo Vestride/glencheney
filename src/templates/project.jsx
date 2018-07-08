@@ -18,9 +18,19 @@ export default ({ data, pathContext }) => {
         </div>
         <div className="spacer-btm-large"></div>
         <div className="container">
-          <div className="col-8@sm col-start-3@sm">
+          <div className="col-3@sm">
+            <div className="no-min-width">
+              <p className="type-label">URL</p>
+              <p>
+                <a target="_blank" rel="noopener" className={styles['text-overflow']} href={post.frontmatter.href}>{post.frontmatter.href}</a>
+              </p>
+              <p className="type-label">Tags</p>
+              <p>{post.frontmatter.tags.join(', ')}</p>
+            </div>
+          </div>
+          <div className="col-8@sm col-start-4@sm">
             <h1 className="type-header-1">{post.frontmatter.title}</h1>
-            <div className={styles.markdown} dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className={`${styles.markdown} no-min-width`} dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
         </div>
       </article>
@@ -50,6 +60,8 @@ export const query = graphql`
       frontmatter {
         title
         imageDescription
+        href
+        tags
       }
     }
     hero: imageSharp(id: { regex: $heroImage }) {

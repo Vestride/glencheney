@@ -3,6 +3,10 @@ title: "Audemars Piguet"
 date: "2017-05-01"
 id: 6
 href: "https://www.audemarspiguet.com/en/"
+tags:
+  - build systems
+  - maintenance
+  - configurator
 imageDescription: "Screenshot of the extended watch browser for Audemars Piguet showing filters and watches."
 shortDescription: "Audemars Piguet is a luxury watch maker located in Switzerland."
 ---

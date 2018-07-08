@@ -380,6 +380,7 @@ pre code {
 
 .marginless { margin: 0 !important; }
 .spacer-btm-large { padding-bottom: 48px; }
+.no-min-width { min-width: 0; }
 
 @media screen and (min-width: 1024px) {
   .spacer-btm-large { padding-bottom: 64px; }
@@ -387,7 +388,7 @@ pre code {
 
 .type-header-1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin-bottom: 0.67em;
 }
 
 .type-label {
