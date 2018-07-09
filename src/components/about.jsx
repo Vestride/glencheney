@@ -27,6 +27,8 @@ const About = ({ profilePhoto }) => {
         <div className="col-12 col-8@sm col-start-2@sm">
           <h2>Looking for my resume?</h2>
           <p>Here you go: <a href={resumeHref}>resume.pdf</a></p>
+          <h2>Looking for my development blog?</h2>
+          <p>It's at <a href="https://glen.codes">https://glen.codes</a>. Yeah I should really add more posts 🤔.</p>
           <SocialLinks />
           <h2>About this site</h2>
           <p className="marginless"><a href="https://github.com/Vestride/glencheney">This site</a> is built on <a target="_blank" rel="noopener" href="https://www.gatsbyjs.org/">Gatsby</a>, a static site generator for React. Components are written in React with GraphQL and project pages are written in markdown. Gatsby takes care of development environment, bundling, code-splitting, and more. I use some Gatsby plugins for images, markdown, and code syntax highlighting.</p>
