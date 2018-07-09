@@ -1,26 +1,21 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# Hey it's the work I've done.
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+> My portfolio of work.
 
-## Install
+This is a [Gatsby](https://www.gatsbyjs.org/) site. Gatsby is a static site generator for React. Components are written in React with GraphQL and project pages are written in markdown. Gatsby takes care of development environment, bundling, code-splitting, and more. I use some Gatsby plugins for images, markdown, and code syntax highlighting.
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
+## Running locally
+
+Install the Gatsby CLI
+
+```shell
 npm install --global gatsby-cli
 ```
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
+Then run the `develop` command.
 
-Then you can run it by:
-```sh
-cd gatsby-example-site
+```shell
 gatsby develop
 ```
 
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Now visit [`localhost:8000`](http://localhost:8000) to see the site.
