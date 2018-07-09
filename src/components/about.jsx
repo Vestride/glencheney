@@ -16,7 +16,7 @@ const About = ({ profilePhoto }) => {
       <div className={`container ${styles.intro}`}>
         <div className="col-6@sm col-start-5@sm">
           <h2 className="type-header-1">About me</h2>
-          <p>I have over 8 years of experience building frontend websites and applications. I&rsquo;m Passionate about performance and delightful interactions. I am a self-motivated developer with strong organizational and communication skills. I also contribute to my open source projects and others&rsquo;.</p>
+          <p>With over 8 years of experience building frontend websites and applications, I&rsquo;m passionate about performance and delightful interactions. I am a self-motivated developer with strong organizational and communication skills. I also contribute to my open source projects and others&rsquo;.</p>
           <p className="marginless">I enjoy working with people who care about the work they do and for the people who use it.</p>
         </div>
         <div className={`col-3@sm col-start-2@sm ${styles['photo-column']}`}>

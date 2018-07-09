@@ -18,9 +18,9 @@ More than 70% of traffic is from mobile devices, making performance and load tim
 
 ## Modernizing the stack
 
-The site is built with Django and the frontend was originally created by another vendor. Unfortunately, the frontend was built for a micro site and as more features and sections were added, it had trouble scaling. One main JS file used to import all the JavaScript for other pages using RequireJS and conditionally initialize it. Dependencies were hard to keep track of, there was a single massive JavaScript bundle sent to the client, and our Ruby Sass with Compass was a mess.
+The site is built with Django and the frontend was originally created by another vendor. Unfortunately, the frontend was built for a micro site and as more features and sections were added, it had trouble scaling. One main JS file used to import all the JavaScript for other pages using RequireJS and conditionally initialize it. Dependencies were hard to keep track of, there was a single massive JavaScript bundle sent to the client, and Compass was deeply entangled in the Ruby Sass code.
 
-In 2016, Hennessy got a design "revamp" and we started to move away from RequireJS with a small webpack build and ES6. We still had a single bundle and many scripts with RequireJS' `define` pattern, but we started to manage our dependencies with npm. We also started writing our CSS with SCSS instead of Sass.
+In 2016, Hennessy went through a design "revamp" and we started to move away from RequireJS with a small webpack build and ES6. We still had a single bundle and many scripts with RequireJS' `define` pattern, but we started to manage our dependencies with npm. We also started writing our CSS with SCSS instead of Sass.
 
 During early 2017, I started work on modernizing the build system:
 
@@ -65,7 +65,7 @@ This section of the campaign features some parallax scrolling and temporary fixe
 
 ### [Hennessy Academy](https://www.hennessy.com/us/heritage/academy/)
 
-The Hennessy Essentials quiz is a Preact app and the other quizzes reuse some of the Preact components from the Essentials quiz.
+The Hennessy Essentials quiz is a Preact app and the other quizzes reuse some of the Preact components from the Essentials quiz. As simple as it is, I really like the Preact component I made for the sticky navigation which animates the titles as the user scrolls through sections of the page.
 
 <video muted playsinline controls loop poster="/heritage-culture-poster.png">
   <source src="heritage-culture.webm" type="video/webm; codecs=vp9,vorbis">

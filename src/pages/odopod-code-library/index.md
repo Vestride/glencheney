@@ -14,9 +14,9 @@ A collection of vanilla JavaScript components used in Odopod web projects.
 
 ## 🐤 Beginnings
 
-When I joined Odopod in 2012, there was a small set of jQuery plugins that were ported from project to project. Files were named with a version number at the end and if we remembered, that version number was updated when changes were made to it.
+When I joined Odopod in 2012, there was a small set of jQuery plugins that were ported from project to project. Files were named with a version number at the end and, if we remembered, we updated the version number when changes were made to it.
 
-This, however, was difficult to maintain and determine what the latest version of the plugin was.
+This, however, was difficult to maintain and to determine what the latest version of the plugin was.
 
 In 2013 and 2014, Odopod worked on two large projects: sony.com and store.google.com. Near the end of 2014 myself and a Senior Developer made a push to create an internal library of JavaScript components to keep track of all the great work we had done and improve it over time with the goal of eventually open-sourcing it.
 
@@ -46,7 +46,11 @@ The technology group at Odopod tried our best to come up with a great name which
 
 ## 📦 GitHub and npm
 
-I [moved the repository to GitHub](https://github.com/odopod/code-library/) as one large repository. We use [Lerna](https://github.com/lerna/lerna) to manage and publish all 31 odo packages to npm, which is much better than managing 30+ different repositories which all share dependencies.
+I [moved the repository to GitHub](https://github.com/odopod/code-library/) as _monorepo_. We use [Lerna](https://github.com/lerna/lerna) to manage and publish all 31 odo packages to npm, which is much better than managing 30+ different repositories which all share dependencies.
+
+## 📝 Documentation
+
+One of the most important parts of any library is its documentation. Every Odo component has a documentation + demos page to go with it, showing off what it can do and its public APIs. Almost half of the components also have TypeScript definitions with an `index.d.ts` file, giving developers who use [VS Code](https://code.visualstudio.com/) useful autocompletion and docs.
 
 ## 🔬 Behind the scenes
 

@@ -33,7 +33,7 @@ After soliciting feedback from the designers and watching how they used the old 
 * Retina image scaling for designs done at 2x size.
 * Added a mode which allowed images to be scrolled.
 * New keyboard shortcuts.
-* Added support for "collections". Designers used to open multiple tabs of cmpdrp, one for each person to show their work. Now they can drop multiple directories in, each one creates a collection.
+* Added support for "collections". Designers used to open multiple tabs of cmpdrp, one for each person to show their work. Now when they drop multiple directories in, Compdrop creates a collection for each one.
 
 <!-- markdownlint-disable MD033 -->
 <video muted playsinline controls loop poster="/compdrop-poster.png">

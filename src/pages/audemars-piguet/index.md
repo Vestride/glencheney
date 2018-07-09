@@ -27,7 +27,7 @@ AP went from a project which Odopod developers were apprehensive to work on to o
 
 ## Strap browser
 
-Some AP watches come with a range of case and strap options to choose from. For the Millenary collection, I created case and strap browser that allowed users to preview what their case would look like with different straps to find the best combination that matches their style.
+Some AP watches come with a range of case and strap options to choose from. For the Millenary collection, I created a case and strap browser that allowed users to preview what their case would look like with different straps to find the best combination that matches their style.
 
 <!-- markdownlint-disable MD033 -->
 <video muted playsinline controls loop poster="/strap-browser-poster.png">

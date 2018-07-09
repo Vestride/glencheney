@@ -14,7 +14,7 @@ A company directory app built with React + Redux for Odopod showing employee inf
 
 ## Where does Tim sit?
 
-The directory helped Odopod employees find where their coworkers sit with the seating map and gave profile pages to each person. Odopeeps could could add their contact information like AIM screen names (in a time before Slack 😱), Twitter, and Instagram.
+The directory helped Odopod employees find where their coworkers sit with the seating map and gave profile pages to each person. Odopeeps could add their contact information like AIM screen names (in a time before Slack 😱), Twitter, and Instagram.
 
 The we.odopod directory was one of the first projects I worked on in 2012 at Odopod. At that time, we built it on top of Twitter Bootstrap, it used [jQuery Pjax](https://github.com/defunkt/jquery-pjax) for partial page loads, and used Django for a backend and CMS. I built the original seating map with custom zooming (CSS transforms), panning, and hotspots.
 

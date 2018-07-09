@@ -42,7 +42,7 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
 
 ### Runtime caching
 
-Workbox also lets you set up runtime caching which only saves responses once the browser has requested it once. This was useful for caching fonts because odopod.com serves a web font with the `.woff2` file type and a fallback `.woff` file. Only one of these font files should be cached; saving both is a waste of data. To accomplish this, we register a route looking for font files, then tell Workbox to use the cached version of the file when the browser wants it. If Workbox doesn’t have the file yet, it will fetch the font like normal and then store it.
+Workbox also lets you set up runtime caching which only saves responses once the browser has requested it. This was useful for caching fonts because odopod.com serves a web font with the `.woff2` file type and a fallback `.woff` file. Only one of these font files should be cached; saving both is a waste of data. To accomplish this, we register a route looking for font files, then tell Workbox to use the cached version of the file when the browser wants it. If Workbox doesn’t have the file yet, it will fetch the font like normal and then store it.
 
 ```js
 workbox.routing.registerRoute(

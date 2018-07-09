@@ -37,4 +37,4 @@ GitHub users have opened more than 150 issues with a wide variety of questions, 
 
 ## Current status
 
-I actively maintain the package and occasionally contribute new features, documentation, and demos. npm users download the `shufflejs` package thousands of times per month.
+I actively maintain the package and occasionally contribute new features, documentation, and demos. npm users download the [`shufflejs`](https://www.npmjs.com/package/shufflejs) package thousands of times per month.
