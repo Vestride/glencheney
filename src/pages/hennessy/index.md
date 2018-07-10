@@ -37,7 +37,7 @@ I've worked quite a bit on Hennessy. Most of it is still there, but some of the 
 
 ### [Store Locator](https://www.hennessy.com/us/collection/master-blenders-selection-no-2/)
 
-Using Google Maps and the addresses of locations which sell Hennessy, the user can find stores closest to them and all over the US. Click "Find a Store" to explore it. [permalink](https://www.hennessy.com/us/store-locator/#master-blenders-selection-no-2)
+Using Google Maps and the addresses of locations which sell Hennessy, the user can find stores closest to them and all over the US. Click "Find a Store" to explore it.
 
 <!-- markdownlint-disable MD033 -->
 <video muted playsinline controls loop poster="/hennessy-store-locator-poster.png">

@@ -6,32 +6,38 @@ import SocialLinks from '../components/social-links';
 import styles from './about.module.css';
 import resumeHref from '../assets/GlenCheneyResume2018.pdf';
 
-// glen.codes
-
 const About = ({ profilePhoto }) => {
-  profilePhoto.sizes = '304px';
+  profilePhoto.sizes = '188px';
   return (
     <section className={styles.about} id="about">
       <div className="spacer-btm-large"></div>
-      <div className={`container ${styles.intro}`}>
+      <div className="container spacer-btm-large">
         <div className="col-6@sm col-start-5@sm">
-          <h2 className="type-header-1">About me</h2>
+          <h2 className="type-header-2">About me</h2>
           <p>With over 8 years of experience building frontend websites and applications, I&rsquo;m passionate about performance and delightful interactions. I am a self-motivated developer with strong organizational and communication skills. I also contribute to my open source projects and others&rsquo;.</p>
-          <p className="marginless">I enjoy working with people who care about the work they do and for the people who use it.</p>
+          <p>I enjoy working with people who care about the work they do and for the people who use it.</p>
+          <p className="marginless">
+            <a href={resumeHref}>resume.pdf</a>
+            {' '}
+            <a href="https://glen.codes">glen.codes</a>
+          </p>
         </div>
-        <div className={`col-3@sm col-start-2@sm ${styles['photo-column']}`}>
-          <Img outerWrapperClassName={styles['image-outer-wrapper'] + ' no-min-width'} className={styles['image-wrapper']} sizes={profilePhoto} alt="Glen smiling in a salmon button-up shirt on a black background." />
+        <div className="col-3@sm col-start-2@sm order-first@sm">
+          <Img outerWrapperClassName={'no-min-width'} className={styles['image-wrapper']} sizes={profilePhoto} alt="Glen smiling in a salmon button-up shirt on a black background." />
         </div>
       </div>
       <div className="container spacer-btm-large">
-        <div className="col-12 col-8@sm col-start-2@sm">
-          <h2>Looking for my resume?</h2>
-          <p>Here you go: <a href={resumeHref}>resume.pdf</a></p>
-          <h2>Looking for my development blog?</h2>
-          <p>It's at <a href="https://glen.codes">https://glen.codes</a>. Yeah I should really add more posts 🤔.</p>
+        <div className="col-12 col-10@sm col-start-2@sm">
+          <hr className="marginless" />
+        </div>
+      </div>
+      <div className="container spacer-btm-large">
+        <div className="col-12 col-5@sm col-start-8@sm">
           <SocialLinks />
+        </div>
+        <div className="col-12 col-5@sm col-start-2@sm order-first@sm">
           <h2>About this site</h2>
-          <p className="marginless"><a href="https://github.com/Vestride/glencheney">This site</a> is built on <a target="_blank" rel="noopener" href="https://www.gatsbyjs.org/">Gatsby</a>, a static site generator for React. Components are written in React with GraphQL and project pages are written in markdown. Gatsby takes care of development environment, bundling, code-splitting, and more. I use some Gatsby plugins for images, markdown, and code syntax highlighting.</p>
+          <p className="marginless"><a href="https://github.com/Vestride/glencheney">This site</a> is built on <a target="_blank" rel="noopener" href="https://www.gatsbyjs.org/">Gatsby</a>, a static site generator for React. Components are written in React with GraphQL and project pages are written in markdown. Gatsby takes care of development environment, bundling, code-splitting, and more.</p>
         </div>
       </div>
     </section>

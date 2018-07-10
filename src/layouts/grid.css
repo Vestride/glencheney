@@ -71,6 +71,12 @@
   grid-column-start: 5;
 }
 
+@media (max-width: 767px) {
+  .container-full\@xs {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 86%;
@@ -143,6 +149,10 @@
 
   .col-start-5\@sm {
     grid-column-start: 5;
+  }
+
+  .col-start-8\@sm {
+    grid-column-start: 8;
   }
 }
 

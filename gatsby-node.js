@@ -47,7 +47,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
-            heroImage: `/images/${node.fields.slug.replace(/\//g, '')}.png/`,
+            heroImage: `/images/${node.fields.slug.replace(/\//g, '')}\-hero.png/`,
             nextProject: nextProject.node,
           },
         });

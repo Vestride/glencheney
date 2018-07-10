@@ -10,8 +10,7 @@ const IndexPage = ({ data }) => (
         <h1 className="type-header-1">Hey, I&rsquo;m Glen, a Frontend Engineer</h1>
         <p className="marginless">I&rsquo;m passionate about performance and delightful interactions. I work at <a href="https://www.odopod.com">Odopod</a> in San Francisco.</p>
         <div className="spacer-btm-large"></div>
-        <h2>Projects</h2>
-        <p>Take a look at some of the work I&rsquo;ve done.</p>
+        <h2 className="type-header-2">Projects</h2>
       </div>
     </div>
     <ProjectList projects={data.allMarkdownRemark.edges} images={[

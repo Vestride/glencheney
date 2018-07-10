@@ -1,3 +1,7 @@
+.container {
+  grid-row-gap: 36px;
+}
+
 a.project {
   position: relative;
   display: flex;
@@ -25,16 +29,15 @@ a.project {
 
 .inner {
   flex-grow: 1;
-  padding: 10px 10px 10px 0;
-}
-
-.title {
-  font-size: 1rem;
-  margin-bottom: 0.5em;
+  padding: 10px 10px 0 0;
 }
 
 @media screen and (min-width: 1024px) {
   .inner {
-    padding: 24px 24px 6px 0;
+    padding: 24px 24px 0 0;
+  }
+
+  .container {
+    grid-row-gap: 48px;
   }
 }
