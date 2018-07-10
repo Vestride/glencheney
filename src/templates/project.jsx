@@ -4,15 +4,33 @@ import GatsbyLink from 'gatsby-link';
 import Img from 'gatsby-image';
 import Helmet from 'react-helmet';
 
+import config from '../config';
 import styles from './project.module.css';
 
 const Project = ({ data, pathContext }) => {
   const post = data.markdownRemark;
   data.hero.sizes.sizes = '(min-width: 1629px) 1400px, (min-width: 768px) 86vw, 100vw';
+  const image = config.url + data.hero.sizes.src;
+  const description = post.frontmatter.shortDescription;
+  const title = `${data.site.siteMetadata.title} · Portfolio`;
   return (
     <div>
       <Helmet>
-        <title>{`${data.site.siteMetadata.title} · ${post.frontmatter.title}`}</title>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        {/* Open Graph tags */}
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <meta property="og:image:width" content={1400} />
+        <meta property="og:image:height" content={788} />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
       </Helmet>
       <div className="spacer-btm-large"></div>
       <article className="spacer-btm-large">
@@ -81,6 +99,7 @@ export const query = graphql`
       frontmatter {
         title
         imageDescription
+        shortDescription
         href
         tags
       }

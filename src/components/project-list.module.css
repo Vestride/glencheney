@@ -10,6 +10,10 @@ a.project {
   color: inherit;
 }
 
+a.project:hover {
+  color: #de3d81;
+}
+
 .project:active {
   top: 1px;
 }
