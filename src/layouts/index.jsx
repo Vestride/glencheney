@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import { initialize, pageview } from 'react-ga';
 
 import Header from '../components/header';
-import config from '../config';
 import './index.css';
 import './grid.css';
 import './prism-theme.css';
@@ -17,15 +16,15 @@ class Layout extends Component {
 
   render() {
     const { children, data } = this.props;
-    const image = config.url + data.ogImage.childImageSharp.original.src;
-    const description = config.description;
+    const image = data.site.siteMetadata.url + data.ogImage.childImageSharp.original.src;
+    const description = data.site.siteMetadata.description;
     const title = `${data.site.siteMetadata.title} · Portfolio`;
     return (
       <div>
         <Helmet>
           <html lang="en" />
           <title>{title}</title>
-          <link rel="canonical" href={`${config.url}${this.props.location.pathname}`} />
+          <link rel="canonical" href={`${data.site.siteMetadata.url}${this.props.location.pathname}`} />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -44,7 +43,7 @@ class Layout extends Component {
 
           {/* Twitter Card tags */}
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:creator" content={config.twitter} />
+          <meta name="twitter:creator" content={data.site.siteMetadata.twitter} />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={image} />
@@ -69,6 +68,9 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        url
+        description
+        twitter
       }
     }
     ogImage: file(relativePath: { eq: "images/we-dot-odopod-hero.png" }) {

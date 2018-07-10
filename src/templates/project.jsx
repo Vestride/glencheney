@@ -4,13 +4,12 @@ import GatsbyLink from 'gatsby-link';
 import Img from 'gatsby-image';
 import Helmet from 'react-helmet';
 
-import config from '../config';
 import styles from './project.module.css';
 
 const Project = ({ data, pathContext }) => {
   const post = data.markdownRemark;
   data.hero.sizes.sizes = '(min-width: 1629px) 1400px, (min-width: 768px) 86vw, 100vw';
-  const image = config.url + data.hero.sizes.src;
+  const image = data.site.siteMetadata.url + data.hero.sizes.src;
   const description = post.frontmatter.shortDescription;
   const title = `${data.site.siteMetadata.title} · Portfolio`;
   return (
@@ -92,6 +91,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        url
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

@@ -31,11 +31,6 @@ export default IndexPage;
 
 export const query = graphql`
   query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     hennessyImage: file(relativePath: { eq: "images/hennessy.png" }) {
       childImageSharp {
         sizes(maxWidth: 664) {
