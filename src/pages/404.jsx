@@ -2,8 +2,13 @@ import React from 'react';
 
 const NotFoundPage = () => (
   <div>
-    <h1 className="type-header-2">NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="spacer-btm-large"></div>
+    <div className="container">
+      <div className="col-12" style={{ textAlign: 'center' }}>
+        <h1 className="type-header-1">This is awkward</h1>
+        <p>The page you&rsquo;re trying to visit doesn&rsquo;t exist.</p>
+      </div>
+    </div>
   </div>
 );
 
