@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{132:function(e,t){e.exports={data:{site:{siteMetadata:{title:"Glen Cheney"}},ogImage:{childImageSharp:{original:{src:"/static/we-dot-odopod-hero-80a160b85804ea0dbcb75ee1f2c361f2.png",width:2300,height:1294}}}},layoutContext:{}}}});
-//# sourceMappingURL=path----77b040455ab1e445005f.js.map
