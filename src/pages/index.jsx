@@ -8,7 +8,7 @@ const IndexPage = ({ data }) => (
       <div className="col-12 col-10@sm">
         <div className="spacer-btm-large"></div>
         <h1 className="type-header-1">Hey, I&rsquo;m Glen, a Frontend Engineer</h1>
-        <p className="marginless">I&rsquo;m passionate about performance and delightful interactions. I work at <a href="https://www.odopod.com">Odopod</a> in San Francisco.</p>
+        <p className="marginless">I&rsquo;m passionate about performance and delightful interactions. I work at <a href="https://www.lyft.com">Lyft</a> in San Francisco.</p>
         <div className="spacer-btm-large"></div>
         <h2 className="type-header-2">Projects</h2>
       </div>
