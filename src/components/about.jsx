@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import cx from 'clsx';
 import SocialLinks from '../components/social-links';
 
 import styles from './about.module.css';
@@ -14,16 +15,23 @@ const About = ({ profilePhoto }) => {
       <div className="container spacer-btm-large">
         <div className="col-6@sm col-start-5@sm">
           <h2 className="type-header-2">About me</h2>
-          <p>With over 8 years of experience building frontend websites and applications, I&rsquo;m passionate about performance and delightful interactions. I am a self-motivated developer with strong organizational and communication skills. I also contribute to my open source projects and others&rsquo;.</p>
+          <p>
+            With over {Math.round(new Date(Date.now() - 1275350400000) / 31536000000)} years of experience building
+            frontend websites and applications, I&rsquo;m passionate about performance and delightful interactions. I am
+            a self-motivated developer with strong organizational and communication skills. I also contribute to my open
+            source projects and others&rsquo;.
+          </p>
           <p>I enjoy working with people who care about the work they do and for the people who use it.</p>
           <p className="marginless">
-            <a href={resumeHref}>resume.pdf</a>
-            {' '}
-            <a href="https://glen.codes">glen.codes</a>
+            <a href={resumeHref}>resume.pdf</a> <a href="https://glen.codes">glen.codes</a>
           </p>
         </div>
         <div className="col-3@sm col-start-2@sm order-first@sm">
-          <Img outerWrapperClassName={'no-min-width'} className={styles['image-wrapper']} sizes={profilePhoto} alt="Glen smiling in a salmon button-up shirt on a black background." />
+          <Img
+            className={cx(styles.imageWrapper, 'no-min-width')}
+            sizes={profilePhoto}
+            alt="Glen smiling in a salmon button-up shirt on a black background."
+          />
         </div>
       </div>
       <div className="container spacer-btm-large">
@@ -37,7 +45,14 @@ const About = ({ profilePhoto }) => {
         </div>
         <div className="col-12 col-5@sm col-start-2@sm order-first@sm">
           <h2>About this site</h2>
-          <p className="marginless"><a href="https://github.com/Vestride/glencheney">This site</a> is built on <a target="_blank" rel="noopener" href="https://www.gatsbyjs.org/">Gatsby</a>, a static site generator for React. Components are written in React with GraphQL and project pages are written in markdown. Gatsby takes care of development environment, bundling, code-splitting, and more.</p>
+          <p className="marginless">
+            <a href="https://github.com/Vestride/glencheney">This site</a> is built on{' '}
+            <a target="_blank" rel="noopener noreferrer" href="https://www.gatsbyjs.org/">
+              Gatsby
+            </a>
+            , a static site generator for React. Components are written in React with GraphQL and project pages are
+            written in markdown. Gatsby takes care of development environment, bundling, code-splitting, and more.
+          </p>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Glen Cheney',
     url: 'https://glencheney.com',
-    description: 'Glen Cheney\'s portfolio of project work. Glen is a Frontend Engineer based in San Francisco.',
+    description: "Glen Cheney's portfolio of project work. Glen is a Frontend Engineer based in San Francisco.",
     twitter: '@Vestride',
   },
   plugins: [
@@ -37,7 +37,7 @@ module.exports = {
               // you may use this to prevent Prism from re-processing syntax.
               // This is an uncommon use-case though;
               // If you're unsure, it's best to use the default value.
-              classPrefix: "language-",
+              classPrefix: 'language-',
               // This is used to allow setting a language for inline code
               // (i.e. single backticks) by creating a separator.
               // This separator is a string and will do no white-space
@@ -65,5 +65,18 @@ module.exports = {
       },
     },
     'gatsby-plugin-catch-links',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: 'UA-24218764-1',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+      },
+    },
   ],
 };

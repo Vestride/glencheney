@@ -1,7 +1,8 @@
 import React from 'react';
+import Layout from '../components/layout';
 
-const NotFoundPage = () => (
-  <div>
+const NotFoundPage = ({ location }) => (
+  <Layout location={location}>
     <div className="spacer-btm-large"></div>
     <div className="container">
       <div className="col-12" style={{ textAlign: 'center' }}>
@@ -9,7 +10,7 @@ const NotFoundPage = () => (
         <p>The page you&rsquo;re trying to visit doesn&rsquo;t exist.</p>
       </div>
     </div>
-  </div>
+  </Layout>
 );
 
 export default NotFoundPage;

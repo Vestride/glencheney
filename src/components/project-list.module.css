@@ -18,13 +18,10 @@ a.project:hover {
   top: 1px;
 }
 
-.image-outer-wrapper {
-  overflow: hidden;
-  outline: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .image-wrapper {
   transition: transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .project:hover .image-wrapper {

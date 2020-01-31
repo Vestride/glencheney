@@ -9,16 +9,40 @@ export default () => (
   <div>
     <h2>Find me elsewhere</h2>
     <p className={styles.socials}>
-      <a className={styles.social} title="GitHub" target="_blank" rel="noopener" href="https://github.com/Vestride">
+      <a
+        className={styles.social}
+        title="GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/Vestride"
+      >
         <img src={github} alt="GitHub logo" />
       </a>
-      <a className={styles.social} title="Twitter" target="_blank" rel="noopener" href="https://twitter.com/Vestride">
+      <a
+        className={styles.social}
+        title="Twitter"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://twitter.com/Vestride"
+      >
         <img src={twitter} alt="Twitter logo" />
       </a>
-      <a className={styles.social} title="CodePen" target="_blank" rel="noopener" href="http://codepen.io/Vestride/">
+      <a
+        className={styles.social}
+        title="CodePen"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://codepen.io/Vestride/"
+      >
         <img src={codepen} alt="CodePen logo" />
       </a>
-      <a className={styles.social} title="LinkedIn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/glenium/">
+      <a
+        className={styles.social}
+        title="LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/glenium/"
+      >
         <img src={linkedin} alt="LinkedIn logo" />
       </a>
     </p>

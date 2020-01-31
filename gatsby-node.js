@@ -6,10 +6,10 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({ node, getNode, basePath: 'pages' })
+    const slug = createFilePath({ node, getNode, basePath: 'pages' });
     createNodeField({
       node,
       name: 'slug',
@@ -18,12 +18,12 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark(sort: {fields: [frontmatter___id], order: ASC}) {
+        allMarkdownRemark(sort: { fields: [frontmatter___id], order: ASC }) {
           edges {
             node {
               frontmatter {
@@ -36,8 +36,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
       }
-    `
-    ).then((result) => {
+    `).then(result => {
       const posts = result.data.allMarkdownRemark.edges;
       posts.forEach(({ node }, index) => {
         let nextProject = index === posts.length - 1 ? posts[0] : posts[index + 1];
@@ -47,12 +46,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
-            heroImage: `/images/${node.fields.slug.replace(/\//g, '')}\-hero.png/`,
+            heroImage: `${node.fields.slug.replace(/\//g, '')}\-hero.png`,
             nextProject: nextProject.node,
           },
         });
       });
       resolve();
     });
-  })
+  });
 };
