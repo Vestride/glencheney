@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{112:function(e,t){e.exports={data:{site:{siteMetadata:{title:"Glen Cheney",url:"https://glencheney.com",description:"Glen Cheney's portfolio of project work. Glen is a Frontend Engineer based in San Francisco.",twitter:"@Vestride"}},ogImage:{childImageSharp:{original:{src:"/static/we-dot-odopod-hero-80a160b85804ea0dbcb75ee1f2c361f2.png",width:2300,height:1294}}}},layoutContext:{}}}});
-//# sourceMappingURL=path----047b0d583a224dcd8ff8.js.map
