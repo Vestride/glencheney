@@ -1,14 +1,14 @@
 ---
-title: "Audemars Piguet"
-date: "2017-05-01"
+title: 'Audemars Piguet'
+date: '2017-05-01'
 id: 6
-href: "https://www.audemarspiguet.com/en/"
+href: 'https://www.audemarspiguet.com/en/'
 tags:
   - build systems
   - maintenance
   - configurator
-imageDescription: "Screenshot of the extended watch browser for Audemars Piguet showing filters and watches."
-shortDescription: "Audemars Piguet is a luxury watch maker located in Switzerland."
+imageDescription: 'Screenshot of the extended watch browser for Audemars Piguet showing filters and watches.'
+shortDescription: 'Audemars Piguet is a luxury watch maker located in Switzerland.'
 ---
 
 Audemars Piguet is a luxury watch maker located in Switzerland.
@@ -43,9 +43,9 @@ The watch browser gives users the ability to find their favorite watch from over
 
 The current watch browser is visually similar to the old one, but I completely rewrote the Backbone app with a focus on speed. Our backend developer updated the watch data model and I worked with [him](https://kevinking.io/) to transform and optimize the old APIs powering the app. I spent time profiling the app with Chrome's DevTools to optimize rendering.
 
-| Mobile view | Search on mobile |
-|:-----------:|:----------------:|
-|![Screenshot of the watch browser on a mobile device](watch-browser-mobile.png) | ![User in a search state](watch-browser-mobile-search.png)|
+|                                   Mobile view                                   |                      Search on mobile                      |
+| :-----------------------------------------------------------------------------: | :--------------------------------------------------------: |
+| ![Screenshot of the watch browser on a mobile device](watch-browser-mobile.png) | ![User in a search state](watch-browser-mobile-search.png) |
 
 Here are the desktop filters in action:
 

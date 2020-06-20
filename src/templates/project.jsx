@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import cx from 'clsx';
 import Layout from '../components/layout';
 
@@ -46,7 +46,7 @@ const Project = ({ data, pageContext, location }) => {
             </a>
             <p className="type-label">Tags</p>
             <p className={styles.tags}>
-              {post.frontmatter.tags.map(tag => (
+              {post.frontmatter.tags.map((tag) => (
                 <span key={tag} className={styles.tag}>
                   {tag}
                 </span>

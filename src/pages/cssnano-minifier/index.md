@@ -1,15 +1,15 @@
 ---
-title: "cssnano"
-date: "2017-09-01"
+title: 'cssnano'
+date: '2017-09-01'
 id: 8
-href: "https://cssnano.vercel.app"
+href: 'https://cssnano.vercel.app'
 tags:
   - open source
   - drag-n-drop
   - TypeScript
   - Node
-imageDescription: "Landing page for the cssnano minifier application."
-shortDescription: "Drag and drop css minification with cssnano."
+imageDescription: 'Landing page for the cssnano minifier application.'
+shortDescription: 'Drag and drop css minification with cssnano.'
 ---
 
 Drag and drop css minification with cssnano.

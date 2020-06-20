@@ -1,15 +1,15 @@
 ---
-title: "hennessy.com"
-date: "2017-08-10"
+title: 'hennessy.com'
+date: '2017-08-10'
 id: 1
-href: "https://www.hennessy.com/us/"
+href: 'https://www.hennessy.com/us/'
 tags:
   - build systems
   - maintenance
   - Preact
   - parallax scrolling
-imageDescription: "Screenshot of hennessy.com/us/ home page with Marshall Taylor riding a bicycle."
-shortDescription: "Mobile users dominate the US site for Hennessy."
+imageDescription: 'Screenshot of hennessy.com/us/ home page with Marshall Taylor riding a bicycle.'
+shortDescription: 'Mobile users dominate the US site for Hennessy.'
 ---
 
 This is the US site for Hennessy cognac. Odopod has been Hennessy’s digital partner since 2012 and it is one of the few sites Odopod has maintained over the years, allowing us to iterate and improve it over time.
@@ -24,12 +24,12 @@ In 2016, Hennessy went through a design "revamp" and we started to move away fro
 
 During early 2017, I started work on modernizing the build system:
 
-* Code-splitting creates a JS bundle per page, reducing the initial code the browser needed to download and parse.
-* All dependencies are managed through npm.
-* Everything is SCSS.
-* Asynchronously load common and page-level CSS to avoid render-blocking.
-* Dynamic imports (`import()`) for code not needed immediately on page load, like modals.
-* Utilize `requestIdleCallback` to initialize sections of the page "below the fold" when the browser has a moment, preventing main thread unresponsiveness on page load.
+- Code-splitting creates a JS bundle per page, reducing the initial code the browser needed to download and parse.
+- All dependencies are managed through npm.
+- Everything is SCSS.
+- Asynchronously load common and page-level CSS to avoid render-blocking.
+- Dynamic imports (`import()`) for code not needed immediately on page load, like modals.
+- Utilize `requestIdleCallback` to initialize sections of the page "below the fold" when the browser has a moment, preventing main thread unresponsiveness on page load.
 
 ## Notable projects
 

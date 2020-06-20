@@ -36,7 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `).then(result => {
+    `).then((result) => {
       const posts = result.data.allMarkdownRemark.edges;
       posts.forEach(({ node }, index) => {
         let nextProject = index === posts.length - 1 ? posts[0] : posts[index + 1];

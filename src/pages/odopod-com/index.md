@@ -1,14 +1,14 @@
 ---
-title: "odopod.com"
-date: "2016-09-01"
+title: 'odopod.com'
+date: '2016-09-01'
 id: 3
-href: "https://www.odopod.com/"
+href: 'https://www.odopod.com/'
 tags:
   - build systems
   - maintenance
   - Node
 imageDescription: "Screenshot of the Odopod home page. 'Hi, we’re Odopod — a digital design agency.'"
-shortDescription: "Odopod’s brand site runs on ExpressJS."
+shortDescription: 'Odopod’s brand site runs on ExpressJS.'
 ---
 
 Odopod’s brand site runs on ExpressJS.
@@ -66,9 +66,7 @@ Since we already have a service worker, why not provide a simple “You’re off
 
 ```js
 // Cache the offline page.
-workbox.precaching.precache([
-  { url: '/offline', revision: '1' },
-]);
+workbox.precaching.precache([{ url: '/offline', revision: '1' }]);
 
 // Respond to navigation requests with the offline page if the fetch fails.
 workbox.routing.registerRoute(

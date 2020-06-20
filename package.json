@@ -10,7 +10,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@reach/router": "^1.2.1",
@@ -27,8 +27,8 @@
     "gatsby-source-filesystem": "^2.0.0",
     "gatsby-transformer-remark": "^2.0.0",
     "gatsby-transformer-sharp": "^2.0.0",
-    "gh-pages": "^2.2.0",
-    "prettier": "^1.19.1",
+    "gh-pages": "^3.0.0",
+    "prettier": "^2.0.5",
     "prismjs": "^1.15.0"
   },
   "license": "MIT",

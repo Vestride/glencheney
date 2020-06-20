@@ -1,16 +1,16 @@
 ---
-title: "Compdrop"
-date: "2017-09-01"
+title: 'Compdrop'
+date: '2017-09-01'
 id: 7
-href: "https://compdrop.io/"
+href: 'https://compdrop.io/'
 tags:
   - open source
   - drag-n-drop
   - TypeScript
   - Vue
   - PWA
-imageDescription: "Screenshot of the compdrop app without any files added yet."
-shortDescription: "Compdrop is a drag and drop web app to view website designs in the browser."
+imageDescription: 'Screenshot of the compdrop app without any files added yet.'
+shortDescription: 'Compdrop is a drag and drop web app to view website designs in the browser.'
 ---
 
 Compdrop is a simple way to view website designs in a desktop browser. Just drag and drop your images into the browser.
@@ -29,11 +29,11 @@ I started off the project with a [Vue PWA scaffold](https://github.com/vuejs-tem
 
 After soliciting feedback from the designers and watching how they used the old compdrop, I began to add new features to the app.
 
-* Dropping a directory of images on the page instead of selecting all within a directory.
-* Retina image scaling for designs done at 2x size.
-* Added a mode which allowed images to be scrolled.
-* New keyboard shortcuts.
-* Added support for "collections". Designers used to open multiple tabs of cmpdrp, one for each person to show their work. Now when they drop multiple directories in, Compdrop creates a collection for each one.
+- Dropping a directory of images on the page instead of selecting all within a directory.
+- Retina image scaling for designs done at 2x size.
+- Added a mode which allowed images to be scrolled.
+- New keyboard shortcuts.
+- Added support for "collections". Designers used to open multiple tabs of cmpdrp, one for each person to show their work. Now when they drop multiple directories in, Compdrop creates a collection for each one.
 
 <!-- markdownlint-disable MD033 -->
 <video muted playsinline controls loop poster="/compdrop-poster.png">

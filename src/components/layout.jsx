@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import Header from '../components/header';
 import './index.css';
@@ -30,7 +30,7 @@ export default ({ children, location }) => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const image = data.site.siteMetadata.url + data.ogImage.childImageSharp.original.src;
       const description = data.site.siteMetadata.description;
       const title = `${data.site.siteMetadata.title} · Portfolio`;

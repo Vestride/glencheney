@@ -62,7 +62,6 @@
   transition-delay: calc(9 * 16ms);
 }
 
-
 .link:hover {
   color: #de3d81;
 }
@@ -135,7 +134,7 @@
 
 @media (min-width: 768px) {
   .link svg {
-    width:32px;
+    width: 32px;
     height: 32px;
   }
 
@@ -146,14 +145,14 @@
 
 @media (min-width: 1024px) {
   .link svg {
-    width:48px;
+    width: 48px;
     height: 48px;
   }
 }
 
 @media (min-width: 1200px) {
   .link svg {
-    width:56px;
+    width: 56px;
     height: 56px;
   }
 }
