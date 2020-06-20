@@ -2,7 +2,7 @@
 title: "cssnano"
 date: "2017-09-01"
 id: 8
-href: "https://cssnano.herokuapp.com/"
+href: "https://cssnano.vercel.app"
 tags:
   - open source
   - drag-n-drop
@@ -20,7 +20,7 @@ I built this small app because sometimes I need to minify CSS outside of a build
 
 ## Tech details
 
-Unfortunately, even though `postcss` works in the browser, the `cssnano` package does not. After you drop a CSS file onto the page, a request is sent to the server to minify the CSS. [CodeMirror](https://codemirror.net/) then renders the response in a fullscreen editor, giving users the ability to copy the styles which were just minified.
+Unfortunately, even though `postcss` works in the browser, the `cssnano` package does not. After you drop a CSS file onto the page, a request is sent to a function on Vercel to minify the CSS. [CodeMirror](https://codemirror.net/) then renders the response in a fullscreen editor, giving users the ability to copy the styles which were just minified.
 
 The frontend is built with TypeScript and bundled with webpack. Since the `codemirror` and `clipboard` packages are only used after the user adds some CSS to minify, I use webpack's code-splitting with dynamic imports to load them after the app has initialized.
 
