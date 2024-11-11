@@ -1,0 +1,16 @@
+.about {
+  border-top: 4px solid #de3d81;
+  background-color: #f5f5f5;
+}
+
+.imageWrapper {
+  border: 2px solid #3498db;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .imageWrapper {
+    margin: auto;
+  }
+}

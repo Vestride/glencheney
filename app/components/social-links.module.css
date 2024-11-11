@@ -1,0 +1,17 @@
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social {
+  width: 48px;
+  height: 48px;
+}
+
+@media screen and (min-width: 1024px) {
+  .social {
+    width: 64px;
+    height: 64px;
+  }
+}
