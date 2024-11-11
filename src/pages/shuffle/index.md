@@ -2,7 +2,7 @@
 title: 'Shuffle'
 date: '2012-09-01'
 id: 4
-href: 'https://vestride.github.io/Shuffle/'
+href: 'https://shuffle.js.org'
 tags:
   - open source
   - component
