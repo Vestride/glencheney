@@ -1,0 +1,68 @@
+/* https://stackoverflow.com/a/43312314/373422 */
+
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-top: 0.5em;
+}
+
+.markdown video {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.markdown table {
+  margin-bottom: 1.5rem;
+}
+
+.textOverflow {
+  display: block;
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  padding: 4px 8px;
+  white-space: nowrap;
+  background-color: hsl(204, 70%, 95%);
+  color: hsl(204, 49%, 30%);
+  border-radius: 10px;
+  font-size: 80%;
+}
+
+.projectNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 0 3%;
+  }
+}
+
+@media (min-width: 768px) {
+  .projectNav {
+    flex-direction: row;
+  }
+
+  .projectNav > *:nth-child(1) {
+    order: 2;
+  }
+
+  .projectNav > *:nth-child(2) {
+    order: 1;
+  }
+}
